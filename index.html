@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cardápio digital do Restaurante Empório do Sertão em Recife, PE.">
-  <title>Empório do Sertão | Cardápio Digital</title>
+  <meta name="description" content="Cardápio digital do Restaurante Empório do Sertão, Recife/PE.">
+  <title>Empório do Sertão — Cardápio Digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
@@ -16,13 +16,15 @@
       --areia: #F5E6C8;
       --marrom: #3E1F00;
       --branco-sujo: #FDF6EC;
-      --barro-claro: #E7C38D;
-      --barro-escuro: #8E3716;
-      --sombra: 0 20px 50px rgba(62, 31, 0, 0.18);
-      --sombra-suave: 0 12px 28px rgba(62, 31, 0, 0.12);
-      --raio: 8px;
+      --carvao: #160B02;
+      --barro: #842F0F;
+      --ouro-suave: rgba(212, 169, 106, 0.44);
+      --linha: rgba(62, 31, 0, 0.14);
+      --sombra: 0 22px 60px rgba(62, 31, 0, 0.2);
+      --sombra-curta: 0 12px 28px rgba(62, 31, 0, 0.14);
       --fonte-titulo: "Playfair Display", Georgia, serif;
       --fonte-corpo: "Lato", Arial, sans-serif;
+      --raio: 8px;
     }
 
     * {
@@ -38,11 +40,10 @@
       color: var(--marrom);
       font-family: var(--fonte-corpo);
       background:
-        radial-gradient(circle at 20% 15%, rgba(212, 169, 106, 0.24), transparent 30%),
-        linear-gradient(135deg, rgba(196, 80, 26, 0.06) 25%, transparent 25%) 0 0 / 34px 34px,
-        linear-gradient(225deg, rgba(74, 124, 89, 0.05) 25%, transparent 25%) 0 0 / 34px 34px,
+        linear-gradient(90deg, rgba(196, 80, 26, 0.08) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(0deg, rgba(196, 80, 26, 0.06) 1px, transparent 1px) 0 0 / 42px 42px,
         var(--areia);
-      line-height: 1.55;
+      overflow-x: hidden;
     }
 
     body.modal-open {
@@ -55,6 +56,7 @@
     }
 
     button {
+      border: 0;
       cursor: pointer;
     }
 
@@ -63,631 +65,643 @@
       text-decoration: none;
     }
 
-    .page-shell {
-      overflow: hidden;
-    }
-
-    /* Hero com textura de barro rachado feita em camadas CSS. */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 100svh;
       display: grid;
       place-items: center;
-      padding: 32px 18px;
-      isolation: isolate;
+      overflow: hidden;
+      padding: 36px 18px;
       color: var(--branco-sujo);
       background:
-        linear-gradient(35deg, transparent 48%, rgba(62, 31, 0, 0.16) 49%, transparent 51%) 0 0 / 78px 82px,
-        linear-gradient(145deg, transparent 47%, rgba(62, 31, 0, 0.12) 48%, transparent 51%) 24px 10px / 96px 88px,
-        radial-gradient(circle at 18% 12%, rgba(253, 246, 236, 0.16), transparent 20%),
-        radial-gradient(circle at 86% 82%, rgba(62, 31, 0, 0.24), transparent 26%),
-        linear-gradient(135deg, var(--terracota), var(--taipa));
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
+        radial-gradient(circle at 50% 47%, rgba(212, 169, 106, 0.13) 0 13%, transparent 13.2%),
+        radial-gradient(circle at 50% 47%, transparent 0 27%, rgba(212, 169, 106, 0.13) 27.1% 27.35%, transparent 27.5%),
+        radial-gradient(circle at 50% 47%, transparent 0 42%, rgba(212, 169, 106, 0.1) 42.1% 42.35%, transparent 42.5%),
+        linear-gradient(90deg, rgba(253, 246, 236, 0.035) 1px, transparent 1px) 0 0 / 76px 76px,
+        linear-gradient(0deg, rgba(253, 246, 236, 0.03) 1px, transparent 1px) 0 0 / 76px 76px,
+        radial-gradient(circle at 72% 18%, rgba(196, 80, 26, 0.3), transparent 30%),
+        linear-gradient(135deg, var(--carvao), #2b1204 58%, var(--barro));
+      isolation: isolate;
     }
 
     .hero::before {
-      background:
-        repeating-linear-gradient(90deg, rgba(253, 246, 236, 0.04) 0 1px, transparent 1px 9px),
-        repeating-linear-gradient(0deg, rgba(62, 31, 0, 0.05) 0 1px, transparent 1px 12px);
-      mix-blend-mode: soft-light;
-      opacity: 0.75;
-    }
-
-    .hero::after {
-      background: linear-gradient(to bottom, rgba(62, 31, 0, 0.06), rgba(62, 31, 0, 0.35));
-    }
-
-    .hero-mark {
-      width: min(760px, 100%);
-      text-align: center;
-      padding: 28px 0;
-    }
-
-    .restaurant-kicker,
-    .section-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--branco-sujo);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .restaurant-kicker::before,
-    .restaurant-kicker::after,
-    .section-kicker::before,
-    .section-kicker::after {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: currentColor;
-      opacity: 0.85;
-    }
-
-    .logo-title {
-      position: relative;
-      margin: 8px auto 14px;
-      max-width: 980px;
-      font-family: var(--fonte-titulo);
-      font-size: clamp(3.4rem, 13vw, 8.4rem);
-      font-weight: 900;
-      line-height: 0.82;
-      text-transform: uppercase;
-      text-shadow: 0 12px 28px rgba(62, 31, 0, 0.34);
-      overflow: hidden;
-    }
-
-    .logo-title::after {
       content: "";
       position: absolute;
-      inset: -20% -80%;
-      background: linear-gradient(110deg, transparent 42%, rgba(253, 246, 236, 0.82), transparent 58%);
-      transform: translateX(-62%) skewX(-8deg);
-      animation: shimmer 2.7s ease-out 0.4s 1;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.28;
+      background:
+        linear-gradient(36deg, transparent 48%, rgba(212, 169, 106, 0.28) 49%, transparent 50%) 0 0 / 118px 126px,
+        linear-gradient(145deg, transparent 48%, rgba(253, 246, 236, 0.18) 49%, transparent 50%) 24px 0 / 98px 118px;
+      mix-blend-mode: soft-light;
     }
 
-    @keyframes shimmer {
-      from { transform: translateX(-62%) skewX(-8deg); }
-      to { transform: translateX(62%) skewX(-8deg); }
+    .hero-side {
+      position: absolute;
+      color: rgba(212, 169, 106, 0.18);
+      pointer-events: none;
     }
 
-    .hero-subtitle {
-      margin: 0 auto 30px;
-      max-width: 560px;
-      color: rgba(253, 246, 236, 0.92);
-      font-size: clamp(1.1rem, 3vw, 1.45rem);
+    .hero-side.sun {
+      top: 8%;
+      right: clamp(-80px, -6vw, -20px);
+      width: clamp(150px, 24vw, 300px);
+      animation: slowSpin 38s linear infinite;
+    }
+
+    .hero-side.cactus {
+      left: clamp(-56px, -3vw, -18px);
+      bottom: 8%;
+      width: clamp(120px, 17vw, 230px);
+    }
+
+    @keyframes slowSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-content {
+      width: min(980px, 100%);
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 14px;
+      color: var(--taipa);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: clamp(34px, 8vw, 76px);
+      height: 1px;
+      background: currentColor;
+    }
+
+    .brand {
+      margin: 36px auto 12px;
+      font-family: var(--fonte-titulo);
+      font-size: clamp(3.5rem, 12vw, 9.3rem);
+      font-weight: 900;
+      line-height: 0.78;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-wrap: balance;
+      text-shadow: 0 28px 60px rgba(0, 0, 0, 0.36);
+    }
+
+    .brand span {
+      display: block;
+      color: var(--taipa);
+      font-size: 0.78em;
+      font-style: italic;
+      text-transform: none;
+    }
+
+    .tagline {
+      margin: 26px auto 0;
+      max-width: 640px;
+      color: rgba(253, 246, 236, 0.78);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
       font-weight: 700;
     }
 
-    .hero-cta,
-    .add-button,
-    .floating-cart {
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 34px 0 0;
+    }
+
+    .btn-primary,
+    .btn-ghost,
+    .modal-add,
+    .cart-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       min-height: 48px;
-      border: 0;
       border-radius: var(--raio);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    .btn-primary,
+    .modal-add,
+    .cart-button {
+      padding: 0 22px;
       color: var(--branco-sujo);
       background: var(--terracota);
-      font-weight: 900;
-      box-shadow: 0 14px 26px rgba(62, 31, 0, 0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.3);
     }
 
-    .hero-cta {
-      padding: 0 26px;
-      background: var(--marrom);
+    .btn-ghost {
+      padding: 0 18px;
+      color: var(--branco-sujo);
+      border: 1px solid rgba(212, 169, 106, 0.55);
+      background: rgba(253, 246, 236, 0.04);
     }
 
-    .hero-cta:hover,
-    .add-button:hover,
-    .floating-cart:hover {
+    .btn-primary:hover,
+    .btn-ghost:hover,
+    .modal-add:hover,
+    .cart-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(62, 31, 0, 0.34);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.34);
     }
 
-    .decor-cactus {
-      position: absolute;
-      bottom: 5vh;
-      width: clamp(96px, 16vw, 210px);
-      color: rgba(253, 246, 236, 0.6);
-      filter: drop-shadow(0 18px 18px rgba(62, 31, 0, 0.25));
+    .hero-info {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      width: min(760px, 100%);
+      margin: 70px auto 0;
     }
 
-    .decor-cactus.left {
-      left: max(12px, 3vw);
-      transform: scaleX(-1);
+    .info-pill {
+      padding: 12px 14px;
+      border: 1px solid rgba(212, 169, 106, 0.45);
+      border-radius: var(--raio);
+      background: rgba(22, 11, 2, 0.38);
+      backdrop-filter: blur(10px);
+      text-align: left;
     }
 
-    .decor-cactus.right {
-      right: max(12px, 3vw);
+    .info-pill b {
+      display: block;
+      color: var(--taipa);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
-    .menu-area {
-      position: relative;
-      background:
-        linear-gradient(45deg, rgba(212, 169, 106, 0.16) 25%, transparent 25% 75%, rgba(212, 169, 106, 0.16) 75%) 0 0 / 42px 42px,
-        linear-gradient(45deg, rgba(74, 124, 89, 0.08) 25%, transparent 25% 75%, rgba(74, 124, 89, 0.08) 75%) 21px 21px / 42px 42px,
-        var(--areia);
-      padding-bottom: 50px;
+    .info-pill span {
+      color: rgba(253, 246, 236, 0.86);
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
-    .tab-bar {
+    .menu-nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(245, 230, 200, 0.94);
-      border-bottom: 3px solid rgba(212, 169, 106, 0.62);
-      box-shadow: 0 12px 24px rgba(62, 31, 0, 0.1);
-      backdrop-filter: blur(12px);
+      z-index: 30;
+      background: rgba(22, 11, 2, 0.94);
+      border-bottom: 1px solid rgba(212, 169, 106, 0.26);
+      box-shadow: 0 18px 44px rgba(62, 31, 0, 0.26);
+      backdrop-filter: blur(16px);
     }
 
-    .tab-bar-inner {
-      max-width: 1180px;
+    .nav-inner {
+      width: min(1180px, calc(100% - 20px));
       margin: 0 auto;
-      padding: 14px 14px 12px;
+      padding: 12px 0;
     }
 
-    .search-wrap {
+    .search-line {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .search-box {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
-      padding: 10px 12px;
-      border: 2px solid rgba(212, 169, 106, 0.86);
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid rgba(212, 169, 106, 0.36);
       border-radius: var(--raio);
-      background: var(--branco-sujo);
-      box-shadow: var(--sombra-suave);
+      color: var(--taipa);
+      background: rgba(253, 246, 236, 0.06);
     }
 
-    .search-wrap svg {
-      flex: 0 0 auto;
-      color: var(--terracota);
-    }
-
-    .search-wrap input {
+    .search-box input {
       width: 100%;
       min-width: 0;
       border: 0;
       outline: 0;
-      color: var(--marrom);
+      color: var(--branco-sujo);
       background: transparent;
       font-weight: 700;
     }
 
+    .search-box input::placeholder {
+      color: rgba(253, 246, 236, 0.48);
+    }
+
+    .result-count {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border-radius: var(--raio);
+      color: var(--branco-sujo);
+      background: var(--cactus);
+      font-size: 0.82rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .tabs {
-      position: relative;
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding: 2px 2px 10px;
+      padding: 2px 0 4px;
       scrollbar-width: thin;
     }
 
-    .tabs::after {
-      content: "";
-      position: absolute;
-      left: var(--underline-left, 2px);
-      bottom: 0;
-      width: var(--underline-width, 100px);
-      height: 4px;
-      border-radius: 999px;
-      background: var(--cactus);
-      transition: left 0.22s ease, width 0.22s ease;
-    }
-
-    .tab-button {
+    .tab {
       flex: 0 0 auto;
       min-height: 42px;
       padding: 0 15px;
-      border: 0;
       border-radius: var(--raio);
-      color: var(--marrom);
-      background: var(--taipa);
-      font-size: 0.92rem;
+      color: rgba(253, 246, 236, 0.75);
+      background: rgba(253, 246, 236, 0.06);
+      border: 1px solid rgba(212, 169, 106, 0.22);
+      font-size: 0.88rem;
       font-weight: 900;
       white-space: nowrap;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
     }
 
-    .tab-button:hover {
-      transform: translateY(-1px);
-    }
-
-    .tab-button.active {
+    .tab:hover,
+    .tab.active {
       color: var(--branco-sujo);
+      border-color: rgba(212, 169, 106, 0.55);
       background: var(--cactus);
     }
 
-    .content {
-      width: min(1180px, calc(100% - 28px));
+    main {
+      background:
+        radial-gradient(circle at 6% 4%, rgba(212, 169, 106, 0.34), transparent 18%),
+        linear-gradient(90deg, rgba(62, 31, 0, 0.05) 1px, transparent 1px) 0 0 / 68px 68px,
+        var(--areia);
+    }
+
+    .menu-wrap {
+      width: min(1180px, calc(100% - 22px));
       margin: 0 auto;
-      padding-top: 34px;
+      padding: 54px 0 70px;
     }
 
-    .menu-section {
-      display: none;
-      animation: sectionIn 0.28s ease both;
+    .section {
+      scroll-margin-top: 146px;
+      margin-bottom: 64px;
     }
 
-    .menu-section.active {
-      display: block;
-    }
-
-    @keyframes sectionIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-heading {
+    .section-head {
       display: grid;
-      gap: 12px;
-      margin: 0 0 22px;
-      text-align: center;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--linha);
     }
 
     .section-kicker {
-      justify-content: center;
+      display: block;
+      margin-bottom: 8px;
       color: var(--terracota);
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-family: var(--fonte-titulo);
-      font-size: clamp(2rem, 8vw, 4.2rem);
-      line-height: 0.95;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
-    .section-heading p {
-      margin: 0 auto;
-      max-width: 680px;
-      color: rgba(62, 31, 0, 0.76);
+    .section-title {
+      margin: 0;
+      font-family: var(--fonte-titulo);
+      font-size: clamp(2.25rem, 6vw, 4.8rem);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      max-width: 410px;
+      margin: 0;
+      color: rgba(62, 31, 0, 0.68);
       font-weight: 700;
+      text-align: right;
     }
 
-    .lace-divider {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin: 22px 0 24px;
-      color: var(--terracota);
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 18px;
     }
 
-    .lace-divider::before,
-    .lace-divider::after {
-      content: "";
-      height: 8px;
-      flex: 1;
-      max-width: 360px;
-      background:
-        radial-gradient(circle, currentColor 2px, transparent 3px) 0 0 / 16px 8px,
-        linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
-      opacity: 0.7;
-    }
-
-    .lace-divider svg {
-      width: 72px;
-      height: 72px;
-    }
-
-    .braided-line {
-      height: 14px;
-      margin: 28px 0;
-      border-radius: 999px;
-      background:
-        repeating-linear-gradient(45deg, var(--marrom) 0 7px, var(--taipa) 7px 14px, var(--terracota) 14px 21px);
-      box-shadow: inset 0 2px 0 rgba(253, 246, 236, 0.3), inset 0 -2px 0 rgba(62, 31, 0, 0.22);
-      opacity: 0.86;
-    }
-
-    .special-card,
-    .day-grid,
+    .buffet-card,
+    .daily-card,
+    .menu-card,
+    .footer-card,
     .empty-state {
-      border: 2px solid rgba(212, 169, 106, 0.86);
       border-radius: var(--raio);
+      border: 1px solid rgba(62, 31, 0, 0.12);
       background: var(--branco-sujo);
-      box-shadow: var(--sombra);
+      box-shadow: var(--sombra-curta);
     }
 
-    .special-card {
+    .buffet-card {
       position: relative;
       overflow: hidden;
-      padding: clamp(20px, 4vw, 34px);
+      min-height: 470px;
+      padding: clamp(22px, 4vw, 42px);
+      color: var(--branco-sujo);
       background:
-        linear-gradient(135deg, rgba(196, 80, 26, 0.16), rgba(253, 246, 236, 0.96)),
-        var(--branco-sujo);
+        linear-gradient(90deg, rgba(22, 11, 2, 0.9), rgba(62, 31, 0, 0.62)),
+        radial-gradient(circle at 86% 26%, rgba(212, 169, 106, 0.42), transparent 28%),
+        linear-gradient(135deg, var(--barro), var(--terracota));
     }
 
-    .special-card::before {
+    .buffet-card::after {
       content: "";
       position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 0 0, transparent 18px, rgba(74, 124, 89, 0.12) 19px 21px, transparent 22px) 0 0 / 48px 48px;
+      right: -50px;
+      bottom: -72px;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(253, 246, 236, 0.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 54px rgba(253, 246, 236, 0.04), 0 0 0 116px rgba(253, 246, 236, 0.03);
     }
 
-    .corner-badge,
-    .item-badge {
+    .stamp {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .corner-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      padding: 8px 12px;
-      color: var(--branco-sujo);
-      background: var(--cactus);
-      box-shadow: 0 10px 20px rgba(62, 31, 0, 0.18);
-    }
-
-    .self-layout {
-      position: relative;
-      display: grid;
-      gap: 22px;
-    }
-
-    .self-title {
-      margin: 0;
-      max-width: 720px;
-      font-family: var(--fonte-titulo);
-      font-size: clamp(2.2rem, 8vw, 4.8rem);
-      line-height: 0.95;
-    }
-
-    .self-copy {
-      margin: 0;
-      max-width: 660px;
-      color: rgba(62, 31, 0, 0.78);
-      font-size: 1.06rem;
-      font-weight: 700;
-    }
-
-    .price-hero {
-      display: inline-grid;
+      gap: 7px;
       width: fit-content;
-      min-width: 190px;
-      padding: 14px 18px;
-      border-radius: var(--raio);
-      color: var(--branco-sujo);
-      background: var(--terracota);
-      box-shadow: var(--sombra-suave);
-    }
-
-    .price-hero span {
-      font-size: 0.8rem;
+      min-height: 34px;
+      padding: 0 11px;
+      border-radius: 999px;
+      color: var(--marrom);
+      background: var(--taipa);
+      font-size: 0.72rem;
       font-weight: 900;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    .price-hero strong {
+    .buffet-card h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 22px 0 12px;
       font-family: var(--fonte-titulo);
-      font-size: 2.05rem;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.82;
+    }
+
+    .buffet-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0;
+      color: rgba(253, 246, 236, 0.78);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .kilo {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 4px;
+      width: fit-content;
+      margin-top: 28px;
+      padding: 16px 20px;
+      border: 1px solid rgba(212, 169, 106, 0.54);
+      border-radius: var(--raio);
+      background: rgba(22, 11, 2, 0.44);
+    }
+
+    .kilo span {
+      color: var(--taipa);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .kilo strong {
+      font-family: var(--fonte-titulo);
+      font-size: 2.4rem;
       line-height: 1;
     }
 
-    .buffet-grid {
+    .buffet-list {
       display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    }
-
-    .buffet-column {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
       position: relative;
-      padding: 16px;
-      border: 1px solid rgba(212, 169, 106, 0.7);
+      z-index: 1;
+    }
+
+    .buffet-col {
+      padding: 14px;
+      border: 1px solid rgba(212, 169, 106, 0.26);
       border-radius: var(--raio);
-      background: rgba(253, 246, 236, 0.78);
+      background: rgba(253, 246, 236, 0.08);
     }
 
-    .buffet-column h3 {
-      margin: 0 0 9px;
+    .buffet-col h3 {
+      margin: 0 0 7px;
+      color: var(--taipa);
       font-family: var(--fonte-titulo);
-      font-size: 1.22rem;
+      font-size: 1.18rem;
     }
 
-    .buffet-column ul {
+    .buffet-col ul {
       display: grid;
-      gap: 7px;
+      gap: 5px;
       margin: 0;
       padding: 0;
       list-style: none;
-      color: rgba(62, 31, 0, 0.78);
+      color: rgba(253, 246, 236, 0.78);
+      font-size: 0.95rem;
       font-weight: 700;
     }
 
-    .ask-badge {
-      display: inline-flex;
-      width: fit-content;
-      margin-top: 10px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      color: var(--branco-sujo);
-      background: var(--cactus);
-      font-size: 0.78rem;
-      font-weight: 900;
-    }
-
-    .day-grid {
+    .daily-stack {
       display: grid;
-      overflow: hidden;
-      border-color: var(--taipa);
+      gap: 18px;
+      scroll-margin-top: 146px;
     }
 
     .daily-card {
-      display: grid;
-      grid-template-columns: 1fr;
-      border-bottom: 1px solid rgba(212, 169, 106, 0.56);
-      background: var(--branco-sujo);
+      overflow: hidden;
     }
 
-    .daily-card:last-child {
-      border-bottom: 0;
-    }
-
-    .food-art {
-      min-height: 220px;
+    .daily-art,
+    .card-art,
+    .modal-art {
+      min-height: 190px;
       background:
-        radial-gradient(circle at 50% 48%, rgba(253, 246, 236, 0.92) 0 17%, transparent 18%),
-        radial-gradient(circle at 52% 44%, rgba(196, 80, 26, 0.82) 0 24%, transparent 25%),
-        radial-gradient(circle at 33% 62%, rgba(74, 124, 89, 0.82) 0 9%, transparent 10%),
-        radial-gradient(circle at 68% 62%, rgba(212, 169, 106, 0.9) 0 12%, transparent 13%),
-        linear-gradient(135deg, var(--barro-escuro), var(--taipa));
+        radial-gradient(circle at 52% 44%, rgba(253, 246, 236, 0.94) 0 13%, transparent 13.5%),
+        radial-gradient(circle at 45% 54%, rgba(196, 80, 26, 0.88) 0 21%, transparent 21.5%),
+        radial-gradient(circle at 65% 62%, rgba(74, 124, 89, 0.85) 0 10%, transparent 10.5%),
+        radial-gradient(circle at 34% 68%, rgba(212, 169, 106, 0.95) 0 10%, transparent 10.5%),
+        linear-gradient(135deg, var(--marrom), var(--terracota));
     }
 
-    .food-art.sea {
+    .daily-art.sea,
+    .card-art.sea {
       background:
-        radial-gradient(circle at 48% 52%, rgba(253, 246, 236, 0.9) 0 16%, transparent 17%),
-        radial-gradient(circle at 55% 46%, rgba(196, 80, 26, 0.72) 0 22%, transparent 23%),
-        radial-gradient(circle at 34% 64%, rgba(74, 124, 89, 0.78) 0 10%, transparent 11%),
+        radial-gradient(circle at 52% 44%, rgba(253, 246, 236, 0.94) 0 13%, transparent 13.5%),
+        radial-gradient(circle at 45% 54%, rgba(196, 80, 26, 0.88) 0 21%, transparent 21.5%),
+        radial-gradient(circle at 65% 62%, rgba(74, 124, 89, 0.85) 0 10%, transparent 10.5%),
         linear-gradient(135deg, var(--cactus), var(--taipa));
     }
 
-    .daily-info,
-    .modal-info {
+    .daily-body,
+    .card-body {
       display: grid;
-      align-content: center;
       gap: 12px;
-      padding: clamp(18px, 4vw, 30px);
+      padding: 18px;
     }
 
-    .daily-info h3,
-    .item-card h3,
-    .modal-info h3 {
-      margin: 0;
-      font-family: var(--fonte-titulo);
-      font-size: clamp(1.35rem, 5vw, 2rem);
-      line-height: 1.05;
-    }
-
-    .daily-info p,
-    .item-card p,
-    .modal-info p {
-      margin: 0;
-      color: rgba(62, 31, 0, 0.76);
-      font-weight: 700;
-    }
-
-    .meta-row {
+    .badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
+      min-height: 28px;
+    }
+
+    .badge {
+      display: inline-flex;
       align-items: center;
-    }
-
-    .price {
-      margin-left: auto;
-      color: var(--terracota);
-      font-family: var(--fonte-titulo);
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .serve-pill,
-    .item-badge {
-      padding: 6px 9px;
+      min-height: 28px;
+      padding: 0 9px;
+      border-radius: 999px;
       color: var(--branco-sujo);
       background: var(--cactus);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .item-badge.spicy {
+    .badge.hot {
       background: var(--terracota);
     }
 
-    .items-grid {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .badge.today {
+      color: var(--marrom);
+      background: var(--taipa);
     }
 
-    .item-card {
-      position: relative;
-      display: grid;
+    .daily-card h3,
+    .menu-card h3,
+    .modal-card h3 {
+      margin: 0;
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      line-height: 1.02;
+    }
+
+    .daily-card p,
+    .menu-card p,
+    .modal-card p {
+      margin: 0;
+      color: rgba(62, 31, 0, 0.7);
+      font-weight: 700;
+    }
+
+    .price-row {
+      display: flex;
       gap: 12px;
-      min-height: 190px;
-      padding: 18px;
-      border: 2px solid rgba(212, 169, 106, 0.68);
-      border-radius: var(--raio);
-      background:
-        linear-gradient(135deg, transparent 0 82%, rgba(212, 169, 106, 0.24) 82%),
-        var(--branco-sujo);
-      box-shadow: var(--sombra-suave);
+      align-items: end;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .serves {
+      color: rgba(62, 31, 0, 0.58);
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .price {
+      color: var(--terracota);
+      font-family: var(--fonte-titulo);
+      font-size: 1.7rem;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .menu-card {
+      display: grid;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 0;
       text-align: left;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
-    .item-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 7px;
-      background:
-        linear-gradient(90deg, var(--terracota) 0 25%, var(--taipa) 25% 50%, var(--cactus) 50% 75%, var(--terracota) 75%);
-      border-radius: 6px 6px 0 0;
-    }
-
-    .item-card:hover,
-    .item-card:focus-visible {
-      transform: translateY(-3px);
-      border-color: var(--terracota);
+    .menu-card:hover,
+    .menu-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: rgba(196, 80, 26, 0.42);
       box-shadow: var(--sombra);
       outline: none;
     }
 
-    .item-top {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      justify-content: space-between;
+    .card-art {
+      min-height: 148px;
+      position: relative;
     }
 
-    .item-icon {
-      display: grid;
-      flex: 0 0 auto;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+    .card-art::after {
+      content: attr(data-category);
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
       color: var(--branco-sujo);
-      background: var(--terracota);
+      background: rgba(22, 11, 2, 0.72);
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      min-height: 26px;
+    .menu-card.compact {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .menu-card.compact .card-art {
+      min-height: 86px;
     }
 
     .empty-state {
       display: none;
-      padding: 32px;
+      padding: 28px;
+      margin: 20px 0 48px;
       text-align: center;
       font-weight: 900;
     }
@@ -696,24 +710,24 @@
       display: block;
     }
 
-    .floating-cart {
+    .cart-button {
       position: fixed;
       right: 16px;
       bottom: 16px;
-      z-index: 25;
-      padding: 0 16px;
-      background: var(--terracota);
+      z-index: 35;
+      min-height: 52px;
+      padding: 0 18px;
     }
 
     .modal {
       position: fixed;
       inset: 0;
-      z-index: 40;
+      z-index: 60;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 16px;
-      background: rgba(62, 31, 0, 0.68);
+      background: rgba(22, 11, 2, 0.78);
     }
 
     .modal.open {
@@ -722,57 +736,61 @@
 
     .modal-card {
       position: relative;
-      width: min(900px, 100%);
-      max-height: min(760px, calc(100vh - 32px));
+      width: min(920px, 100%);
+      max-height: min(760px, calc(100svh - 32px));
       overflow: auto;
-      border: 3px solid var(--taipa);
       border-radius: var(--raio);
       background: var(--branco-sujo);
-      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.44);
     }
 
     .modal-layout {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 0.92fr 1.08fr;
     }
 
     .modal-art {
-      min-height: 250px;
-      background:
-        radial-gradient(circle at 50% 42%, rgba(253, 246, 236, 0.94) 0 14%, transparent 15%),
-        radial-gradient(circle at 43% 51%, rgba(196, 80, 26, 0.86) 0 22%, transparent 23%),
-        radial-gradient(circle at 61% 58%, rgba(74, 124, 89, 0.86) 0 11%, transparent 12%),
-        radial-gradient(circle at 30% 68%, rgba(212, 169, 106, 0.9) 0 12%, transparent 13%),
-        linear-gradient(135deg, var(--terracota), var(--taipa));
+      min-height: 420px;
+    }
+
+    .modal-info {
+      display: grid;
+      align-content: center;
+      gap: 16px;
+      padding: clamp(24px, 5vw, 42px);
+    }
+
+    .modal-price {
+      color: var(--terracota);
+      font-family: var(--fonte-titulo);
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .modal-add {
+      width: fit-content;
+      min-width: 210px;
     }
 
     .close-modal {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 2;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
       display: grid;
       place-items: center;
       width: 42px;
       height: 42px;
-      border: 0;
       border-radius: 50%;
       color: var(--marrom);
-      background: rgba(253, 246, 236, 0.9);
-      box-shadow: var(--sombra-suave);
+      background: rgba(253, 246, 236, 0.92);
+      box-shadow: var(--sombra-curta);
     }
 
-    .add-button {
-      width: fit-content;
-      min-width: 200px;
-      padding: 0 18px;
-    }
-
-    .footer {
+    footer {
       color: var(--branco-sujo);
-      background:
-        radial-gradient(circle at 12% 20%, rgba(196, 80, 26, 0.5), transparent 26%),
-        linear-gradient(135deg, var(--marrom), #241100);
+      background: var(--carvao);
       padding: 44px 18px 28px;
     }
 
@@ -783,110 +801,134 @@
       gap: 24px;
     }
 
-    .footer-logo {
+    .footer-brand {
       font-family: var(--fonte-titulo);
-      font-size: clamp(2rem, 7vw, 3.7rem);
+      font-size: clamp(2.5rem, 8vw, 5.8rem);
       font-weight: 900;
-      line-height: 0.92;
+      line-height: 0.86;
       text-transform: uppercase;
     }
 
     .footer-grid {
       display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
     }
 
-    .footer-block h3 {
-      margin: 0 0 6px;
+    .footer-card {
+      padding: 16px;
+      color: var(--branco-sujo);
+      background: rgba(253, 246, 236, 0.05);
+      border-color: rgba(212, 169, 106, 0.22);
+      box-shadow: none;
+    }
+
+    .footer-card b {
+      display: block;
+      margin-bottom: 6px;
       color: var(--taipa);
-      font-family: var(--fonte-titulo);
-      font-size: 1.25rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    .footer-block p {
-      margin: 0;
-      color: rgba(253, 246, 236, 0.84);
+    .footer-card span {
+      color: rgba(253, 246, 236, 0.78);
       font-weight: 700;
     }
 
     .socials {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
+      gap: 8px;
     }
 
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border: 2px solid rgba(212, 169, 106, 0.72);
+    .socials a {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(212, 169, 106, 0.34);
       border-radius: 50%;
       color: var(--branco-sujo);
-      background: rgba(253, 246, 236, 0.08);
     }
 
     .copyright {
       margin: 0;
-      padding-top: 20px;
-      border-top: 1px solid rgba(212, 169, 106, 0.35);
-      color: rgba(253, 246, 236, 0.72);
+      padding-top: 22px;
+      border-top: 1px solid rgba(212, 169, 106, 0.22);
+      color: rgba(253, 246, 236, 0.56);
       font-weight: 700;
     }
 
-    @media (min-width: 720px) {
-      .daily-card,
+    @media (max-width: 960px) {
+      .feature-grid,
       .modal-layout {
-        grid-template-columns: minmax(250px, 0.88fr) 1.12fr;
+        grid-template-columns: 1fr;
       }
 
-      .day-grid .daily-card:nth-child(even) .food-art {
-        order: 2;
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .hero-mark {
-        padding-inline: 120px;
+      .modal-art {
+        min-height: 280px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 719px) {
-      .decor-cactus {
-        opacity: 0.44;
+    @media (max-width: 640px) {
+      .hero {
+        align-items: start;
+        padding-top: 92px;
       }
 
-      .decor-cactus.left {
-        left: -38px;
+      .brand {
+        margin-top: 28px;
+        font-size: clamp(2.55rem, 12.5vw, 3.05rem);
       }
 
-      .decor-cactus.right {
-        right: -38px;
+      .hero-info,
+      .buffet-list,
+      .cards-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
-      .corner-badge {
-        position: static;
-        width: fit-content;
-        margin-bottom: 12px;
+      .hero-info {
+        margin-top: 48px;
       }
 
-      .tab-bar-inner {
-        padding-inline: 10px;
+      .search-line,
+      .section-head {
+        grid-template-columns: 1fr;
       }
 
-      .content {
-        width: min(100% - 20px, 1180px);
+      .section-note {
+        text-align: left;
       }
 
-      .price {
-        width: 100%;
-        margin-left: 0;
+      .section {
+        scroll-margin-top: 168px;
+        margin-bottom: 48px;
       }
 
-      .floating-cart {
+      .menu-wrap {
+        width: min(100% - 18px, 1180px);
+        padding-top: 38px;
+      }
+
+      .card-art {
+        min-height: 132px;
+      }
+
+      .cart-button {
         right: 10px;
         bottom: 10px;
+        left: 10px;
+        width: auto;
       }
     }
 
@@ -902,415 +944,344 @@
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <section class="hero" id="inicio" aria-label="Apresentação do restaurante">
-      <svg class="decor-cactus left" viewBox="0 0 220 260" aria-hidden="true">
-        <path fill="currentColor" d="M88 251c-12 0-22-10-22-22V108c0-22 17-40 39-40s39 18 39 40v21h11c16 0 29-13 29-29V77c0-9 7-16 16-16s16 7 16 16v23c0 34-27 61-61 61h-11v68c0 12-10 22-22 22H88Zm-44-81C19 170 0 151 0 126v-19c0-9 7-16 16-16s16 7 16 16v19c0 7 5 12 12 12h22v32H44Zm61-126c-13 0-24-10-24-23S92-2 105-2s23 10 23 23-10 23-23 23Z"/>
-      </svg>
-      <div class="hero-mark">
-        <div class="restaurant-kicker">Restaurante</div>
-        <h1 class="logo-title">Empório do Sertão</h1>
-        <p class="hero-subtitle">Comida do Sertão com o sabor de casa</p>
-        <a href="#cardapio" class="hero-cta" aria-label="Ir para o cardápio">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v12a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V4a1 1 0 0 1 1-1Zm1 2v11a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5H5Zm2 3h10v2H7V8Zm0 4h10v2H7v-2Z"/></svg>
-          Ver Cardápio
-        </a>
+  <header class="hero" id="topo">
+    <svg class="hero-side sun" viewBox="0 0 120 120" aria-hidden="true">
+      <path fill="currentColor" d="M60 6 70 32l27-10-10 27 27 11-27 10 10 27-27-10-10 27-11-27-27 10 10-27L6 60l26-11-10-27 27 10L60 6Z"/>
+    </svg>
+    <svg class="hero-side cactus" viewBox="0 0 180 240" aria-hidden="true">
+      <path fill="currentColor" d="M82 232c-12 0-21-9-21-21V92c0-21 17-38 38-38s38 17 38 38v18h10c13 0 24-11 24-24V63c0-9 7-16 16-16s16 7 16 16v23c0 31-25 56-56 56h-10v69c0 12-9 21-21 21H82ZM36 157c-24 0-44-20-44-44V93c0-9 7-16 16-16s16 7 16 16v20c0 6 6 12 12 12h25v32H36ZM99 42c-12 0-22-10-22-22S87-2 99-2s22 10 22 22-10 22-22 22Z"/>
+    </svg>
+
+    <div class="hero-content">
+      <div class="eyebrow">Menu Digital</div>
+      <h1 class="brand">Empório <span>do Sertão</span></h1>
+      <p class="tagline">Comida do Sertão com o sabor de casa, servida em Recife com brasa, panela e mesa farta.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#cardapio">Ver cardápio</a>
+        <a class="btn-ghost" href="#self-service">Self-service R$ 59,90/kg</a>
       </div>
-      <svg class="decor-cactus right" viewBox="0 0 220 260" aria-hidden="true">
-        <path fill="currentColor" d="M88 251c-12 0-22-10-22-22V108c0-22 17-40 39-40s39 18 39 40v21h11c16 0 29-13 29-29V77c0-9 7-16 16-16s16 7 16 16v23c0 34-27 61-61 61h-11v68c0 12-10 22-22 22H88Zm-44-81C19 170 0 151 0 126v-19c0-9 7-16 16-16s16 7 16 16v19c0 7 5 12 12 12h22v32H44Zm61-126c-13 0-24-10-24-23S92-2 105-2s23 10 23 23-10 23-23 23Z"/>
-      </svg>
-    </section>
+      <div class="hero-info" aria-label="Informações rápidas">
+        <div class="info-pill"><b>Endereço</b><span>Recife, PE</span></div>
+        <div class="info-pill"><b>Almoço</b><span>Seg. a sáb. 11h às 15h</span></div>
+        <div class="info-pill"><b>Avaliação</b><span>★ 5.0 no iFood</span></div>
+      </div>
+    </div>
+  </header>
 
-    <main class="menu-area" id="cardapio">
-      <nav class="tab-bar" aria-label="Categorias do cardápio">
-        <div class="tab-bar-inner">
-          <label class="search-wrap" for="searchInput">
-            <svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m21.53 20.47-4.77-4.77a7.5 7.5 0 1 0-1.06 1.06l4.77 4.77 1.06-1.06ZM4 10.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z"/></svg>
-            <input id="searchInput" type="search" placeholder="Buscar por carne de sol, moqueca, baião..." autocomplete="off">
-          </label>
-          <div class="tabs" id="tabs" role="tablist" aria-label="Categorias">
-            <button class="tab-button active" type="button" role="tab" aria-selected="true" data-target="self-service">Self-Service</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="prato-do-dia">Prato do Dia</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="entradas">Entradas</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="carnes">Carnes</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="frango">Frango</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="peixes">Peixes &amp; Frutos do Mar</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="massas">Massas</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="acompanhamentos">Acompanhamentos</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="lanches">Lanches</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="bebidas">Bebidas</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="sobremesas">Sobremesas</button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" data-target="combos">Combos</button>
+  <nav class="menu-nav" id="cardapio" aria-label="Categorias do cardápio">
+    <div class="nav-inner">
+      <div class="search-line">
+        <label class="search-box" for="searchInput">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m21.53 20.47-4.77-4.77a7.5 7.5 0 1 0-1.06 1.06l4.77 4.77 1.06-1.06ZM4 10.5a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="Buscar por carne de sol, moqueca, baião..." autocomplete="off">
+        </label>
+        <div class="result-count" id="resultCount">0 itens</div>
+      </div>
+      <div class="tabs" id="tabs"></div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="menu-wrap">
+      <section class="section" id="self-service" data-section="Self-Service">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Buffet da casa</span>
+            <h2 class="section-title">Self-Service</h2>
           </div>
+          <p class="section-note">Monte o prato no seu ritmo. Segunda a sábado, das 11h às 15h.</p>
         </div>
-      </nav>
 
-      <div class="content">
-        <section class="menu-section active" id="self-service" role="tabpanel">
-          <div class="section-heading">
-            <div class="section-kicker">Buffet</div>
-            <h2>Self-Service</h2>
-            <p>Monte seu prato com os sabores que fazem parte da mesa nordestina.</p>
-          </div>
-          <div class="lace-divider" aria-hidden="true">
-            <svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M50 6c8 17 21 27 40 29-13 14-17 31-10 50-18-8-34-4-50 10-2-20-12-33-29-40 17-8 28-23 29-42 6 4 13 5 20-7Z"/><circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="50" cy="50" r="5" fill="currentColor"/></svg>
-          </div>
-          <article class="special-card" data-search-area>
-            <span class="corner-badge">Mais pedido</span>
-            <div class="self-layout">
-              <h3 class="self-title">Monte o seu prato!</h3>
-              <p class="self-copy">Buffet de segunda a sábado, das 11h às 15h, com saladas, carnes, feijões e guarnições preparados no capricho.</p>
-              <div class="price-hero"><span>Preço por quilo</span><strong>R$ 59,90/kg</strong></div>
-              <div class="buffet-grid">
-                <div class="buffet-column">
-                  <h3>Saladas</h3>
-                  <ul><li>Salada verde</li><li>Salada de macarrão</li><li>Vinagrete</li><li>Maionese caseira</li></ul>
-                </div>
-                <div class="buffet-column">
-                  <h3>Feijões</h3>
-                  <ul><li>Feijão tropeiro</li><li>Feijão verde cozido</li><li>Baião de dois</li></ul>
-                </div>
-                <div class="buffet-column">
-                  <h3>Carnes</h3>
-                  <ul><li>Carne de sol desfiada</li><li>Frango assado</li><li>Costela bovina</li><li>Linguiça toscana grelhada</li></ul>
-                </div>
-                <div class="buffet-column">
-                  <h3>Guarnições</h3>
-                  <ul><li>Farofa temperada</li><li>Macaxeira cozida</li><li>Arroz branco</li><li>Pirão</li></ul>
-                </div>
-                <div class="buffet-column">
-                  <h3>Especiais do dia</h3>
-                  <ul><li>Variação diária da cozinha</li></ul>
-                  <span class="ask-badge">Pergunte ao garçom</span>
-                </div>
-              </div>
+        <div class="feature-grid">
+          <article class="buffet-card menu-click" data-name="Self-Service por Quilo" data-price="R$ 59,90/kg" data-category="Self-Service" data-description="Buffet de segunda a sábado, das 11h às 15h, com saladas, feijões, carnes, guarnições e especiais do dia." data-badges="Mais pedido,Destaque da casa">
+            <span class="stamp">Mais pedido</span>
+            <h2>Monte o seu prato</h2>
+            <p>Buffet com comida regional feita no dia: salada fresca, feijão cheiroso, carne na brasa e guarnição de mesa farta.</p>
+            <div class="kilo"><span>Preço por quilo</span><strong>R$ 59,90/kg</strong></div>
+            <div class="buffet-list">
+              <div class="buffet-col"><h3>Saladas</h3><ul><li>Salada verde</li><li>Salada de macarrão</li><li>Vinagrete</li><li>Maionese caseira</li></ul></div>
+              <div class="buffet-col"><h3>Feijões</h3><ul><li>Feijão tropeiro</li><li>Feijão verde cozido</li><li>Baião de dois</li></ul></div>
+              <div class="buffet-col"><h3>Carnes</h3><ul><li>Carne de sol desfiada</li><li>Frango assado</li><li>Costela bovina</li><li>Linguiça toscana</li></ul></div>
+              <div class="buffet-col"><h3>Guarnições</h3><ul><li>Farofa temperada</li><li>Macaxeira cozida</li><li>Arroz branco</li><li>Pirão</li></ul></div>
             </div>
           </article>
-        </section>
 
-        <section class="menu-section" id="prato-do-dia" role="tabpanel">
-          <div class="section-heading">
-            <div class="section-kicker">Hoje</div>
-            <h2>Prato do Dia</h2>
-            <p>Dois pratos em destaque para quem quer chegar, sentar e comer bem.</p>
-          </div>
-          <div class="lace-divider" aria-hidden="true">
-            <svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M10 50c18-18 32-18 40 0 8-18 22-18 40 0-18 18-32 18-40 0-8 18-22 18-40 0Z"/><circle cx="50" cy="50" r="10" fill="currentColor"/></svg>
-          </div>
-          <div class="day-grid" data-search-area>
-            <article class="daily-card menu-click" data-name="Picanha na Brasa com Acompanhamentos" data-price="R$ 89,90" data-description="450g de picanha premium grelhada no carvão, servida com arroz branco, feijão tropeiro, farofa de bacon e vinagrete." data-badges="HOJE,Destaque da casa">
-              <div class="food-art" aria-hidden="true"></div>
-              <div class="daily-info">
-                <div class="meta-row"><span class="item-badge">Hoje</span><span class="item-badge">Destaque da casa</span></div>
-                <h3>Picanha na Brasa com Acompanhamentos</h3>
-                <p>450g de picanha premium grelhada no carvão, servida com arroz branco, feijão tropeiro, farofa de bacon e vinagrete.</p>
-                <div class="meta-row"><span class="serve-pill">Serve 1 a 2 pessoas</span><strong class="price">R$ 89,90</strong></div>
-              </div>
-            </article>
-            <article class="daily-card menu-click" data-name="Moqueca de Camarão" data-price="R$ 79,90" data-description="Camarão fresco cozido em molho de azeite de dendê, leite de coco, tomate e coentro, servido com arroz e pirão." data-badges="HOJE,Picante">
-              <div class="food-art sea" aria-hidden="true"></div>
-              <div class="daily-info">
-                <div class="meta-row"><span class="item-badge">Hoje</span><span class="item-badge spicy">Picante</span></div>
-                <h3>Moqueca de Camarão</h3>
-                <p>Camarão fresco cozido em molho de azeite de dendê, leite de coco, tomate e coentro, servido com arroz e pirão.</p>
-                <div class="meta-row"><span class="serve-pill">Serve 1 pessoa</span><strong class="price">R$ 79,90</strong></div>
-              </div>
-            </article>
-          </div>
-        </section>
+          <div class="daily-stack" id="prato-do-dia"></div>
+        </div>
+      </section>
 
-        <section class="menu-section" id="entradas" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Começo</div><h2>Entradas</h2><p>Petiscos de mesa para abrir a conversa e o apetite.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M20 25h60v50H20zM35 10v80M65 10v80M10 40h80M10 60h80"/></svg></div>
-          <div class="items-grid" data-items="entradas"></div>
-        </section>
+      <div id="sectionsMount"></div>
+      <div class="empty-state" id="emptyState">Nenhum item encontrado nessa busca.</div>
+    </div>
+  </main>
 
-        <section class="menu-section" id="carnes" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Brasa</div><h2>Carnes</h2><p>Na manteiga, no bafo ou na chapa, sempre com o perfume da cozinha sertaneja.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M50 8 61 38h31L67 57l10 31-27-18-27 18 10-31L8 38h31L50 8Z"/></svg></div>
-          <div class="items-grid" data-items="carnes"></div>
-        </section>
-
-        <section class="menu-section" id="frango" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Roça</div><h2>Frango</h2><p>Do assado inteiro à galinha caipira, pratos para matar saudade.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="4"/><path fill="none" stroke="currentColor" stroke-width="4" d="M25 50h50M50 25v50M32 32l36 36M68 32 32 68"/></svg></div>
-          <div class="items-grid" data-items="frango"></div>
-        </section>
-
-        <section class="menu-section" id="peixes" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Mar</div><h2>Peixes &amp; Frutos do Mar</h2><p>Recife no prato, com molho, alho, brasa e pirão.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M7 50c19-21 50-24 72-4l14-14v36L79 54C57 74 26 71 7 50Z"/><circle cx="30" cy="47" r="3" fill="currentColor"/></svg></div>
-          <div class="items-grid" data-items="peixes"></div>
-        </section>
-
-        <section class="menu-section" id="massas" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Panela</div><h2>Massas</h2><p>Receitas simples, fartas e bem temperadas.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M17 54c8-20 23-20 31 0s23 20 35 0M18 35c11 15 22 15 32 0s21-15 32 0M30 72h40"/></svg></div>
-          <div class="items-grid" data-items="massas"></div>
-        </section>
-
-        <section class="menu-section" id="acompanhamentos" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Lado bom</div><h2>Acompanhamentos</h2><p>Porções individuais para completar seu prato.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M20 74h60M28 74 18 28h64L72 74M32 40h36M36 54h28"/></svg></div>
-          <div class="items-grid" data-items="acompanhamentos"></div>
-        </section>
-
-        <section class="menu-section" id="lanches" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Chapa</div><h2>Lanches</h2><p>Sanduíches caprichados para comer sem cerimônia.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M18 45c6-17 58-17 64 0H18Zm0 16h64M23 70h54c-7 13-47 13-54 0Z"/></svg></div>
-          <div class="items-grid" data-items="lanches"></div>
-        </section>
-
-        <section class="menu-section" id="bebidas" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Refresco</div><h2>Bebidas</h2><p>Sucos, cervejas, cachaça e clássicos para acompanhar a refeição.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M32 12h36l-6 74H38L32 12Zm4 17h28M42 86h16M44 5h12"/></svg></div>
-          <div class="items-grid" data-items="bebidas"></div>
-        </section>
-
-        <section class="menu-section" id="sobremesas" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Doce</div><h2>Sobremesas</h2><p>Final de almoço com açúcar, coco, milho e memória afetiva.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M50 18c18 0 32 10 32 23 0 20-32 41-32 41S18 61 18 41c0-13 14-23 32-23Z"/></svg></div>
-          <div class="items-grid" data-items="sobremesas"></div>
-        </section>
-
-        <section class="menu-section" id="combos" role="tabpanel">
-          <div class="section-heading"><div class="section-kicker">Oferta</div><h2>Combos</h2><p>Combinações prontas para almoçar bem e dividir melhor ainda.</p></div>
-          <div class="lace-divider" aria-hidden="true"><svg viewBox="0 0 100 100"><path fill="none" stroke="currentColor" stroke-width="4" d="M20 40h60v48H20zM15 28h70v12H15zM50 28v60M35 28c-15-12 0-29 15 0M65 28c15-12 0-29-15 0"/></svg></div>
-          <div class="items-grid" data-items="combos"></div>
-        </section>
-
-        <div class="empty-state" id="emptyState">Nenhum item encontrado nessa busca.</div>
-        <div class="braided-line" aria-hidden="true"></div>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-logo">Empório do Sertão</div>
-        <div class="footer-grid">
-          <div class="footer-block">
-            <h3>Endereço</h3>
-            <p>Recife, PE</p>
-          </div>
-          <div class="footer-block">
-            <h3>Horário</h3>
-            <p>Segunda a Sábado 11h às 22h<br>Domingo 11h às 17h</p>
-          </div>
-          <div class="footer-block">
-            <h3>Avaliação</h3>
-            <p>★ 5.0 no iFood</p>
-          </div>
-          <div class="footer-block">
-            <h3>Redes sociais</h3>
-            <div class="socials">
-              <a href="#" class="social-link" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg></a>
-              <a href="#" class="social-link" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.93 9.93 0 0 0-8.6 14.92L2 22l5.23-1.37A9.96 9.96 0 1 0 12.04 2Zm0 2a7.96 7.96 0 0 1 6.74 12.2 7.94 7.94 0 0 1-9.95 2.67l-.38-.18-3.1.81.83-3.02-.2-.4A7.94 7.94 0 0 1 12.04 4Zm-3.3 4.22c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.11 2.82.14.18 1.89 3.03 4.68 4.12 2.32.91 2.8.73 3.3.69.51-.05 1.65-.68 1.88-1.33.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32-.28-.14-1.65-.82-1.9-.91-.26-.09-.45-.14-.64.14-.18.27-.73.91-.89 1.09-.16.18-.33.2-.6.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.27-.02-.42.12-.56.13-.13.28-.33.42-.49.14-.16.18-.27.28-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.54-.87-2.1-.22-.54-.45-.47-.62-.47h-.53Z"/></svg></a>
-              <a href="#" class="social-link" aria-label="iFood"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 6.4C6 4.52 7.52 3 9.4 3h5.2C16.48 3 18 4.52 18 6.4v11.2c0 1.88-1.52 3.4-3.4 3.4H9.4C7.52 21 6 19.48 6 17.6V6.4Zm2 0v11.2C8 18.38 8.62 19 9.4 19h5.2c.78 0 1.4-.62 1.4-1.4V6.4c0-.78-.62-1.4-1.4-1.4H9.4C8.62 5 8 5.62 8 6.4Zm1.7 2.1h4.6v2H9.7v-2Zm0 3.1h4.6v2H9.7v-2Zm0 3.1h2.8v2H9.7v-2Z"/></svg></a>
-            </div>
+  <footer id="contato">
+    <div class="footer-inner">
+      <div class="footer-brand">Empório<br>do Sertão</div>
+      <div class="footer-grid">
+        <div class="footer-card"><b>Endereço</b><span>Recife, PE</span></div>
+        <div class="footer-card"><b>Horário</b><span>Segunda a Sábado 11h às 22h<br>Domingo 11h às 17h</span></div>
+        <div class="footer-card"><b>Avaliação</b><span>★ 5.0 no iFood</span></div>
+        <div class="footer-card">
+          <b>Redes sociais</b>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg></a>
+            <a href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.93 9.93 0 0 0-8.6 14.92L2 22l5.23-1.37A9.96 9.96 0 1 0 12.04 2Zm0 2a7.96 7.96 0 0 1 6.74 12.2 7.94 7.94 0 0 1-9.95 2.67l-.38-.18-3.1.81.83-3.02-.2-.4A7.94 7.94 0 0 1 12.04 4Z"/></svg></a>
+            <a href="#" aria-label="iFood"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 6.4C6 4.52 7.52 3 9.4 3h5.2C16.48 3 18 4.52 18 6.4v11.2c0 1.88-1.52 3.4-3.4 3.4H9.4C7.52 21 6 19.48 6 17.6V6.4Zm2 0v11.2C8 18.38 8.62 19 9.4 19h5.2c.78 0 1.4-.62 1.4-1.4V6.4c0-.78-.62-1.4-1.4-1.4H9.4C8.62 5 8 5.62 8 6.4Zm1.7 2.1h4.6v2H9.7v-2Zm0 3.1h4.6v2H9.7v-2Z"/></svg></a>
           </div>
         </div>
-        <p class="copyright">© 2025 Empório do Sertão · Todos os direitos reservados</p>
       </div>
-    </footer>
-  </div>
+      <p class="copyright">© 2025 Empório do Sertão · Todos os direitos reservados</p>
+    </div>
+  </footer>
 
-  <button class="floating-cart" type="button" aria-label="Ver pedido">
-    <svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 3h2.2l2.54 10.17A3 3 0 0 0 10.65 15H17a3 3 0 0 0 2.82-1.98L22 7H7.13l-.5-2H3V3Zm4.63 6h11.52l-1.21 3.37A1 1 0 0 1 17 13h-6.35a1 1 0 0 1-.97-.76L7.63 9Z"/></svg>
-    Ver Pedido
+  <button class="cart-button" type="button" aria-label="Ver pedido">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 3h2.2l2.54 10.17A3 3 0 0 0 10.65 15H17a3 3 0 0 0 2.82-1.98L22 7H7.13l-.5-2H3V3Z"/></svg>
+    Ver pedido
   </button>
 
   <div class="modal" id="itemModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="close-modal" type="button" aria-label="Fechar modal">
-        <svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 10.59 4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41L12 10.59Z"/></svg>
+    <article class="modal-card">
+      <button class="close-modal" type="button" aria-label="Fechar">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 10.59 4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41L12 10.59Z"/></svg>
       </button>
       <div class="modal-layout">
         <div class="modal-art" id="modalArt" aria-hidden="true"></div>
         <div class="modal-info">
-          <div class="badge-row" id="modalBadges"></div>
-          <h3 id="modalTitle">Item do cardápio</h3>
+          <div class="badges" id="modalBadges"></div>
+          <h3 id="modalTitle"></h3>
           <p id="modalDescription"></p>
-          <strong class="price" id="modalPrice"></strong>
-          <button class="add-button" type="button">Adicionar ao pedido</button>
+          <strong class="modal-price" id="modalPrice"></strong>
+          <button class="modal-add" type="button">Adicionar ao pedido</button>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 
   <script>
-    const iconMap = {
-      carnes: '<path fill="currentColor" d="M16 2c3.3 0 6 2.7 6 6 0 2.3-1.3 4.3-3.2 5.3L14 18.1c-1.9 1.9-5 1.9-6.9 0l-1.2-1.2c-1.9-1.9-1.9-5 0-6.9l4.8-4.8C11.7 3.3 13.7 2 16 2Zm0 2c-1.8 0-3.3 1-4 2.5l-.1.2-4.6 4.7a2.9 2.9 0 0 0 0 4.1l1.2 1.2a2.9 2.9 0 0 0 4.1 0l4.7-4.6.2-.1A4.4 4.4 0 0 0 20 8c0-2.2-1.8-4-4-4Z"/>',
-      frango: '<path fill="currentColor" d="M15.5 2A6.5 6.5 0 0 1 22 8.5c0 4.1-3.2 7.6-7.9 8.3l-1.5 1.5a3.3 3.3 0 0 1-4.6 0 3.2 3.2 0 0 1-.4-4.1L5 11.6 3.4 13.2 2 11.8l3-3 4.2 4.2a3.3 3.3 0 0 1 4.3-.1c3.8-.4 6.5-2.9 6.5-5.9A4.5 4.5 0 0 0 15.5 2Z"/>',
-      peixes: '<path fill="currentColor" d="M2 12c4.1-4.6 10.9-5.4 16.1-1.9L22 6v12l-3.9-4.1C12.9 17.4 6.1 16.6 2 12Zm4.2 0c2.9 2 6.7 2.1 9.8.2v-.4c-3.1-1.9-6.9-1.8-9.8.2ZM7.5 10.7a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"/>',
-      massas: '<path fill="currentColor" d="M5 5h14v2H5V5Zm1 4h12v2H6V9Zm-1 4h14v2H5v-2Zm3 4h8v2H8v-2Z"/>',
-      acompanhamentos: '<path fill="currentColor" d="M4 4h16v6a8 8 0 0 1-16 0V4Zm2 2v4a6 6 0 0 0 12 0V6H6Zm-2 15h16v-2H4v2Z"/>',
-      lanches: '<path fill="currentColor" d="M3 10c.8-3.4 4.6-6 9-6s8.2 2.6 9 6H3Zm0 2h18v2H3v-2Zm2 4h14c-.9 2.4-3.6 4-7 4s-6.1-1.6-7-4Z"/>',
-      bebidas: '<path fill="currentColor" d="M8 2h8l-1 4v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V6L8 2Zm2.6 2 .4 2h2l.4-2h-2.8ZM11 8v12h2V8h-2Z"/>',
-      sobremesas: '<path fill="currentColor" d="M12 4c4.4 0 8 2.7 8 6 0 5.2-8 10-8 10s-8-4.8-8-10c0-3.3 3.6-6 8-6Zm0 2c-3.2 0-6 1.9-6 4 0 2.6 3.1 5.7 6 7.5 2.9-1.8 6-4.9 6-7.5 0-2.1-2.8-4-6-4Z"/>',
-      combos: '<path fill="currentColor" d="M4 9h16v11H4V9Zm2 2v7h12v-7H6Zm-1-6h14v4H5V5Zm6 0h2v15h-2V5Z"/>',
-      entradas: '<path fill="currentColor" d="M12 2a10 10 0 0 1 10 10H2A10 10 0 0 1 12 2Zm0 2a8 8 0 0 0-7.7 6h15.4A8 8 0 0 0 12 4ZM3 14h18v2H3v-2Zm2 4h14v2H5v-2Z"/>'
-    };
+    const sections = [
+      { id: 'entradas', nav: 'Entradas', kicker: 'Comece por aqui', title: 'Entradas', note: 'Petiscos de mesa para abrir a conversa e o apetite.', type: 'entradas' },
+      { id: 'carnes', nav: 'Carnes', kicker: 'Brasa e manteiga', title: 'Carnes', note: 'Cortes, carne de sol e receitas de panela com pegada regional.', type: 'carnes' },
+      { id: 'frango', nav: 'Frango', kicker: 'Da roça', title: 'Frango', note: 'Assado, grelhado ou cozido como comida de casa.', type: 'frango' },
+      { id: 'peixes', nav: 'Peixes & Frutos do Mar', kicker: 'Do litoral à panela', title: 'Peixes & Frutos do Mar', note: 'Moquecas, grelhados e pratos com sabor de Recife.', type: 'peixes' },
+      { id: 'massas', nav: 'Massas', kicker: 'Panela cheia', title: 'Massas', note: 'Pratos simples, cremosos e bem servidos.', type: 'massas' },
+      { id: 'acompanhamentos', nav: 'Acompanhamentos', kicker: 'Completa o prato', title: 'Acompanhamentos', note: 'Porções individuais para montar sua refeição.', type: 'acompanhamentos' },
+      { id: 'lanches', nav: 'Lanches', kicker: 'Na chapa', title: 'Lanches', note: 'Sanduíches para uma refeição rápida e caprichada.', type: 'lanches' },
+      { id: 'bebidas', nav: 'Bebidas', kicker: 'Geladas e da casa', title: 'Bebidas', note: 'Sucos, cervejas, cachaça e clássicos.', type: 'bebidas' },
+      { id: 'sobremesas', nav: 'Sobremesas', kicker: 'Doce final', title: 'Sobremesas', note: 'Milho, coco, caramelo e memória afetiva.', type: 'sobremesas' },
+      { id: 'combos', nav: 'Combos', kicker: 'Prontos para pedir', title: 'Combos', note: 'Combinações para almoçar bem e dividir melhor.', type: 'combos' }
+    ];
+
+    const dailyItems = [
+      { name: 'Picanha na Brasa com Acompanhamentos', price: 'R$ 89,90', category: 'Prato do Dia', desc: '450g de picanha premium grelhada no carvão, servida com arroz branco, feijão tropeiro, farofa de bacon e vinagrete.', badges: ['Hoje', 'Destaque da casa'], serves: 'Serve 1 a 2 pessoas', tone: 'meat' },
+      { name: 'Moqueca de Camarão', price: 'R$ 79,90', category: 'Prato do Dia', desc: 'Camarão fresco cozido em molho de azeite de dendê, leite de coco, tomate e coentro, servido com arroz e pirão.', badges: ['Hoje', 'Picante'], serves: 'Serve 1 pessoa', tone: 'sea' }
+    ];
 
     const menuData = {
       entradas: [
-        { name: 'Dadinho de Tapioca com Melado', price: 'R$ 24,90', desc: 'Cubos crocantes de tapioca com queijo coalho e melado de engenho.', badges: ['Destaque da casa'] },
-        { name: 'Queijo Coalho na Brasa', price: 'R$ 22,90', desc: 'Queijo coalho dourado na brasa com orégano e melaço leve.' },
-        { name: 'Macaxeira Frita', price: 'R$ 18,90', desc: 'Macaxeira cremosa por dentro, crocante por fora, servida com manteiga de garrafa.' },
-        { name: 'Bolinho de Carne de Sol', price: 'R$ 27,90', desc: 'Bolinho sequinho recheado com carne de sol desfiada e queijo.' },
-        { name: 'Caldinho de Feijão Verde', price: 'R$ 16,90', desc: 'Caldinho encorpado com cheiro-verde, torresmo e pimenta à parte.', badges: ['Picante'] }
+        ['Dadinho de Tapioca com Melado', 'R$ 24,90', 'Cubos crocantes de tapioca com queijo coalho e melado de engenho.', ['Destaque da casa']],
+        ['Queijo Coalho na Brasa', 'R$ 22,90', 'Queijo coalho dourado na brasa com orégano e melaço leve.', []],
+        ['Macaxeira Frita', 'R$ 18,90', 'Macaxeira cremosa por dentro, crocante por fora, servida com manteiga de garrafa.', []],
+        ['Bolinho de Carne de Sol', 'R$ 27,90', 'Bolinho sequinho recheado com carne de sol desfiada e queijo.', []],
+        ['Caldinho de Feijão Verde', 'R$ 16,90', 'Caldinho encorpado com cheiro-verde, torresmo e pimenta à parte.', ['Picante']]
       ],
       carnes: [
-        { name: 'Carne de Sol na Manteiga', price: 'R$ 65,90', desc: 'Carne de sol artesanal grelhada na manteiga de garrafa, acompanha macaxeira e vinagrete.', badges: ['Destaque da casa'] },
-        { name: 'Picanha Grelhada', price: 'R$ 85,90', desc: '300g de picanha no carvão com arroz, feijão e farofa.' },
-        { name: 'Costela Bovina no Bafo', price: 'R$ 74,90', desc: 'Costela assada lentamente por 8h, desfiada e suculenta.', badges: ['Destaque da casa'] },
-        { name: 'Bode Assado', price: 'R$ 62,90', desc: 'Especialidade da casa, temperado com ervas nordestinas.', badges: ['Picante'] },
-        { name: 'Filé na Chapa', price: 'R$ 58,90', desc: 'Filé mignon grelhado com alho, limão e ervas.' },
-        { name: 'Lombinho Suíno Grelhado', price: 'R$ 49,90', desc: 'Lombinho dourado na chapa, servido com molho da casa.' },
-        { name: 'Calabresa Artesanal Grelhada', price: 'R$ 44,90', desc: 'Calabresa artesanal grelhada, acebolada e servida com farofa.' }
+        ['Carne de Sol na Manteiga', 'R$ 65,90', 'Carne de sol artesanal grelhada na manteiga de garrafa, acompanha macaxeira e vinagrete.', ['Destaque da casa']],
+        ['Picanha Grelhada', 'R$ 85,90', '300g de picanha no carvão com arroz, feijão e farofa.', []],
+        ['Costela Bovina no Bafo', 'R$ 74,90', 'Costela assada lentamente por 8h, desfiada e suculenta.', ['Destaque da casa']],
+        ['Bode Assado', 'R$ 62,90', 'Especialidade da casa, temperado com ervas nordestinas.', ['Picante']],
+        ['Filé na Chapa', 'R$ 58,90', 'Filé mignon grelhado com alho, limão e ervas.', []],
+        ['Lombinho Suíno Grelhado', 'R$ 49,90', 'Lombinho dourado na chapa, servido com molho da casa.', []],
+        ['Calabresa Artesanal Grelhada', 'R$ 44,90', 'Calabresa artesanal grelhada, acebolada e servida com farofa.', []]
       ],
       frango: [
-        { name: 'Frango Assado Inteiro', price: 'R$ 69,90', desc: 'Frango inteiro assado lentamente, serve 2 pessoas.', badges: ['Destaque da casa'] },
-        { name: 'Sobrecoxa Grelhada', price: 'R$ 38,90', desc: 'Sobrecoxa suculenta na grelha com ervas e limão.' },
-        { name: 'Frango na Brasa', price: 'R$ 42,90', desc: 'Cortes de frango dourados na brasa, com arroz e farofa.' },
-        { name: 'Galinha Caipira Cozida', price: 'R$ 59,90', desc: 'Galinha de verdade, cozida com temperos da roça.', badges: ['Destaque da casa'] },
-        { name: 'Frango ao Molho Toscana', price: 'R$ 45,90', desc: 'Frango grelhado coberto com molho toscana cremoso.' }
+        ['Frango Assado Inteiro', 'R$ 69,90', 'Frango inteiro assado lentamente, serve 2 pessoas.', ['Destaque da casa']],
+        ['Sobrecoxa Grelhada', 'R$ 38,90', 'Sobrecoxa suculenta na grelha com ervas e limão.', []],
+        ['Frango na Brasa', 'R$ 42,90', 'Cortes de frango dourados na brasa, com arroz e farofa.', []],
+        ['Galinha Caipira Cozida', 'R$ 59,90', 'Galinha de verdade, cozida com temperos da roça.', ['Destaque da casa']],
+        ['Frango ao Molho Toscana', 'R$ 45,90', 'Frango grelhado coberto com molho toscana cremoso.', []]
       ],
       peixes: [
-        { name: 'Filé de Peixe Frito', price: 'R$ 54,90', desc: 'Filé empanado e frito, com arroz, salada e molho cítrico.' },
-        { name: 'Peixe Assado Inteiro', price: 'R$ 68,90', desc: 'Peixe inteiro assado com ervas, serve 2 pessoas.', badges: ['Destaque da casa'] },
-        { name: 'Salmão Grelhado', price: 'R$ 72,90', desc: 'Salmão grelhado com legumes e arroz branco.' },
-        { name: 'Moqueca de Peixe', price: 'R$ 64,90', desc: 'Peixe cozido em molho de leite de coco, tomate, coentro e dendê.', badges: ['Picante'] },
-        { name: 'Moqueca de Camarão', price: 'R$ 79,90', desc: 'Camarão fresco em molho de dendê e leite de coco, servido com arroz e pirão.', badges: ['Picante'] },
-        { name: 'Camarão Grelhado no Alho', price: 'R$ 82,90', desc: 'Camarões grelhados no alho, finalizados com ervas frescas.' },
-        { name: 'Tilápia Grelhada', price: 'R$ 48,90', desc: 'Tilápia grelhada com limão, arroz e salada verde.' }
+        ['Filé de Peixe Frito', 'R$ 54,90', 'Filé empanado e frito, com arroz, salada e molho cítrico.', []],
+        ['Peixe Assado Inteiro', 'R$ 68,90', 'Peixe inteiro assado com ervas, serve 2 pessoas.', ['Destaque da casa']],
+        ['Salmão Grelhado', 'R$ 72,90', 'Salmão grelhado com legumes e arroz branco.', []],
+        ['Moqueca de Peixe', 'R$ 64,90', 'Peixe cozido em molho de leite de coco, tomate, coentro e dendê.', ['Picante']],
+        ['Moqueca de Camarão', 'R$ 79,90', 'Camarão fresco em molho de dendê e leite de coco, servido com arroz e pirão.', ['Picante']],
+        ['Camarão Grelhado no Alho', 'R$ 82,90', 'Camarões grelhados no alho, finalizados com ervas frescas.', []],
+        ['Tilápia Grelhada', 'R$ 48,90', 'Tilápia grelhada com limão, arroz e salada verde.', []]
       ],
       massas: [
-        { name: 'Espaguete à Bolonhesa', price: 'R$ 42,90', desc: 'Espaguete com molho bolonhesa de cozimento lento.' },
-        { name: 'Espaguete ao Alho e Óleo', price: 'R$ 36,90', desc: 'Massa salteada no alho, azeite, cheiro-verde e parmesão.' },
-        { name: 'Talharim ao Molho Rosé', price: 'R$ 44,90', desc: 'Talharim em molho rosé cremoso com toque de ervas.' }
+        ['Espaguete à Bolonhesa', 'R$ 42,90', 'Espaguete com molho bolonhesa de cozimento lento.', []],
+        ['Espaguete ao Alho e Óleo', 'R$ 36,90', 'Massa salteada no alho, azeite, cheiro-verde e parmesão.', []],
+        ['Talharim ao Molho Rosé', 'R$ 44,90', 'Talharim em molho rosé cremoso com toque de ervas.', []]
       ],
       acompanhamentos: [
-        { name: 'Arroz branco', price: 'R$ 8,00', desc: 'Porção individual de arroz branco soltinho.' },
-        { name: 'Feijão tropeiro', price: 'R$ 12,00', desc: 'Feijão tropeiro com farinha, bacon, ovo e cheiro-verde.', badges: ['Destaque da casa'] },
-        { name: 'Baião de dois', price: 'R$ 14,00', desc: 'Arroz, feijão verde e queijo coalho no ponto.' },
-        { name: 'Macaxeira cozida', price: 'R$ 10,00', desc: 'Macaxeira macia servida com manteiga de garrafa.' },
-        { name: 'Farofa temperada', price: 'R$ 10,00', desc: 'Farofa crocante com cebola, ervas e manteiga.' },
-        { name: 'Salada verde', price: 'R$ 12,00', desc: 'Folhas, tomate, cebola roxa e molho leve.' }
+        ['Arroz branco', 'R$ 8,00', 'Porção individual de arroz branco soltinho.', []],
+        ['Feijão tropeiro', 'R$ 12,00', 'Feijão tropeiro com farinha, bacon, ovo e cheiro-verde.', ['Destaque da casa']],
+        ['Baião de dois', 'R$ 14,00', 'Arroz, feijão verde e queijo coalho no ponto.', []],
+        ['Macaxeira cozida', 'R$ 10,00', 'Macaxeira macia servida com manteiga de garrafa.', []],
+        ['Farofa temperada', 'R$ 10,00', 'Farofa crocante com cebola, ervas e manteiga.', []],
+        ['Salada verde', 'R$ 12,00', 'Folhas, tomate, cebola roxa e molho leve.', []]
       ],
       lanches: [
-        { name: 'X-Burguer da Casa', price: 'R$ 28,90', desc: 'Hambúrguer artesanal, queijo, molho da casa e pão selado.' },
-        { name: 'X-Salada', price: 'R$ 26,90', desc: 'Hambúrguer com queijo, alface, tomate e maionese da casa.' },
-        { name: 'X-Frango', price: 'R$ 27,90', desc: 'Frango grelhado, queijo, salada e molho cremoso.' },
-        { name: 'Misto Quente', price: 'R$ 18,90', desc: 'Pão tostado com queijo derretido e presunto.' },
-        { name: 'Bauru do Sertão', price: 'R$ 32,90', desc: 'Sanduíche com carne de sol, queijo, tomate e molho da casa.', badges: ['Destaque da casa'] }
+        ['X-Burguer da Casa', 'R$ 28,90', 'Hambúrguer artesanal, queijo, molho da casa e pão selado.', []],
+        ['X-Salada', 'R$ 26,90', 'Hambúrguer com queijo, alface, tomate e maionese da casa.', []],
+        ['X-Frango', 'R$ 27,90', 'Frango grelhado, queijo, salada e molho cremoso.', []],
+        ['Misto Quente', 'R$ 18,90', 'Pão tostado com queijo derretido e presunto.', []],
+        ['Bauru do Sertão', 'R$ 32,90', 'Sanduíche com carne de sol, queijo, tomate e molho da casa.', ['Destaque da casa']]
       ],
       bebidas: [
-        { name: 'Água mineral 500ml', price: 'R$ 5,00', desc: 'Água mineral sem gás ou com gás.' },
-        { name: 'Refrigerante Lata', price: 'R$ 7,00', desc: 'Lata 350ml gelada.' },
-        { name: 'Refrigerante 2L', price: 'R$ 15,00', desc: 'Garrafa 2L para dividir.' },
-        { name: 'Suco Natural', price: 'R$ 12,00', desc: 'Sabores: laranja, caju, goiaba ou tamarindo.', badges: ['Destaque da casa'] },
-        { name: 'Vitamina de frutas', price: 'R$ 14,00', desc: 'Vitamina cremosa com frutas selecionadas.' },
-        { name: 'Cerveja Lata 350ml', price: 'R$ 9,00', desc: 'Cerveja lata 350ml bem gelada.' },
-        { name: 'Cerveja Long Neck', price: 'R$ 12,00', desc: 'Long neck gelada.' },
-        { name: 'Cachaça da Boa', price: 'R$ 10,00', desc: 'Dose de cachaça selecionada.' },
-        { name: 'Caipirinha', price: 'R$ 22,00', desc: 'Caipirinha clássica com limão e cachaça.', badges: ['Picante'] }
+        ['Água mineral 500ml', 'R$ 5,00', 'Água mineral sem gás ou com gás.', []],
+        ['Refrigerante Lata', 'R$ 7,00', 'Lata 350ml gelada.', []],
+        ['Refrigerante 2L', 'R$ 15,00', 'Garrafa 2L para dividir.', []],
+        ['Suco Natural', 'R$ 12,00', 'Sabores: laranja, caju, goiaba ou tamarindo.', ['Destaque da casa']],
+        ['Vitamina de frutas', 'R$ 14,00', 'Vitamina cremosa com frutas selecionadas.', []],
+        ['Cerveja Lata 350ml', 'R$ 9,00', 'Cerveja lata 350ml bem gelada.', []],
+        ['Cerveja Long Neck', 'R$ 12,00', 'Long neck gelada.', []],
+        ['Cachaça da Boa', 'R$ 10,00', 'Dose de cachaça selecionada.', []],
+        ['Caipirinha', 'R$ 22,00', 'Caipirinha clássica com limão e cachaça.', []]
       ],
       sobremesas: [
-        { name: 'Pudim de Leite Condensado', price: 'R$ 14,90', desc: 'Pudim cremoso com calda de caramelo.', badges: ['Destaque da casa'] },
-        { name: 'Canjica', price: 'R$ 12,90', desc: 'Canjica doce com leite, coco e canela.' },
-        { name: 'Mungunzá', price: 'R$ 12,90', desc: 'Milho cozido em creme doce, servido com canela.' },
-        { name: 'Cocada', price: 'R$ 8,90', desc: 'Cocada branca ou queimada.' },
-        { name: 'Bolo de Macaxeira', price: 'R$ 11,90', desc: 'Bolo úmido de macaxeira com coco.' },
-        { name: 'Pé de Moleque', price: 'R$ 7,90', desc: 'Doce tradicional com amendoim e rapadura.' }
+        ['Pudim de Leite Condensado', 'R$ 14,90', 'Pudim cremoso com calda de caramelo.', ['Destaque da casa']],
+        ['Canjica', 'R$ 12,90', 'Canjica doce com leite, coco e canela.', []],
+        ['Mungunzá', 'R$ 12,90', 'Milho cozido em creme doce, servido com canela.', []],
+        ['Cocada', 'R$ 8,90', 'Cocada branca ou queimada.', []],
+        ['Bolo de Macaxeira', 'R$ 11,90', 'Bolo úmido de macaxeira com coco.', []],
+        ['Pé de Moleque', 'R$ 7,90', 'Doce tradicional com amendoim e rapadura.', []]
       ],
       combos: [
-        { name: 'Combo do Sertanejo', price: 'R$ 69,90', desc: 'Carne de sol + 2 acompanhamentos + bebida.', badges: ['Destaque da casa'] },
-        { name: 'Combo da Galera', price: 'R$ 129,90', desc: '2 pratos + 4 acompanhamentos + 2 bebidas. Serve 2 pessoas.' },
-        { name: 'Combo Self-Service + Bebida', price: 'R$ 74,90', desc: 'Self-service com bebida da casa.' },
-        { name: 'Combo Frango Completo', price: 'R$ 59,90', desc: 'Frango assado + acompanhamentos + suco.' }
+        ['Combo do Sertanejo', 'R$ 69,90', 'Carne de sol + 2 acompanhamentos + bebida.', ['Destaque da casa']],
+        ['Combo da Galera', 'R$ 129,90', '2 pratos + 4 acompanhamentos + 2 bebidas. Serve 2 pessoas.', []],
+        ['Combo Self-Service + Bebida', 'R$ 74,90', 'Self-service com bebida da casa.', []],
+        ['Combo Frango Completo', 'R$ 59,90', 'Frango assado + acompanhamentos + suco.', []]
       ]
     };
 
-    const tabs = document.querySelectorAll('.tab-button');
-    const sections = document.querySelectorAll('.menu-section');
-    const tabList = document.getElementById('tabs');
+    const categoryLabel = {
+      entradas: 'Entrada',
+      carnes: 'Carne',
+      frango: 'Frango',
+      peixes: 'Mar',
+      massas: 'Massa',
+      acompanhamentos: 'Acomp.',
+      lanches: 'Lanche',
+      bebidas: 'Bebida',
+      sobremesas: 'Doce',
+      combos: 'Combo'
+    };
+
+    const seaTypes = new Set(['peixes', 'bebidas']);
+    const tabs = document.getElementById('tabs');
+    const mount = document.getElementById('sectionsMount');
+    const dailyStack = document.getElementById('prato-do-dia');
     const searchInput = document.getElementById('searchInput');
+    const resultCount = document.getElementById('resultCount');
     const emptyState = document.getElementById('emptyState');
     const modal = document.getElementById('itemModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalPrice = document.getElementById('modalPrice');
-    const modalBadges = document.getElementById('modalBadges');
 
     function badgeMarkup(badges = []) {
       return badges.map((badge) => {
-        const spicy = badge.toLowerCase().includes('picante');
-        const label = spicy ? 'Picante' : badge;
-        return `<span class="item-badge ${spicy ? 'spicy' : ''}">${label}</span>`;
+        const lower = badge.toLowerCase();
+        const cls = lower.includes('picante') ? 'hot' : lower.includes('hoje') ? 'today' : '';
+        return `<span class="badge ${cls}">${badge}</span>`;
       }).join('');
     }
 
-    function renderItems() {
-      Object.entries(menuData).forEach(([category, items]) => {
-        const grid = document.querySelector(`[data-items="${category}"]`);
-        if (!grid) return;
-        grid.innerHTML = items.map((item) => `
-          <button class="item-card menu-click" type="button" data-name="${item.name}" data-price="${item.price}" data-description="${item.desc}" data-badges="${(item.badges || []).join(',')}">
-            <div class="item-top">
-              <h3>${item.name}</h3>
-              <span class="item-icon" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24">${iconMap[category]}</svg></span>
-            </div>
+    function itemDataset(item, category) {
+      return `data-name="${item.name}" data-price="${item.price}" data-category="${category}" data-description="${item.desc}" data-badges="${item.badges.join(',')}"`;
+    }
+
+    function normalizeItem(raw, type) {
+      return { name: raw[0], price: raw[1], desc: raw[2], badges: raw[3] || [], type };
+    }
+
+    function renderDaily() {
+      dailyStack.innerHTML = dailyItems.map((item) => `
+        <article class="daily-card menu-click" ${itemDataset({ ...item, badges: item.badges, type: item.tone }, item.category)}>
+          <div class="daily-art ${item.tone === 'sea' ? 'sea' : ''}" aria-hidden="true"></div>
+          <div class="daily-body">
+            <div class="badges">${badgeMarkup(item.badges)}</div>
+            <h3>${item.name}</h3>
             <p>${item.desc}</p>
-            <div class="badge-row">${badgeMarkup(item.badges)}</div>
-            <strong class="price">${item.price}</strong>
-          </button>
-        `).join('');
+            <div class="price-row"><span class="serves">${item.serves}</span><strong class="price">${item.price}</strong></div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderSections() {
+      tabs.innerHTML = `<button class="tab active" type="button" data-target="self-service">Self-Service</button><button class="tab" type="button" data-target="prato-do-dia">Prato do Dia</button>` +
+        sections.map((section) => `<button class="tab" type="button" data-target="${section.id}">${section.nav}</button>`).join('');
+
+      mount.innerHTML = sections.map((section) => {
+        const cards = menuData[section.type].map((raw) => {
+          const item = normalizeItem(raw, section.type);
+          const compact = ['bebidas', 'acompanhamentos', 'sobremesas', 'massas'].includes(section.type) ? 'compact' : '';
+          const tone = seaTypes.has(section.type) ? 'sea' : '';
+          return `
+            <button class="menu-card menu-click ${compact}" type="button" ${itemDataset(item, categoryLabel[section.type])}>
+              <div class="card-art ${tone}" data-category="${categoryLabel[section.type]}" aria-hidden="true"></div>
+              <div class="card-body">
+                <div class="badges">${badgeMarkup(item.badges)}</div>
+                <h3>${item.name}</h3>
+                <p>${item.desc}</p>
+                <div class="price-row"><span class="serves">Empório do Sertão</span><strong class="price">${item.price}</strong></div>
+              </div>
+            </button>
+          `;
+        }).join('');
+
+        return `
+          <section class="section" id="${section.id}" data-section="${section.nav}">
+            <div class="section-head">
+              <div>
+                <span class="section-kicker">${section.kicker}</span>
+                <h2 class="section-title">${section.title}</h2>
+              </div>
+              <p class="section-note">${section.note}</p>
+            </div>
+            <div class="cards-grid">${cards}</div>
+          </section>
+        `;
+      }).join('');
+    }
+
+    function filterItems() {
+      const term = searchInput.value.trim().toLowerCase();
+      const cards = [...document.querySelectorAll('.menu-click')];
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        const match = !term || text.includes(term);
+        card.style.display = match ? '' : 'none';
+        if (match) visible += 1;
       });
+
+      document.querySelectorAll('.section').forEach((section) => {
+        const hasVisible = [...section.querySelectorAll('.menu-click')].some((card) => card.style.display !== 'none');
+        section.style.display = hasVisible ? '' : 'none';
+      });
+
+      resultCount.textContent = `${visible} ${visible === 1 ? 'item' : 'itens'}`;
+      emptyState.classList.toggle('show', visible === 0);
     }
 
-    function updateUnderline() {
-      const active = document.querySelector('.tab-button.active');
-      if (!active) return;
-      const listBox = tabList.getBoundingClientRect();
-      const activeBox = active.getBoundingClientRect();
-      tabList.style.setProperty('--underline-left', `${activeBox.left - listBox.left + tabList.scrollLeft}px`);
-      tabList.style.setProperty('--underline-width', `${activeBox.width}px`);
-    }
-
-    function activateTab(targetId) {
-      tabs.forEach((tab) => {
-        const active = tab.dataset.target === targetId;
+    function activateTab(id) {
+      document.querySelectorAll('.tab').forEach((tab) => {
+        const active = tab.dataset.target === id;
         tab.classList.toggle('active', active);
-        tab.setAttribute('aria-selected', active ? 'true' : 'false');
-        if (active) tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        if (active) tab.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
       });
-      sections.forEach((section) => section.classList.toggle('active', section.id === targetId));
-      searchInput.value = '';
-      filterItems('');
-      updateUnderline();
     }
 
-    function filterItems(query) {
-      const term = query.trim().toLowerCase();
-      const activeSection = document.querySelector('.menu-section.active');
-      if (!activeSection) return;
-      let visibleCount = 0;
-      const searchable = activeSection.querySelectorAll('.menu-click, .special-card[data-search-area]');
-      searchable.forEach((item) => {
-        const haystack = item.textContent.toLowerCase();
-        const visible = !term || haystack.includes(term);
-        item.style.display = visible ? '' : 'none';
-        if (visible) visibleCount += 1;
-      });
-      emptyState.classList.toggle('show', visibleCount === 0);
-    }
-
-    function openModal(item) {
-      const badges = (item.dataset.badges || '').split(',').filter(Boolean);
-      modalTitle.textContent = item.dataset.name;
-      modalDescription.textContent = item.dataset.description || 'Preparado com ingredientes selecionados e temperos da casa.';
-      modalPrice.textContent = item.dataset.price || '';
-      modalBadges.innerHTML = badgeMarkup(badges);
+    function openModal(card) {
+      const badges = (card.dataset.badges || '').split(',').filter(Boolean);
+      document.getElementById('modalTitle').textContent = card.dataset.name;
+      document.getElementById('modalDescription').textContent = card.dataset.description;
+      document.getElementById('modalPrice').textContent = card.dataset.price;
+      document.getElementById('modalBadges').innerHTML = badgeMarkup(badges);
+      document.getElementById('modalArt').classList.toggle('sea', card.dataset.category === 'Mar' || card.dataset.name.toLowerCase().includes('camarão'));
       modal.classList.add('open');
       document.body.classList.add('modal-open');
     }
@@ -1320,26 +1291,35 @@
       document.body.classList.remove('modal-open');
     }
 
-    renderItems();
-    updateUnderline();
+    renderDaily();
+    renderSections();
+    filterItems();
 
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => activateTab(tab.dataset.target));
+    tabs.addEventListener('click', (event) => {
+      const tab = event.target.closest('.tab');
+      if (!tab) return;
+      document.getElementById(tab.dataset.target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      activateTab(tab.dataset.target);
     });
 
-    tabList.addEventListener('scroll', updateUnderline, { passive: true });
-    window.addEventListener('resize', updateUnderline);
-    searchInput.addEventListener('input', (event) => filterItems(event.target.value));
+    searchInput.addEventListener('input', filterItems);
 
     document.addEventListener('click', (event) => {
-      const item = event.target.closest('.menu-click');
-      if (item) openModal(item);
-      if (event.target.closest('.close-modal') || event.target === modal) closeModal();
+      const card = event.target.closest('.menu-click');
+      if (card) openModal(card);
+      if (event.target === modal || event.target.closest('.close-modal')) closeModal();
     });
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeModal();
     });
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) activateTab(visible.target.id);
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.25, 0.5] });
+
+    document.querySelectorAll('.section').forEach((section) => observer.observe(section));
   </script>
 </body>
 </html>
