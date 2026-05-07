@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empório do Sertão — Cardápio Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient-marks" aria-hidden="true">
+    <img src="assets/logo-emporio.jpg" class="ambient-mark mark-1" alt="">
+    <img src="assets/logo-emporio.jpg" class="ambient-mark mark-2" alt="">
+    <img src="assets/logo-emporio.jpg" class="ambient-mark mark-3" alt="">
+    <img src="assets/logo-emporio.jpg" class="ambient-mark mark-4" alt="">
+  </div>
+
+  <main class="menu-shell">
+    <div class="language-switch" aria-label="Idioma">
+      <a class="language-pill is-active" href="index.html" aria-label="Português">
+        <span class="flag flag-br" aria-hidden="true"></span>
+        <span>PT</span>
+      </a>
+      <a class="language-pill" href="en.html" aria-label="English">
+        <span class="flag flag-us" aria-hidden="true"></span>
+        <span>EN</span>
+      </a>
+    </div>
+
+    <header class="cover">
+      <div class="cover-brand">
+        <span class="menu-word">M E N U</span>
+        <span class="kicker">Cardápio Digital</span>
+        <img src="assets/logo-emporio.jpg" alt="Empório do Sertão" class="logo">
+        <h1>Empório do Sertão</h1>
+        <p>Self-service regional com sabores de feira, fogão de lenha e tradição nordestina.</p>
+        <a class="cover-cta" href="#cardapio">Ver cardápio</a>
+      </div>
+
+      <div class="cover-balloons" aria-label="Horários">
+        <div class="balloon clay">
+          <span>Almoço</span>
+          <strong>Seg-sex 11h30-15h30</strong>
+          <strong>Sáb, dom e feriado 11h30-16h</strong>
+        </div>
+        <div class="balloon leaf">
+          <span>Regional</span>
+          <strong>Buffet por quilo e livre</strong>
+          <strong>Receitas sertanejas todos os dias</strong>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tab-dock" id="cardapio" role="tablist" aria-label="Categorias do cardápio">
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-self" id="tab-self"><span>01</span>Self-service</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-degustacao" id="tab-degustacao"><span>02</span>Especiais</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-entradas" id="tab-entradas"><span>03</span>Entradas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-saladas" id="tab-saladas"><span>04</span>Saladas & Kids</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-pratos" id="tab-pratos"><span>05</span>Pratos</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sobremesas" id="tab-sobremesas"><span>06</span>Sobremesas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-bebidas" id="tab-bebidas"><span>07</span>Bebidas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-drinks" id="tab-drinks"><span>08</span>Sucos</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-alcoolicas" id="tab-alcoolicas"><span>09</span>Alcoólicas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-vinhos" id="tab-vinhos"><span>10</span>Combos</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-info" id="tab-info"><span>11</span>Info</button>
+    </nav>
+
+    <section class="menu-status">
+      <span>Cardápio atualizado</span>
+      <span>Valores em R$</span>
+    </section>
+
+    <div class="tab-panels">
+      <section class="panel is-active" id="panel-self" role="tabpanel" aria-labelledby="tab-self">
+        <div class="section-hero self-hero">
+          <div>
+            <span>Almoço da casa</span>
+            <h2>Self-service</h2>
+            <p>Uma seção própria, como um cardápio paralelo: quente, variada e organizada por ilhas de buffet.</p>
+          </div>
+          <img src="assets/buffet-regional.jpg" alt="Buffet regional do Empório do Sertão">
+        </div>
+
+        <div class="buffet-board">
+          <article><span>Carnes</span><p>Carne de sol acebolada</p><p>Galinha caipira ao molho pardo</p><p>Costelinha no melaço de rapadura</p><p>Bode guisado com cheiro-verde</p><p>Linguiça artesanal na chapa</p></article>
+          <article><span>Arrozes</span><p>Arroz branco soltinho</p><p>Baião de dois cremoso</p><p>Arroz de leite com queijo coalho</p><p>Arroz com pequi e coentro</p><p>Arroz integral com legumes</p></article>
+          <article><span>Guarnições</span><p>Macaxeira cozida na manteiga</p><p>Farofa de cuscuz com bacon</p><p>Pirão de queijo coalho</p><p>Feijão verde temperado</p><p>Purê de jerimum</p></article>
+          <article><span>Saladas</span><p>Vinagrete sertanejo</p><p>Mix de folhas com manga</p><p>Tomate, cebola roxa e coentro</p><p>Molho de caju com limão</p><p>Conservas da casa</p></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-degustacao" role="tabpanel" aria-labelledby="tab-degustacao" hidden>
+        <div class="section-head"><span>Da casa</span><h2>Especiais Regionais</h2></div>
+        <div class="menu-list">
+          <article class="menu-item large"><div><span>Experiência</span><h3>Rota do Sertão</h3><p>Sequência com dadinho de tapioca, mini escondidinho de carne de sol, baião cremoso, queijo coalho tostado e doce de leite com rapadura.</p></div><strong>89,90</strong></article>
+          <article class="menu-item"><div><span>Prato do dia</span><h3>Segunda do Baião</h3><p>Baião de dois, carne de sol na nata, macaxeira dourada e farofa crocante.</p></div><strong>46,90</strong></article>
+          <article class="menu-item"><div><span>Prato do dia</span><h3>Quarta da Galinha Caipira</h3><p>Galinha caipira, pirão do caldo, arroz branco, feijão verde e vinagrete.</p></div><strong>44,90</strong></article>
+          <article class="menu-item"><div><span>Fim de semana</span><h3>Panelada Sertaneja</h3><p>Panelada bem temperada, arroz, farofa de manteiga, limão e pimenta da casa.</p></div><strong>49,90</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-entradas" role="tabpanel" aria-labelledby="tab-entradas" hidden>
+        <div class="section-head"><span>Para começar</span><h2>Entradas</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/carne-de-sol.jpg" alt="Escondidinho de carne de sol"><div><span>Entrada</span><h3>Mini escondidinho de carne de sol</h3><p>Macaxeira cremosa, carne de sol desfiada e queijo coalho gratinado.</p></div><strong>28</strong></article>
+          <article class="menu-item"><div><span>Entrada</span><h3>Dadinho de tapioca com melaço de rapadura</h3><p>Cubos crocantes por fora, macios por dentro, servidos com melaço agridoce.</p></div><strong>24</strong></article>
+          <article class="menu-item"><div><span>Entrada</span><h3>Queijo coalho na brasa</h3><p>Queijo coalho tostado, orégano fresco, mel de engenho e pimenta suave.</p></div><strong>26</strong></article>
+          <article class="menu-item"><div><span>Entrada</span><h3>Pastéis de bode guisado</h3><p>Massa leve, recheio regional bem temperado e vinagrete de coentro.</p></div><strong>32</strong></article>
+          <article class="menu-item"><div><span>Entrada</span><h3>Bolinho de feijão verde</h3><p>Bolinho dourado com queijo manteiga e molho de caju.</p></div><strong>25</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-saladas" role="tabpanel" aria-labelledby="tab-saladas" hidden>
+        <div class="section-head"><span>Frescor & família</span><h2>Saladas & Kids</h2></div>
+        <div class="menu-list">
+          <article class="menu-item"><div><span>Salada</span><h3>Salada Mandacaru</h3><p>Folhas, manga, tomate cereja, castanha de caju e molho cítrico.</p></div><strong>29</strong></article>
+          <article class="menu-item"><div><span>Salada</span><h3>Feijão verde frio</h3><p>Feijão verde, cebola roxa, pimentão, coentro e azeite de limão.</p></div><strong>24</strong></article>
+          <article class="menu-item"><div><span>Salada</span><h3>Vinagrete de maxixe</h3><p>Maxixe crocante, tomate, cebola e ervas frescas.</p></div><strong>18</strong></article>
+          <article class="menu-item large"><div><span>Kids</span><h3>Pratinho sertanejo</h3><p>Franguinho grelhado ou carne de sol desfiada com arroz, feijão, macaxeira ou batata frita.</p></div><strong>32</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-pratos" role="tabpanel" aria-labelledby="tab-pratos" hidden>
+        <div class="section-head"><span>Pratos individuais</span><h2>Principais</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/carne-de-sol.jpg" alt="Carne de sol do Empório"><div><span>Carne</span><h3>Carne de sol do Empório</h3><p>Carne de sol na manteiga de garrafa, baião de dois, macaxeira e vinagrete.</p></div><strong>58</strong></article>
+          <article class="menu-item with-photo"><img src="assets/buffet-regional.jpg" alt="Baião de dois cremoso"><div><span>Regional</span><h3>Baião de dois cremoso</h3><p>Feijão verde, arroz, queijo coalho, nata, carne de sol desfiada e coentro.</p></div><strong>48</strong></article>
+          <article class="menu-item"><div><span>Caipira</span><h3>Galinha caipira com pirão</h3><p>Galinha cozida lentamente, arroz branco, pirão do caldo e farofa de manteiga.</p></div><strong>52</strong></article>
+          <article class="menu-item"><div><span>Cabrito</span><h3>Bode guisado sertanejo</h3><p>Bode macio no molho de especiarias, feijão verde, macaxeira e arroz.</p></div><strong>62</strong></article>
+          <article class="menu-item"><div><span>Peixe</span><h3>Tilápia ao molho de coco</h3><p>Tilápia grelhada, molho de coco, arroz de coentro e legumes salteados.</p></div><strong>54</strong></article>
+          <article class="menu-item"><div><span>Vegetariano</span><h3>Jerimum recheado</h3><p>Jerimum assado com queijo coalho, legumes, castanha e molho de ervas.</p></div><strong>42</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-sobremesas" role="tabpanel" aria-labelledby="tab-sobremesas" hidden>
+        <div class="section-head"><span>Final doce</span><h2>Sobremesas</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/sobremesa-cartola.jpg" alt="Cartola sertaneja"><div><span>Sobremesa</span><h3>Cartola sertaneja</h3><p>Banana dourada, queijo coalho, açúcar, canela e mel de engenho.</p></div><strong>24</strong></article>
+          <article class="menu-item"><div><span>Sobremesa</span><h3>Pudim de rapadura</h3><p>Pudim cremoso com calda de rapadura e toque de laranja.</p></div><strong>22</strong></article>
+          <article class="menu-item"><div><span>Sobremesa</span><h3>Doce de leite com queijo coalho</h3><p>Doce de leite da casa, queijo tostado e farofa de castanha.</p></div><strong>23</strong></article>
+          <article class="menu-item"><div><span>Sobremesa</span><h3>Bolo de rolo com sorvete</h3><p>Fatia de bolo de rolo, sorvete de tapioca e calda quente.</p></div><strong>26</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-bebidas" role="tabpanel" aria-labelledby="tab-bebidas" hidden>
+        <div class="section-head"><span>Sem álcool</span><h2>Bebidas</h2></div>
+        <div class="price-grid">
+          <article><h3>Água mineral com / sem gás</h3><strong>6</strong><span>300 ml</span></article>
+          <article><h3>Água de coco</h3><strong>12 / 22</strong><span>Copo / jarra</span></article>
+          <article><h3>Coca-Cola</h3><strong>9</strong><span>Normal / zero</span></article>
+          <article><h3>Guaraná</h3><strong>9</strong><span>Normal / zero</span></article>
+          <article><h3>H2O limão</h3><strong>10</strong><span>500 ml</span></article>
+          <article><h3>Café coado</h3><strong>5</strong><span>Xícara</span></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-drinks" role="tabpanel" aria-labelledby="tab-drinks" hidden>
+        <div class="section-head"><span>Frutas regionais</span><h2>Sucos & Refrescos</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/drink-caju.jpg" alt="Refresco de caju"><div><span>Suco</span><h3>Caju com limão</h3><p>Polpa de caju, limão espremido e gelo.</p></div><strong>12</strong></article>
+          <article class="menu-item"><div><span>Suco</span><h3>Umbu cajá</h3><p>Fruta regional batida na hora com água ou leite.</p></div><strong>13</strong></article>
+          <article class="menu-item"><div><span>Suco</span><h3>Graviola</h3><p>Suco cremoso de graviola, servido bem gelado.</p></div><strong>14</strong></article>
+          <article class="menu-item"><div><span>Refresco</span><h3>Mate com rapadura e limão</h3><p>Chá mate gelado, limão e rapadura ralada.</p></div><strong>11</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-alcoolicas" role="tabpanel" aria-labelledby="tab-alcoolicas" hidden>
+        <div class="section-head"><span>Bar</span><h2>Bebidas alcoólicas</h2></div>
+        <div class="price-grid dense">
+          <article><h3>Cerveja long neck</h3><strong>12</strong><span>Consulte rótulos</span></article>
+          <article><h3>Chopp pilsen</h3><strong>11</strong><span>300 ml</span></article>
+          <article><h3>Caipirinha de limão</h3><strong>21</strong><span>Cachaça</span></article>
+          <article><h3>Caipirosca de cajá</h3><strong>26</strong><span>Vodka</span></article>
+          <article><h3>Cachaça umburana</h3><strong>12</strong><span>Dose</span></article>
+          <article><h3>Cachaça prata</h3><strong>9</strong><span>Dose</span></article>
+          <article><h3>Whisky nacional</h3><strong>18</strong><span>Dose</span></article>
+          <article><h3>Gin tônica</h3><strong>28</strong><span>Taça</span></article>
+          <article><h3>Licor de jenipapo</h3><strong>14</strong><span>Dose</span></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-vinhos" role="tabpanel" aria-labelledby="tab-vinhos" hidden>
+        <div class="section-head"><span>Para dividir</span><h2>Combos</h2></div>
+        <div class="wine-stack">
+          <article><h3>Combo Sertão para 2</h3><p>Carne de sol, baião cremoso, macaxeira, queijo coalho, farofa e vinagrete. R$ 118</p></article>
+          <article><h3>Combo Feira Livre</h3><p>Dadinho de tapioca, pastéis de bode, queijo coalho e molho de caju. R$ 76</p></article>
+          <article><h3>Combo Família</h3><p>Galinha caipira, arroz, pirão, feijão verde, macaxeira e salada. R$ 146</p></article>
+          <article><h3>Combo Doce de Casa</h3><p>Cartola, pudim de rapadura e bolo de rolo com sorvete. R$ 58</p></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-info" role="tabpanel" aria-labelledby="tab-info" hidden>
+        <div class="section-head"><span>Restaurante</span><h2>Informações</h2></div>
+        <div class="info-cards">
+          <article><span>Endereço</span><p>Empório do Sertão · cozinha regional nordestina</p></article>
+          <article><span>Telefone</span><p>Atendimento, reservas e encomendas pelo WhatsApp.</p></article>
+          <article><span>Redes</span><p>@emporiodosertao · Instagram, Google e delivery.</p></article>
+          <article><span>Pagamento</span><p>Dinheiro, Pix, cartões de crédito, débito e benefícios.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <footer class="menu-footer">
+      <img src="assets/logo-emporio.jpg" alt="Empório do Sertão">
+      <span>Empório do Sertão · Cozinha regional</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
