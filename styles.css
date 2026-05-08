@@ -78,8 +78,7 @@ h1, h2, h3, p { margin: 0; }
   pointer-events: none;
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: .16;
-  mix-blend-mode: multiply;
+  opacity: 1;
 }
 
 .menu-shell::before {
@@ -289,11 +288,10 @@ h1, h2, h3, p { margin: 0; }
   right: 6px;
   bottom: 4px;
   z-index: 0;
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   background: center / contain no-repeat;
-  opacity: .20;
-  mix-blend-mode: multiply;
+  opacity: 1;
 }
 
 .tab:nth-child(5n+1)::after { background-image: url("assets/xilo-cacto.png"); }
@@ -301,7 +299,7 @@ h1, h2, h3, p { margin: 0; }
 .tab:nth-child(5n+3)::after { background-image: url("assets/xilo-chapeu.png"); }
 .tab:nth-child(5n+4)::after { background-image: url("assets/xilo-passaro.png"); }
 .tab:nth-child(5n+5)::after { background-image: url("assets/xilo-cacto-mulher.png"); }
-.tab.is-active::after { opacity: .32; }
+.tab.is-active::after { opacity: 1; }
 
 .tab span {
   display: block;
@@ -344,12 +342,19 @@ h1, h2, h3, p { margin: 0; }
   position: absolute;
   inset: 0;
   pointer-events: none;
+  background: url("assets/padrao-sertao.svg") 18px 20px / 300px 300px repeat;
+  opacity: .12;
+  mix-blend-mode: multiply;
+}
+
+.tab-panels::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background:
     url("assets/xilo-sol.png") right 22px top 24px / 170px auto no-repeat,
-    url("assets/xilo-cacto.png") left 24px bottom 42px / 96px auto no-repeat,
-    url("assets/padrao-sertao.svg") 18px 20px / 300px 300px repeat;
-  opacity: .18;
-  mix-blend-mode: multiply;
+    url("assets/xilo-cacto.png") left 24px bottom 42px / 96px auto no-repeat;
 }
 
 .panel {
@@ -460,10 +465,9 @@ h1, h2, h3, p { margin: 0; }
   position: absolute;
   inset: 8px auto 8px 10px;
   z-index: 0;
-  width: 46px;
+  width: 38px;
   background: center / contain no-repeat;
-  opacity: .18;
-  mix-blend-mode: multiply;
+  opacity: 1;
 }
 
 .buffet-tab:nth-child(1)::before { background-image: url("assets/xilo-cacto.png"); }
@@ -471,7 +475,7 @@ h1, h2, h3, p { margin: 0; }
 .buffet-tab:nth-child(3)::before { background-image: url("assets/xilo-chapeu.png"); }
 .buffet-tab:nth-child(4)::before { background-image: url("assets/xilo-passaro.png"); }
 .buffet-tab:nth-child(5)::before { background-image: url("assets/xilo-cacto-mulher.png"); }
-.buffet-tab.is-active::before { opacity: .30; }
+.buffet-tab.is-active::before { opacity: 1; }
 
 .buffet-tab.is-active {
   color: var(--verde);
