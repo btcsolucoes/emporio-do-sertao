@@ -57,29 +57,29 @@ body::before {
     url("assets/xilo-cacto-mulher.png"),
     url("assets/xilo-passaro.png");
   -webkit-mask-position:
-    left 24px top 170px,
-    right 38px top 170px,
-    left 42px bottom 150px,
-    right 30px bottom 245px,
-    left 50vw bottom 50px;
+    left 10px top 132px,
+    right 12px top 254px,
+    left 14px top 376px,
+    right 14px top 500px,
+    left 12px top 620px;
   mask-position:
-    left 24px top 170px,
-    right 38px top 170px,
-    left 42px bottom 150px,
-    right 30px bottom 245px,
-    left 50vw bottom 50px;
+    left 10px top 132px,
+    right 12px top 254px,
+    left 14px top 376px,
+    right 14px top 500px,
+    left 12px top 620px;
   -webkit-mask-size:
-    112px auto,
-    122px auto,
-    96px auto,
-    126px auto,
-    92px auto;
+    76px auto,
+    86px auto,
+    70px auto,
+    82px auto,
+    72px auto;
   mask-size:
-    112px auto,
-    122px auto,
-    96px auto,
-    126px auto,
-    92px auto;
+    76px auto,
+    86px auto,
+    70px auto,
+    82px auto,
+    72px auto;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
@@ -714,6 +714,10 @@ h1, h2, h3, p { margin: 0; }
 }
 
 @media (max-width: 820px) {
+  body::before {
+    content: none;
+  }
+
   .menu-shell { padding-inline: 12px; }
 
   .cover {
