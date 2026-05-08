@@ -1,250 +1,60 @@
 <!-- Provérbios 16:3 Confia ao SENHOR as tuas obras, e os teus desígnios serão estabelecidos -->
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Empório do Sertão - Cardápio Digital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=qrstack-badge-6">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cardapio indisponivel</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f0e6;
+      --ink: #23170f;
+      --muted: #6b5848;
+      --line: rgba(35, 23, 15, .18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-align: center;
+    }
+
+    main {
+      width: min(460px, 100%);
+      padding: 28px 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      line-height: 1.1;
+    }
+
+    p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
 </head>
 <body>
-  <main class="menu-shell">
-    <header class="cover">
-      <div class="cover-brand">
-        <img src="assets/logo-emporio-clean-4k.png" alt="Empório do Sertão" class="logo" width="4096" height="2731" fetchpriority="high">
-        <h1 class="sr-only">Empório do Sertão</h1>
-        <p>Comida brasileira e regional no Recife Antigo, com sabores de cuscuz, macaxeira, carne de sol, sucos e almoço de sertão.</p>
-      </div>
-    </header>
-
-    <nav class="tab-dock" id="cardapio" role="tablist" aria-label="Categorias do cardápio">
-      <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-self-service" id="tab-self-service"><span class="tab-number">01</span><span class="tab-label">Self-Service</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-prato-dia" id="tab-prato-dia"><span class="tab-number">02</span><span class="tab-label">Prato do dia</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-cafe-manha" id="tab-cafe-manha"><span class="tab-number">03</span><span class="tab-label">Café / Jantar</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-petiscos" id="tab-petiscos"><span class="tab-number">04</span><span class="tab-label">Petiscos</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sanduiches" id="tab-sanduiches"><span class="tab-number">05</span><span class="tab-label">Sanduíches</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sucos" id="tab-sucos"><span class="tab-number">06</span><span class="tab-label">Sucos</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-bebidas" id="tab-bebidas"><span class="tab-number">07</span><span class="tab-label">Bebidas</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-alcoolicas" id="tab-alcoolicas"><span class="tab-number">08</span><span class="tab-label">Alcoólicas</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sobremesas" id="tab-sobremesas"><span class="tab-number">09</span><span class="tab-label">Sobremesas</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-porcoes" id="tab-porcoes"><span class="tab-number">10</span><span class="tab-label">Porções</span></button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-info" id="tab-info"><span class="tab-number">11</span><span class="tab-label">Info</span></button>
-    </nav>
-
-    <section class="menu-status">
-      <span>Valores em R$</span>
-    </section>
-
-    <div class="tab-panels">
-      <section class="panel is-active" id="panel-self-service" role="tabpanel" aria-labelledby="tab-self-service">
-        <div class="section-hero">
-          <div>
-            <span>Buffet regional</span>
-            <h2>Self-Service</h2>
-            <p>Monte o prato navegando pelas ilhas do buffet: carnes, bases, guarnições, saladas e acompanhamentos.</p>
-          </div>
-          <img class="section-xilo" src="assets/header-xilo-01-ave.png" alt="Xilogravura de ave em espiral">
-        </div>
-
-        <div class="buffet-tabs" aria-label="Itens do buffet">
-          <button class="buffet-tab is-active" type="button" data-buffet-target="buffet-carnes"><span>Carnes</span></button>
-          <button class="buffet-tab" type="button" data-buffet-target="buffet-bases"><span>Bases</span></button>
-          <button class="buffet-tab" type="button" data-buffet-target="buffet-guarnicoes"><span>Guarnições</span></button>
-          <button class="buffet-tab" type="button" data-buffet-target="buffet-saladas"><span>Saladas</span></button>
-          <button class="buffet-tab" type="button" data-buffet-target="buffet-acompanhamentos"><span>Acompanhamentos</span></button>
-        </div>
-
-        <div class="buffet-panels">
-          <section class="buffet-panel is-active" id="buffet-carnes">
-            <article><span>Carnes</span><p>Carne de sol acebolada</p><p>Carne de panela</p><p>Charque desfiada</p><p>Frango desfiado</p><p>Bode guisado</p></article>
-          </section>
-          <section class="buffet-panel" id="buffet-bases" hidden>
-            <article><span>Bases</span><p>Cuscuz nordestino</p><p>Macaxeira cozida</p><p>Inhame</p><p>Batata doce</p><p>Arroz branco</p></article>
-          </section>
-          <section class="buffet-panel" id="buffet-guarnicoes" hidden>
-            <article><span>Guarnições</span><p>Feijão</p><p>Farofa</p><p>Macarrão</p><p>Purê</p><p>Vinagrete</p></article>
-          </section>
-          <section class="buffet-panel" id="buffet-saladas" hidden>
-            <article><span>Saladas</span><p>Salada do Empório</p><p>Salada sertaneja</p><p>Porção de salada</p><p>Frutas frescas</p><p>Legumes do dia</p></article>
-          </section>
-          <section class="buffet-panel" id="buffet-acompanhamentos" hidden>
-            <article><span>Acompanhamentos</span><p>Ovo frito / cozido</p><p>Porção de queijo</p><p>Porção de torrada</p><p>Batata palha</p><p>Bacon</p></article>
-          </section>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-prato-dia" role="tabpanel" aria-labelledby="tab-prato-dia" hidden>
-        <div class="section-head"><div><span>Almoço da casa</span><h2>Prato do dia</h2></div><img class="section-xilo" src="assets/header-xilo-02-sol-espiral.png" alt="Xilogravura de sol em espiral"></div>
-        <div class="menu-list photo-list">
-          <article class="menu-item with-photo"><img src="assets/illustracao-prato.png" alt=""><div><span>Da casa</span><h3>Carne de sol do Empório</h3><p>Prato regional com carne de sol, em versão individual ou para dividir.</p></div><strong>35,90</strong></article>
-          <article class="menu-item"><div><span>Nata</span><h3>Carne de sol na nata</h3><p>Carne de sol com molho de nata.</p></div><strong>35,90</strong></article>
-          <article class="menu-item"><div><span>Bode</span><h3>Bode grelhado</h3><p>Carne de bode preparada na grelha.</p></div><strong>36,90</strong></article>
-          <article class="menu-item"><div><span>Peixe</span><h3>Peixe ao molho de camarão</h3><p>Peixe servido com molho de camarão.</p></div><strong>48,90</strong></article>
-          <article class="menu-item"><div><span>Grelhado</span><h3>Filé mignon grelhado</h3><p>Filé mignon preparado na chapa.</p></div><strong>49,90</strong></article>
-          <article class="menu-item"><div><span>Salada</span><h3>Salada sertaneja</h3><p>Opção leve com assinatura regional.</p></div><strong>31,90</strong></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-cafe-manha" role="tabpanel" aria-labelledby="tab-cafe-manha" hidden>
-        <div class="section-hero">
-          <div>
-            <span>Raízes da casa</span>
-            <h2>Café / Jantar</h2>
-            <p>Cuscuz, macaxeira, inhame, batata doce, tapioca e caldos com recheios sertanejos.</p>
-          </div>
-          <img class="section-xilo" src="assets/header-xilo-03-cacto-mulher.png" alt="Xilogravura de cacto e mulher">
-        </div>
-
-        <div class="menu-list photo-list">
-          <article class="menu-item with-photo"><img src="assets/illustracao-prato.png" alt=""><div><span>Carne de sol</span><h3>Cuscuz c/ carne de sol</h3><p>Base regional de cuscuz com recheio de carne de sol.</p></div><strong>23,00</strong></article>
-          <article class="menu-item"><div><span>Bode</span><h3>Cuscuz c/ bode guisado</h3><p>Cuscuz nordestino servido com bode guisado.</p></div><strong>24,00</strong></article>
-          <article class="menu-item"><div><span>Charque</span><h3>Cuscuz c/ charque desfiada</h3><p>Charque desfiada sobre cuscuz quente.</p></div><strong>22,00</strong></article>
-          <article class="menu-item"><div><span>Macaxeira</span><h3>Macaxeira c/ carne de sol</h3><p>Macaxeira com carne de sol, simples e direto.</p></div><strong>23,00</strong></article>
-          <article class="menu-item"><div><span>Inhame</span><h3>Inhame c/ carne de panela</h3><p>Inhame cozido com carne de panela.</p></div><strong>20,00</strong></article>
-          <article class="menu-item"><div><span>Batata doce</span><h3>Batata doce c/ frango desfiado</h3><p>Batata doce acompanhada de frango desfiado.</p></div><strong>20,00</strong></article>
-          <article class="menu-item"><div><span>Tapioca</span><h3>Tapioca de carne de sol c/ queijo</h3><p>Tapioca recheada com carne de sol e queijo.</p></div><strong>16,00</strong></article>
-          <article class="menu-item"><div><span>Caldo</span><h3>Caldo de kenga</h3><p>Caldo regional para abrir o apetite.</p></div><strong>11,00</strong></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-petiscos" role="tabpanel" aria-labelledby="tab-petiscos" hidden>
-        <div class="section-head"><div><span>Para compartilhar</span><h2>Petiscos</h2></div><img class="section-xilo" src="assets/header-xilo-04-chapeu-vaqueiro.png" alt="Xilogravura de chapéu de vaqueiro"></div>
-        <div class="menu-list">
-          <article class="menu-item"><div><span>Charque</span><h3>Bolinho charque c/ queijo</h3><p>Bolinho de charque com queijo.</p></div><strong>29,90</strong></article>
-          <article class="menu-item"><div><span>Charque</span><h3>Bolinho de charque</h3><p>Petisco clássico da casa.</p></div><strong>29,90</strong></article>
-          <article class="menu-item"><div><span>Queijo</span><h3>Bolinho de queijo</h3><p>Bolinho crocante de queijo.</p></div><strong>24,90</strong></article>
-          <article class="menu-item"><div><span>Mar</span><h3>Camarão alho e óleo</h3><p>Camarão salteado no alho e óleo.</p></div><strong>55,90</strong></article>
-          <article class="menu-item"><div><span>Porção</span><h3>Carne de sol c/ fritas</h3><p>Carne de sol servida com fritas.</p></div><strong>58,00</strong></article>
-          <article class="menu-item"><div><span>Caldo</span><h3>Caldinho de feijão</h3><p>Caldinho para acompanhar.</p></div><strong>14,00</strong></article>
-          <article class="menu-item"><div><span>Frango</span><h3>Frango à passarinho</h3><p>Frango em pedaços, servido como petisco.</p></div><strong>47,90</strong></article>
-          <article class="menu-item"><div><span>Fritas</span><h3>Porção de fritas</h3><p>Batatas fritas para dividir.</p></div><strong>20,00</strong></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-sanduiches" role="tabpanel" aria-labelledby="tab-sanduiches" hidden>
-        <div class="section-head"><div><span>Lanches</span><h2>Sanduíches</h2></div><img class="section-xilo" src="assets/header-xilo-05-cacto-j-borges.png" alt="Xilogravura de cacto"></div>
-        <div class="menu-list">
-          <article class="menu-item"><div><span>Empório</span><h3>Hambúrguer Empório do Sertão</h3><p>Hambúrguer assinatura da casa.</p></div><strong>22,00</strong></article>
-          <article class="menu-item"><div><span>Nordestino</span><h3>Hambúrguer nordestino</h3><p>Hambúrguer com sotaque regional.</p></div><strong>25,00</strong></article>
-          <article class="menu-item"><div><span>Beirute</span><h3>Beirute de carne de sol</h3><p>Beirute recheado com carne de sol.</p></div><strong>26,90</strong></article>
-          <article class="menu-item"><div><span>Beirute</span><h3>Beirute de camarão</h3><p>Versão com camarão.</p></div><strong>27,90</strong></article>
-          <article class="menu-item"><div><span>Queijo</span><h3>Cheese carne de sol</h3><p>Sanduíche com carne de sol e queijo.</p></div><strong>24,00</strong></article>
-          <article class="menu-item"><div><span>Clássico</span><h3>Americano</h3><p>Sanduíche tradicional.</p></div><strong>15,00</strong></article>
-          <article class="menu-item"><div><span>Simples</span><h3>Pão c/ ovo</h3><p>Pão com ovo feito na hora.</p></div><strong>7,00</strong></article>
-          <article class="menu-item"><div><span>Acompanhamento</span><h3>Acréscimo de frita no beirute</h3><p>Adicional para acompanhar o beirute.</p></div><strong>10,00</strong></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-sucos" role="tabpanel" aria-labelledby="tab-sucos" hidden>
-        <div class="section-head"><div><span>Frutas e jarras</span><h2>Sucos</h2></div><img class="section-xilo" src="assets/header-xilo-06-sol.png" alt="Xilogravura de sol"></div>
-        <div class="price-grid">
-          <article><h3>Jarra de cajá</h3><strong>24,00</strong><span>Jarra</span></article>
-          <article><h3>Jarra de cupuaçu</h3><strong>24,00</strong><span>Jarra</span></article>
-          <article><h3>Jarra de graviola</h3><strong>24,00</strong><span>Jarra</span></article>
-          <article><h3>Jarra de caju</h3><strong>24,00</strong><span>Jarra</span></article>
-          <article><h3>Jarra beijo gelado</h3><strong>27,00</strong><span>Jarra</span></article>
-          <article><h3>Suco Sertão</h3><strong>12,00</strong><span>Copo</span></article>
-          <article><h3>Suco Guia 171</h3><strong>12,00</strong><span>Copo</span></article>
-          <article><h3>Suco Empório Verde</h3><strong>12,00</strong><span>Copo</span></article>
-          <article><h3>Suco salada mista</h3><strong>13,00</strong><span>Copo</span></article>
-          <article><h3>Vitamina de abacate</h3><strong>9,00</strong><span>Copo</span></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-bebidas" role="tabpanel" aria-labelledby="tab-bebidas" hidden>
-        <div class="section-head"><div><span>Sem álcool</span><h2>Bebidas</h2></div><img class="section-xilo" src="assets/header-xilo-07-cacto.png" alt="Xilogravura de cacto"></div>
-        <div class="price-grid dense">
-          <article><h3>Água s/ gás</h3><strong>5,00</strong><span></span></article>
-          <article><h3>Água c/ gás</h3><strong>7,00</strong><span></span></article>
-          <article><h3>Água tônica</h3><strong>7,00</strong><span></span></article>
-          <article><h3>Coca lata</h3><strong>7,00</strong><span></span></article>
-          <article><h3>Coca 1L</h3><strong>11,00</strong><span></span></article>
-          <article><h3>Coca 2L</h3><strong>19,00</strong><span></span></article>
-          <article><h3>Guaraná lata</h3><strong>7,00</strong><span></span></article>
-          <article><h3>H2O</h3><strong>7,00</strong><span></span></article>
-          <article><h3>Chá gelado</h3><strong>8,00</strong><span></span></article>
-          <article><h3>Red Bull</h3><strong>12,00</strong><span></span></article>
-          <article><h3>Monster G</h3><strong>15,00</strong><span></span></article>
-          <article><h3>Powerade</h3><strong>8,00</strong><span></span></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-alcoolicas" role="tabpanel" aria-labelledby="tab-alcoolicas" hidden>
-        <div class="section-head"><div><span>Bar</span><h2>Bebidas Alcoólicas</h2></div><img class="section-xilo" src="assets/header-xilo-08-passaro.png" alt="Xilogravura de pássaro"></div>
-        <div class="price-grid dense">
-          <article><h3>Drink Empório do Sertão</h3><strong>25,00</strong><span></span></article>
-          <article><h3>Caipirinha</h3><strong>15,00</strong><span></span></article>
-          <article><h3>Caipiroska</h3><strong>18,00</strong><span></span></article>
-          <article><h3>Caipifruta de cajá</h3><strong>20,00</strong><span></span></article>
-          <article><h3>Caipifruta de cupuaçu</h3><strong>20,00</strong><span></span></article>
-          <article><h3>Brahma 600ml</h3><strong>12,00</strong><span></span></article>
-          <article><h3>Devassa 600ml</h3><strong>12,00</strong><span></span></article>
-          <article><h3>Eisebanh 600ml</h3><strong>14,00</strong><span></span></article>
-          <article><h3>Dose Pitu</h3><strong>7,00</strong><span></span></article>
-          <article><h3>Dose de whisky Johnny Walker</h3><strong>15,00</strong><span></span></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-sobremesas" role="tabpanel" aria-labelledby="tab-sobremesas" hidden>
-        <div class="section-head"><div><span>Doces</span><h2>Sobremesas</h2></div><img class="section-xilo" src="assets/header-xilo-09-cacto-mulher-classico.png" alt="Xilogravura de mulher e cacto"></div>
-        <div class="menu-list photo-list">
-          <article class="menu-item with-photo"><img src="assets/illustracao-sobremesa.png" alt=""><div><span>Clássico</span><h3>Cartola</h3><p>Sobremesa tradicional nordestina.</p></div><strong>25,00</strong></article>
-          <article class="menu-item"><div><span>Frutas</span><h3>Salada de fruta</h3><p>Porção de frutas frescas.</p></div><strong>10,00</strong></article>
-          <article class="menu-item"><div><span>Frutas</span><h3>Salada de fruta gourmet</h3><p>Versão especial da salada de fruta.</p></div><strong>13,00</strong></article>
-          <article class="menu-item"><div><span>Doce</span><h3>Pudim</h3><p>Pudim da casa.</p></div><strong>12,00</strong></article>
-          <article class="menu-item"><div><span>Açaí</span><h3>Açaí c/ cupuaçu na tigela</h3><p>Açaí servido na tigela com cupuaçu.</p></div><strong>25,00</strong></article>
-          <article class="menu-item"><div><span>Fatia</span><h3>Torta fatia</h3><p>Fatia de torta.</p></div><strong>12,00</strong></article>
-          <article class="menu-item"><div><span>Regional</span><h3>Bolo de rolo</h3><p>Doce regional para acompanhar café.</p></div><strong>7,00</strong></article>
-          <article class="menu-item"><div><span>Docinho</span><h3>Paçoca</h3><p>Doce típico.</p></div><strong>1,00</strong></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-porcoes" role="tabpanel" aria-labelledby="tab-porcoes" hidden>
-        <div class="section-head"><div><span>Complementos</span><h2>Porções</h2></div><img class="section-xilo" src="assets/header-xilo-10-chapeu.png" alt="Xilogravura de chapéu"></div>
-        <div class="price-grid">
-          <article><h3>Porção de arroz</h3><strong>6,00</strong><span>Individual</span></article>
-          <article><h3>Porção de arroz p/2</h3><strong>12,00</strong><span>Para dividir</span></article>
-          <article><h3>Porção de feijão</h3><strong>6,00</strong><span>Individual</span></article>
-          <article><h3>Porção de feijão p/2</h3><strong>12,00</strong><span>Para dividir</span></article>
-          <article><h3>Porção de farofa</h3><strong>6,00</strong><span>Individual</span></article>
-          <article><h3>Porção de purê</h3><strong>6,00</strong><span>Individual</span></article>
-          <article><h3>Porção de queijo</h3><strong>10,00</strong><span></span></article>
-          <article><h3>Porção de vinagrete</h3><strong>6,00</strong><span></span></article>
-          <article><h3>Ovo frito / cozido</h3><strong>2,00</strong><span>Adicional</span></article>
-          <article><h3>Porção de torrada</h3><strong>4,00</strong><span></span></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-info" role="tabpanel" aria-labelledby="tab-info" hidden>
-        <div class="section-head"><div><span>Restaurante</span><h2>Informações</h2></div><img class="section-xilo" src="assets/header-xilo-11-info.png" alt="Ilustração em estilo xilogravura nordestina"></div>
-        <div class="info-cards">
-          <article><span>Nome</span><p>Restaurante Empório do Sertão LTDA</p></article>
-          <article><span>Endereço</span><p>Rua da Guia, 171 - Recife - PE</p></article>
-          <article><span>Telefone</span><p>(81) 99732-5955 | (81) 3097-8931</p></article>
-          <article><span>WhatsApp</span><p>81 3097-8931</p></article>
-          <article><span>CNPJ</span><p>50.474.870/0001-70</p></article>
-          <article><span>Categoria iFood</span><p>Comida Brasileira</p></article>
-        </div>
-      </section>
-    </div>
-
-    <footer class="menu-footer">
-      <div class="product-badge" aria-label="Um produto QrStack">
-        <div class="qrstack-lockup">
-          <span class="product-copy">Um produto</span>
-          <img class="qrstack-mark" src="assets/qrstack-mark.png" alt="" aria-hidden="true">
-        </div>
-        <img class="qrstack-wordmark" src="assets/qrstack-wordmark.png" alt="QrStack">
-      </div>
-      <div class="footer-brand">
-        <img src="assets/logo-emporio-clean-4k.png" alt="Emp&oacute;rio do Sert&atilde;o">
-        <span>Emp&oacute;rio do Sert&atilde;o - Cozinha brasileira e regional</span>
-      </div>
-    </footer>
+  <main>
+    <h1>Card&aacute;pio indispon&iacute;vel</h1>
+    <p>Este card&aacute;pio digital n&atilde;o est&aacute; mais ativo.</p>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
