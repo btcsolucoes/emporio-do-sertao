@@ -406,16 +406,17 @@ h1, h2, h3, p { margin: 0; }
 .section-hero,
 .section-head {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(140px, 22vw, 230px);
+  gap: 18px;
+  align-items: center;
   overflow: visible;
   padding: 26px 22px 22px;
   color: var(--texto);
 }
 
 .section-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  gap: 18px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) clamp(180px, 25vw, 280px);
 }
 
 .section-hero::before,
@@ -456,13 +457,22 @@ h1, h2, h3, p { margin: 0; }
   line-height: 1.5;
 }
 
-.section-hero img {
+.section-xilo {
+  justify-self: end;
   width: 100%;
+  max-width: 230px;
+  height: 160px;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+.section-hero .section-xilo {
+  max-width: 280px;
   height: 210px;
-  object-fit: cover;
-  border: 4px solid rgba(255, 248, 226, .88);
-  border-radius: 4px 46px 4px 46px;
-  box-shadow: 0 14px 26px rgba(74, 42, 18, .18);
 }
 
 .buffet-tabs {
@@ -733,6 +743,7 @@ h1, h2, h3, p { margin: 0; }
 
   .cover-balloons,
   .section-hero,
+  .section-head,
   .price-grid,
   .price-grid.dense,
   .info-cards {
@@ -744,8 +755,11 @@ h1, h2, h3, p { margin: 0; }
     padding-inline: 12px;
   }
 
-  .section-hero img {
-    height: 190px;
+  .section-xilo,
+  .section-hero .section-xilo {
+    justify-self: center;
+    width: min(240px, 72vw);
+    height: 150px;
   }
 }
 
@@ -907,9 +921,10 @@ h1, h2, h3, p { margin: 0; }
     font-size: .86rem;
   }
 
-  .section-hero img {
-    height: 160px;
-    border-radius: 4px 32px 4px 32px;
+  .section-xilo,
+  .section-hero .section-xilo {
+    width: min(190px, 62vw);
+    height: 116px;
   }
 
   .menu-item {
