@@ -1,16 +1,19 @@
 :root {
-  --verde: #063f2b;
-  --verde-2: #17613f;
-  --vermelho: #c51f16;
-  --vermelho-2: #8e170f;
-  --ouro: #d99a22;
-  --areia: #ead8b1;
-  --papel: #f8ecd2;
-  --papel-claro: #fff8e7;
-  --barro: #815032;
-  --texto: #26180f;
-  --muted: #6b523b;
-  --linha: rgba(94, 58, 32, .18);
+  --verde: #1f4d2e;
+  --verde-2: #356b3c;
+  --terracota: #a94624;
+  --vermelho: #b53d22;
+  --vermelho-2: #722717;
+  --ouro: #d18a2f;
+  --taipa: #c48a50;
+  --areia: #d0a56c;
+  --papel: #e4bd7c;
+  --papel-claro: #f3d59c;
+  --barro: #65351f;
+  --argila: #8f4326;
+  --texto: #261407;
+  --muted: #684026;
+  --linha: rgba(88, 43, 22, .28);
   --display: "Cormorant Garamond", Georgia, serif;
   --text: "Libre Franklin", system-ui, sans-serif;
 }
@@ -25,11 +28,11 @@ body {
   color: var(--texto);
   font-family: var(--text);
   background:
-    linear-gradient(rgba(234, 216, 177, .36), rgba(234, 216, 177, .36)),
-    url("assets/padrao-sertao.svg") center top / 330px 330px repeat,
-    radial-gradient(circle at 16% 6%, rgba(217, 154, 34, .34), transparent 28%),
-    radial-gradient(circle at 86% 18%, rgba(6, 63, 43, .16), transparent 30%),
-    linear-gradient(145deg, #f4e4bf, #d7bb7e 58%, #b98749);
+    linear-gradient(rgba(164, 79, 37, .26), rgba(101, 53, 31, .18)),
+    url("assets/padrao-sertao.svg") center top / 300px 300px repeat,
+    radial-gradient(circle at 15% 8%, rgba(209, 138, 47, .44), transparent 30%),
+    radial-gradient(circle at 84% 18%, rgba(31, 77, 46, .34), transparent 32%),
+    linear-gradient(145deg, #d19a59, #b35f34 56%, #6f351f);
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -42,8 +45,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px) 0 0 / 24px 24px,
-    linear-gradient(180deg, rgba(255, 250, 234, .36), transparent 34%, rgba(79, 44, 20, .06));
+    linear-gradient(90deg, rgba(54, 27, 14, .13) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(180deg, rgba(245, 200, 124, .22), transparent 34%, rgba(51, 25, 10, .24));
   mix-blend-mode: multiply;
 }
 
@@ -54,9 +57,9 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    url("assets/padrao-sertao.svg") -90px 120px / 460px 460px repeat;
-  opacity: .34;
-  mix-blend-mode: multiply;
+    url("assets/padrao-sertao.svg") -90px 120px / 390px 390px repeat;
+  opacity: .48;
+  mix-blend-mode: color-burn;
 }
 
 img { display: block; max-width: 100%; }
@@ -95,7 +98,7 @@ h1, h2, h3, p { margin: 0; }
   padding: 34px max(20px, calc((100vw - 1080px) / 2 + 24px)) 32px;
   text-align: center;
   background:
-    linear-gradient(180deg, rgba(20, 13, 7, .04), rgba(28, 22, 11, .04) 42%, rgba(34, 18, 9, .46)),
+    linear-gradient(180deg, rgba(43, 22, 9, .06), rgba(49, 25, 11, .08) 42%, rgba(45, 20, 8, .56)),
     url("assets/hero-sertao-illustration.png") center / cover no-repeat;
 }
 
@@ -117,7 +120,7 @@ h1, h2, h3, p { margin: 0; }
   bottom: -1px;
   height: 120px;
   z-index: -1;
-  background: linear-gradient(180deg, transparent, rgba(234, 216, 177, .98));
+  background: linear-gradient(180deg, transparent, rgba(180, 95, 52, .96));
 }
 
 .cover-brand {
@@ -169,6 +172,9 @@ h1, h2, h3, p { margin: 0; }
   font-size: clamp(1rem, 2.3vw, 1.18rem);
   font-weight: 700;
   line-height: 1.45;
+  padding: 10px 16px;
+  border: 1px solid rgba(243, 213, 156, .28);
+  background: rgba(38, 20, 7, .34);
   text-shadow: 0 2px 14px rgba(0, 0, 0, .42);
 }
 
@@ -243,8 +249,8 @@ h1, h2, h3, p { margin: 0; }
   padding: 11px 16px;
   overflow-x: auto;
   background:
-    linear-gradient(90deg, rgba(142, 23, 15, .96), rgba(197, 31, 22, .96) 50%, rgba(6, 63, 43, .96));
-  box-shadow: 0 12px 22px rgba(54, 27, 9, .22);
+    linear-gradient(90deg, rgba(114, 39, 23, .98), rgba(181, 61, 34, .98) 50%, rgba(31, 77, 46, .98));
+  box-shadow: 0 12px 22px rgba(54, 27, 9, .34);
   scrollbar-width: none;
 }
 
@@ -256,7 +262,7 @@ h1, h2, h3, p { margin: 0; }
   border: 1px solid rgba(255, 248, 226, .18);
   border-radius: 0;
   color: rgba(255, 248, 226, .9);
-  background: rgba(255, 248, 226, .09);
+  background: rgba(54, 27, 14, .18);
   text-align: left;
   font-weight: 800;
   cursor: pointer;
@@ -293,9 +299,9 @@ h1, h2, h3, p { margin: 0; }
 
 .tab-panels {
   position: relative;
-  background: rgba(255, 248, 226, .38);
-  border: 1px solid rgba(111, 70, 36, .2);
-  box-shadow: 0 18px 40px rgba(88, 53, 24, .12);
+  background: rgba(228, 189, 124, .66);
+  border: 1px solid rgba(88, 43, 22, .32);
+  box-shadow: 0 18px 40px rgba(58, 30, 14, .2);
 }
 
 .tab-panels::before {
@@ -304,8 +310,8 @@ h1, h2, h3, p { margin: 0; }
   inset: 0;
   pointer-events: none;
   background: url("assets/padrao-sertao.svg") 18px 20px / 260px 260px repeat;
-  opacity: .24;
-  mix-blend-mode: multiply;
+  opacity: .34;
+  mix-blend-mode: color-burn;
 }
 
 .panel {
@@ -326,8 +332,8 @@ h1, h2, h3, p { margin: 0; }
   padding: 26px 22px 22px;
   color: var(--texto);
   background:
-    linear-gradient(135deg, rgba(255, 248, 226, .88), rgba(239, 224, 191, .9)),
-    url("assets/padrao-sertao.svg") right -50px top -74px / 300px 300px repeat,
+    linear-gradient(135deg, rgba(243, 213, 156, .9), rgba(212, 154, 88, .86)),
+    url("assets/padrao-sertao.svg") right -50px top -74px / 250px 250px repeat,
     var(--papel);
   border-bottom: 1px solid var(--linha);
 }
@@ -389,7 +395,7 @@ h1, h2, h3, p { margin: 0; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
   background:
-    linear-gradient(90deg, rgba(6, 63, 43, .96), rgba(142, 23, 15, .94)),
+    linear-gradient(90deg, rgba(31, 77, 46, .98), rgba(114, 39, 23, .96)),
     var(--verde);
   border-bottom: 1px solid rgba(255, 248, 226, .22);
 }
@@ -416,8 +422,8 @@ h1, h2, h3, p { margin: 0; }
   min-height: 280px;
   padding: 26px 24px;
   background:
-    linear-gradient(rgba(255, 248, 226, .86), rgba(255, 248, 226, .86)),
-    url("assets/padrao-sertao.svg") center / 320px 320px repeat,
+    linear-gradient(rgba(243, 213, 156, .82), rgba(243, 213, 156, .82)),
+    url("assets/padrao-sertao.svg") center / 280px 280px repeat,
     var(--papel-claro);
 }
 
@@ -432,7 +438,7 @@ h1, h2, h3, p { margin: 0; }
 
 .buffet-panel p {
   padding: 13px 0;
-  border-bottom: 1px dashed rgba(129, 80, 50, .28);
+  border-bottom: 1px dashed rgba(101, 53, 31, .36);
   color: var(--verde);
   font-size: 1.02rem;
   font-weight: 800;
@@ -451,12 +457,12 @@ h1, h2, h3, p { margin: 0; }
   align-items: start;
   min-height: 104px;
   padding: 18px 20px;
-  background: rgba(255, 248, 226, .9);
-  border-bottom: 1px dashed rgba(129, 80, 50, .26);
+  background: rgba(243, 213, 156, .92);
+  border-bottom: 1px dashed rgba(101, 53, 31, .32);
 }
 
 .menu-item:nth-child(even) {
-  background: rgba(244, 229, 195, .84);
+  background: rgba(224, 180, 111, .82);
 }
 
 .menu-item.with-photo {
@@ -469,7 +475,7 @@ h1, h2, h3, p { margin: 0; }
   object-fit: cover;
   border-radius: 4px 30px 4px 30px;
   border: 3px solid rgba(255, 248, 226, .88);
-  box-shadow: 0 10px 20px rgba(94, 58, 32, .14);
+  box-shadow: 0 10px 20px rgba(58, 30, 14, .2);
 }
 
 .menu-item span {
@@ -506,7 +512,7 @@ h1, h2, h3, p { margin: 0; }
   background: var(--vermelho);
   border: 3px double rgba(255, 248, 226, .78);
   border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(142, 23, 15, .18);
+  box-shadow: 0 8px 18px rgba(114, 39, 23, .24);
   font-size: .9rem;
   font-weight: 800;
   line-height: 1;
@@ -534,14 +540,14 @@ h1, h2, h3, p { margin: 0; }
 .info-cards article {
   min-height: 122px;
   padding: 18px 20px;
-  background: rgba(255, 248, 226, .9);
-  border-right: 1px dashed rgba(129, 80, 50, .22);
-  border-bottom: 1px dashed rgba(129, 80, 50, .26);
+  background: rgba(243, 213, 156, .92);
+  border-right: 1px dashed rgba(101, 53, 31, .28);
+  border-bottom: 1px dashed rgba(101, 53, 31, .32);
 }
 
 .price-grid article:nth-child(even),
 .info-cards article:nth-child(even) {
-  background: rgba(244, 229, 195, .84);
+  background: rgba(224, 180, 111, .82);
 }
 
 .price-grid h3,

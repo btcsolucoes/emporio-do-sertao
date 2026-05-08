@@ -1,32 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
-  <rect width="420" height="420" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+  <rect width="480" height="480" fill="none"/>
 
-  <!-- Padrao original inspirado em cordel e xilogravura nordestina. -->
-  <g fill="none" stroke="#7f5633" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".38">
-    <path d="M42 54h126M42 70h92M42 86h116M260 49h106M284 65h82M250 81h116"/>
-    <path d="M62 268V122c0-24 33-24 33 0v48c0 13 20 13 20 0v-24c0-21 29-21 29 0v122"/>
-    <path d="M40 268h130M63 170c-23 0-38 13-38 38v25M144 190c30-2 45 14 45 42v27"/>
-    <path d="M236 119c25-25 74-25 100 0M212 134c38 25 112 25 150 0M255 124l12 39M320 124l-12 39"/>
-    <path d="M52 346h88M250 346h102M252 286c28-18 68-18 96 0M230 303h138"/>
-    <path d="M64 28l24 18 24-18M314 196l25 15 25-15M196 371l30 18 30-18"/>
+  <!-- Padrao original inspirado na linguagem popular de cordel e xilogravura nordestina. -->
+  <g opacity=".62">
+    <circle cx="366" cy="94" r="44" fill="#a34725"/>
+    <path d="M366 24v34M366 130v34M296 94h34M402 94h34M316 44l24 24M392 120l24 24M416 44l-24 24M340 120l-24 24" stroke="#3a2114" stroke-width="9" stroke-linecap="round"/>
+    <path d="M337 82h58M332 96h68M340 110h50" stroke="#f0c36f" stroke-width="5" stroke-linecap="round" opacity=".72"/>
   </g>
 
-  <g fill="none" stroke="#9f4328" stroke-width="2.3" stroke-linecap="round" opacity=".32">
-    <path d="M210 202h144M210 217h116M210 232h136M39 318h150M54 333h118M69 348h94"/>
-    <path d="M156 318l44 26M160 300l72 43M248 34l48 29M262 16l78 45"/>
-    <path d="M26 112l44 28M25 132l46 28M350 262l44 28M350 282l46 28"/>
-    <path d="M198 252l144 84M197 272l120 70M212 294l94 55"/>
-    <path d="M104 114l61 36M110 132l74 43M118 152l62 36"/>
-    <path d="M22 184h142M34 198h106M50 212h118"/>
+  <g fill="#244f30" stroke="#3a2114" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".74">
+    <path d="M82 314V144c0-23 33-23 33 0v52c0 10 15 10 15 0v-30c0-22 31-22 31 0v148z"/>
+    <path d="M82 208c-29 0-45 18-45 50v38h45z"/>
+    <path d="M161 228c33 0 51 20 51 56v30h-51z"/>
+    <path d="M95 154v151M146 174v132M55 259v41M184 284v23" stroke="#9bbd45" stroke-width="5"/>
   </g>
 
-  <g fill="none" stroke="#5f3f26" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" opacity=".30">
-    <path d="M330 350c-16 13-42 13-58 0"/>
-    <path d="M272 350c5-20 18-32 29-33 12 1 24 13 29 33"/>
-    <path d="M287 316c-5-15 2-30 14-36 12 6 19 21 14 36"/>
-    <path d="M82 362c-11-7-17-17-17-29 0-16 13-29 29-29 18 0 32 15 30 33"/>
-    <path d="M61 333h66M72 316h44"/>
-    <path d="M346 62c17 9 27 26 27 45M334 78c12 7 19 19 19 32M318 94c7 4 12 12 12 20"/>
-    <path d="M184 30c-12 18-16 38-12 60M170 38c-9 15-12 31-9 49M158 50c-6 11-8 22-6 34"/>
+  <g fill="#6f351f" stroke="#2e1a10" stroke-width="7" stroke-linejoin="round" opacity=".70">
+    <path d="M270 230c36-35 106-35 142 0 16 15 2 34-28 27-40-10-82-10-122 0-30 7-46-12-28-27z"/>
+    <path d="M244 259c56 33 138 33 194 0v26c-56 27-138 27-194 0z"/>
+    <path d="M286 239l16 43M378 239l-16 43" stroke="#e4a548" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g opacity=".66">
+    <path d="M26 390c41-48 91-48 132 0 42-50 94-50 136 0 43-49 94-49 137 0v45H26z" fill="#8f4426"/>
+    <path d="M30 389c38-17 78-17 119 0M165 389c43-18 83-18 121 0M307 389c38-18 78-18 121 0" fill="none" stroke="#2e1a10" stroke-width="7" stroke-linecap="round"/>
+    <path d="M57 417h78M185 417h90M320 417h72" stroke="#d58a35" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#2e1a10" opacity=".62">
+    <path d="M48 55h124v12H48zM48 82h96v10H48zM48 106h136v12H48z"/>
+    <path d="M255 48h82v11h-82zM248 72h116v10H248zM270 96h76v11h-76z"/>
+    <path d="M42 344h130v11H42zM58 368h96v10H58z"/>
+    <path d="M282 332h134v11H282zM306 356h86v10H306z"/>
+  </g>
+
+  <g fill="none" stroke="#3a2114" stroke-width="6" stroke-linecap="round" opacity=".55">
+    <path d="M219 58c-18 24-24 53-18 87M196 68c-14 22-18 46-14 74M175 82c-10 17-13 36-9 58"/>
+    <path d="M36 150l72 45M30 174l70 43M30 198l54 33"/>
+    <path d="M384 186l62 38M371 210l72 44M382 238l54 34"/>
+    <path d="M205 319l84 49M224 293l126 73M270 286l100 58"/>
+    <path d="M116 36l25 20 27-20M426 306l-30 18-30-18M233 421l27 20 27-20"/>
   </g>
 </svg>
