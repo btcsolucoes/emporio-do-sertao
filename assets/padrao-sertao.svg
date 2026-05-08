@@ -1,14 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
-  <rect width="360" height="360" fill="none"/>
-  <g fill="none" stroke="#8f6138" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" opacity=".36">
-    <path d="M54 244V112c0-22 31-22 31 0v45c0 13 19 13 19 0v-22c0-20 28-20 28 0v109"/>
-    <path d="M35 244h120M55 157c-21 0-34 12-34 35v22M132 177c27-2 40 12 40 37v25"/>
-    <path d="M213 93c23-23 66-23 90 0M191 106c34 22 101 22 135 0M229 96l11 34M287 96l-11 34"/>
-    <path d="M44 304h62M215 304h84M216 246c24-16 58-16 82 0M198 260h118"/>
-    <path d="M45 48l22 16 22-16M231 42h72M280 179l22 13 22-13"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+  <rect width="420" height="420" fill="none"/>
+
+  <!-- Padrao original inspirado em cordel e xilogravura nordestina. -->
+  <g fill="none" stroke="#7f5633" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".38">
+    <path d="M42 54h126M42 70h92M42 86h116M260 49h106M284 65h82M250 81h116"/>
+    <path d="M62 268V122c0-24 33-24 33 0v48c0 13 20 13 20 0v-24c0-21 29-21 29 0v122"/>
+    <path d="M40 268h130M63 170c-23 0-38 13-38 38v25M144 190c30-2 45 14 45 42v27"/>
+    <path d="M236 119c25-25 74-25 100 0M212 134c38 25 112 25 150 0M255 124l12 39M320 124l-12 39"/>
+    <path d="M52 346h88M250 346h102M252 286c28-18 68-18 96 0M230 303h138"/>
+    <path d="M64 28l24 18 24-18M314 196l25 15 25-15M196 371l30 18 30-18"/>
   </g>
-  <g fill="none" stroke="#9f4328" stroke-width="2.5" stroke-linecap="round" opacity=".22">
-    <path d="M196 153h105M196 165h87M196 177h99M38 82h105M38 94h78M38 106h96"/>
-    <path d="M132 305l34 20M137 288l54 32M237 35l38 22M244 20l58 33"/>
+
+  <g fill="none" stroke="#9f4328" stroke-width="2.3" stroke-linecap="round" opacity=".32">
+    <path d="M210 202h144M210 217h116M210 232h136M39 318h150M54 333h118M69 348h94"/>
+    <path d="M156 318l44 26M160 300l72 43M248 34l48 29M262 16l78 45"/>
+    <path d="M26 112l44 28M25 132l46 28M350 262l44 28M350 282l46 28"/>
+  </g>
+
+  <g fill="none" stroke="#5f3f26" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" opacity=".30">
+    <path d="M330 350c-16 13-42 13-58 0"/>
+    <path d="M272 350c5-20 18-32 29-33 12 1 24 13 29 33"/>
+    <path d="M287 316c-5-15 2-30 14-36 12 6 19 21 14 36"/>
+    <path d="M82 362c-11-7-17-17-17-29 0-16 13-29 29-29 18 0 32 15 30 33"/>
+    <path d="M61 333h66M72 316h44"/>
   </g>
 </svg>
