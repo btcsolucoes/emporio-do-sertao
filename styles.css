@@ -25,8 +25,8 @@ body {
   color: var(--texto);
   font-family: var(--text);
   background:
-    linear-gradient(rgba(234, 216, 177, .82), rgba(234, 216, 177, .82)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%239b754b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' opacity='.22'%3E%3Cpath d='M48 172V80c0-15 22-15 22 0v31c0 9 13 9 13 0V96c0-14 19-14 19 0v76'/%3E%3Cpath d='M35 172h81M48 110c-14 0-23 8-23 23v14M102 124c18-1 27 8 27 25v15'/%3E%3Cpath d='M143 75c18-14 51-14 70 0M130 83c25 15 73 15 96 0M158 77l7 23M196 77l-7 23'/%3E%3Cpath d='M44 220h48M154 214h62M153 174c16-10 38-10 54 0M141 183h78'/%3E%3Cpath d='M30 35l17 13 17-13M151 32h49M210 127l16 10 16-10'/%3E%3C/g%3E%3C/svg%3E") center top / 260px 260px repeat,
+    linear-gradient(rgba(234, 216, 177, .58), rgba(234, 216, 177, .58)),
+    url("assets/padrao-sertao.svg") center top / 340px 340px repeat,
     radial-gradient(circle at 16% 6%, rgba(217, 154, 34, .34), transparent 28%),
     radial-gradient(circle at 86% 18%, rgba(6, 63, 43, .16), transparent 30%),
     linear-gradient(145deg, #f4e4bf, #d7bb7e 58%, #b98749);
@@ -39,10 +39,23 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px) 0 0 / 22px 22px,
-    linear-gradient(180deg, rgba(255, 250, 234, .62), transparent 38%, rgba(79, 44, 20, .08));
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(180deg, rgba(255, 250, 234, .36), transparent 34%, rgba(79, 44, 20, .06));
+  mix-blend-mode: multiply;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    url("assets/padrao-sertao.svg") -90px 120px / 520px 520px repeat;
+  opacity: .18;
   mix-blend-mode: multiply;
 }
 
@@ -285,7 +298,18 @@ h1, h2, h3, p { margin: 0; }
   box-shadow: 0 18px 40px rgba(88, 53, 24, .12);
 }
 
+.tab-panels::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("assets/padrao-sertao.svg") 18px 20px / 300px 300px repeat;
+  opacity: .12;
+  mix-blend-mode: multiply;
+}
+
 .panel {
+  position: relative;
   min-height: 460px;
   animation: reveal .18s ease-out;
 }
@@ -302,7 +326,8 @@ h1, h2, h3, p { margin: 0; }
   padding: 26px 22px 22px;
   color: var(--texto);
   background:
-    linear-gradient(135deg, rgba(255, 248, 226, .96), rgba(239, 224, 191, .96)),
+    linear-gradient(135deg, rgba(255, 248, 226, .88), rgba(239, 224, 191, .9)),
+    url("assets/padrao-sertao.svg") right -50px top -74px / 360px 360px repeat,
     var(--papel);
   border-bottom: 1px solid var(--linha);
 }
