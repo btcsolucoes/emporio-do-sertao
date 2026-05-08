@@ -13,53 +13,81 @@
   <main class="menu-shell">
     <header class="cover">
       <div class="cover-brand">
-        <span class="menu-word">M E N U</span>
-        <span class="kicker">Cardápio Digital</span>
         <img src="assets/logo-emporio-clean-4k.png" alt="Empório do Sertão" class="logo" width="4096" height="2731" fetchpriority="high">
         <h1 class="sr-only">Empório do Sertão</h1>
-        <p>Comida brasileira, café regional, sanduíches, sucos e pratos do sertão no Recife Antigo.</p>
-        <div class="sertanejo-tags" aria-label="Sabores da casa">
-          <span>Carne de sol</span>
-          <span>Cuscuz</span>
-          <span>Macaxeira</span>
-          <span>Sucos regionais</span>
-        </div>
-      </div>
-
-      <div class="cover-balloons" aria-label="Informações do restaurante">
-        <div class="balloon clay">
-          <span>Endereço</span>
-          <strong>Rua da Guia, 171</strong>
-          <strong>Recife - PE</strong>
-        </div>
-        <div class="balloon leaf">
-          <span>Especialidade</span>
-          <strong>Brasileira e regional</strong>
-          <strong>Pedido mínimo no iFood: R$ 10,00</strong>
-        </div>
+        <p>Comida brasileira e regional no Recife Antigo, com sabores de cuscuz, macaxeira, carne de sol, sucos e almoço de sertão.</p>
       </div>
     </header>
 
     <nav class="tab-dock" id="cardapio" role="tablist" aria-label="Categorias do cardápio">
-      <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-cafe-manha" id="tab-cafe-manha"><span>01</span>Café / Jantar</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-almoco" id="tab-almoco"><span>02</span>Almoço</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-petiscos" id="tab-petiscos"><span>03</span>Petiscos</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sanduiches" id="tab-sanduiches"><span>04</span>Sanduíches</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sucos" id="tab-sucos"><span>05</span>Sucos</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-bebidas" id="tab-bebidas"><span>06</span>Bebidas</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-alcoolicas" id="tab-alcoolicas"><span>07</span>Alcoólicas</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sobremesas" id="tab-sobremesas"><span>08</span>Sobremesas</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-porcoes" id="tab-porcoes"><span>09</span>Porções</button>
-      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-info" id="tab-info"><span>10</span>Info</button>
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-self-service" id="tab-self-service"><span>01</span>Self-Service</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-prato-dia" id="tab-prato-dia"><span>02</span>Prato do dia</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-cafe-manha" id="tab-cafe-manha"><span>03</span>Café / Jantar</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-petiscos" id="tab-petiscos"><span>04</span>Petiscos</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sanduiches" id="tab-sanduiches"><span>05</span>Sanduíches</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sucos" id="tab-sucos"><span>06</span>Sucos</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-bebidas" id="tab-bebidas"><span>07</span>Bebidas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-alcoolicas" id="tab-alcoolicas"><span>08</span>Alcoólicas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sobremesas" id="tab-sobremesas"><span>09</span>Sobremesas</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-porcoes" id="tab-porcoes"><span>10</span>Porções</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-info" id="tab-info"><span>11</span>Info</button>
     </nav>
 
     <section class="menu-status">
-      <span>Fundo rústico com estampa sutil do sertão</span>
       <span>Valores em R$</span>
     </section>
 
     <div class="tab-panels">
-      <section class="panel is-active" id="panel-cafe-manha" role="tabpanel" aria-labelledby="tab-cafe-manha">
+      <section class="panel is-active" id="panel-self-service" role="tabpanel" aria-labelledby="tab-self-service">
+        <div class="section-hero">
+          <div>
+            <span>Buffet regional</span>
+            <h2>Self-Service</h2>
+            <p>Monte o prato navegando pelas ilhas do buffet: carnes, bases, guarnições, saladas e acompanhamentos.</p>
+          </div>
+          <img src="assets/illustracao-buffet.png" alt="Ilustração regional de buffet">
+        </div>
+
+        <div class="buffet-tabs" aria-label="Itens do buffet">
+          <button class="buffet-tab is-active" type="button" data-buffet-target="buffet-carnes">Carnes</button>
+          <button class="buffet-tab" type="button" data-buffet-target="buffet-bases">Bases</button>
+          <button class="buffet-tab" type="button" data-buffet-target="buffet-guarnicoes">Guarnições</button>
+          <button class="buffet-tab" type="button" data-buffet-target="buffet-saladas">Saladas</button>
+          <button class="buffet-tab" type="button" data-buffet-target="buffet-acompanhamentos">Acompanhamentos</button>
+        </div>
+
+        <div class="buffet-panels">
+          <section class="buffet-panel is-active" id="buffet-carnes">
+            <article><span>Carnes</span><p>Carne de sol acebolada</p><p>Carne de panela</p><p>Charque desfiada</p><p>Frango desfiado</p><p>Bode guisado</p></article>
+          </section>
+          <section class="buffet-panel" id="buffet-bases" hidden>
+            <article><span>Bases</span><p>Cuscuz nordestino</p><p>Macaxeira cozida</p><p>Inhame</p><p>Batata doce</p><p>Arroz branco</p></article>
+          </section>
+          <section class="buffet-panel" id="buffet-guarnicoes" hidden>
+            <article><span>Guarnições</span><p>Feijão</p><p>Farofa</p><p>Macarrão</p><p>Purê</p><p>Vinagrete</p></article>
+          </section>
+          <section class="buffet-panel" id="buffet-saladas" hidden>
+            <article><span>Saladas</span><p>Salada do Empório</p><p>Salada sertaneja</p><p>Porção de salada</p><p>Frutas frescas</p><p>Legumes do dia</p></article>
+          </section>
+          <section class="buffet-panel" id="buffet-acompanhamentos" hidden>
+            <article><span>Acompanhamentos</span><p>Ovo frito / cozido</p><p>Porção de queijo</p><p>Porção de torrada</p><p>Batata palha</p><p>Bacon</p></article>
+          </section>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-prato-dia" role="tabpanel" aria-labelledby="tab-prato-dia" hidden>
+        <div class="section-head"><span>Almoço da casa</span><h2>Prato do dia</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/illustracao-prato.png" alt=""><div><span>Da casa</span><h3>Carne de sol do Empório</h3><p>Prato regional com carne de sol, em versão individual ou para dividir.</p></div><strong>35,90</strong></article>
+          <article class="menu-item"><div><span>Nata</span><h3>Carne de sol na nata</h3><p>Carne de sol com molho de nata.</p></div><strong>35,90</strong></article>
+          <article class="menu-item"><div><span>Bode</span><h3>Bode grelhado</h3><p>Carne de bode preparada na grelha.</p></div><strong>36,90</strong></article>
+          <article class="menu-item"><div><span>Peixe</span><h3>Peixe ao molho de camarão</h3><p>Peixe servido com molho de camarão.</p></div><strong>48,90</strong></article>
+          <article class="menu-item"><div><span>Grelhado</span><h3>Filé mignon grelhado</h3><p>Filé mignon preparado na chapa.</p></div><strong>49,90</strong></article>
+          <article class="menu-item"><div><span>Salada</span><h3>Salada sertaneja</h3><p>Opção leve com assinatura regional.</p></div><strong>31,90</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-cafe-manha" role="tabpanel" aria-labelledby="tab-cafe-manha" hidden>
         <div class="section-hero">
           <div>
             <span>Raízes da casa</span>
@@ -78,21 +106,6 @@
           <article class="menu-item"><div><span>Batata doce</span><h3>Batata doce c/ frango desfiado</h3><p>Batata doce acompanhada de frango desfiado.</p></div><strong>20,00</strong></article>
           <article class="menu-item"><div><span>Tapioca</span><h3>Tapioca de carne de sol c/ queijo</h3><p>Tapioca recheada com carne de sol e queijo.</p></div><strong>16,00</strong></article>
           <article class="menu-item"><div><span>Caldo</span><h3>Caldo de kenga</h3><p>Caldo regional para abrir o apetite.</p></div><strong>11,00</strong></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-almoco" role="tabpanel" aria-labelledby="tab-almoco" hidden>
-        <div class="section-head"><span>Pratos principais</span><h2>Almoço</h2></div>
-        <div class="menu-list photo-list">
-          <article class="menu-item with-photo"><img src="assets/illustracao-prato.png" alt=""><div><span>Da casa</span><h3>Carne de sol do Empório</h3><p>Prato regional com carne de sol, em versão individual ou para dividir.</p></div><strong>35,90</strong></article>
-          <article class="menu-item"><div><span>Para 2</span><h3>Carne de sol do Empório p/2</h3><p>Versão para duas pessoas.</p></div><strong>67,90</strong></article>
-          <article class="menu-item"><div><span>Nata</span><h3>Carne de sol na nata</h3><p>Carne de sol com molho de nata.</p></div><strong>35,90</strong></article>
-          <article class="menu-item"><div><span>Charque</span><h3>Charque do chef</h3><p>Prato de charque da casa.</p></div><strong>42,90</strong></article>
-          <article class="menu-item"><div><span>Bode</span><h3>Bode grelhado</h3><p>Carne de bode preparada na grelha.</p></div><strong>36,90</strong></article>
-          <article class="menu-item"><div><span>Cordeiro</span><h3>Cordeiro ao molho</h3><p>Cordeiro servido com molho da casa.</p></div><strong>35,90</strong></article>
-          <article class="menu-item"><div><span>Peixe</span><h3>Peixe ao molho de camarão</h3><p>Peixe servido com molho de camarão.</p></div><strong>48,90</strong></article>
-          <article class="menu-item"><div><span>Grelhado</span><h3>Filé mignon grelhado</h3><p>Filé mignon preparado na chapa.</p></div><strong>49,90</strong></article>
-          <article class="menu-item"><div><span>Salada</span><h3>Salada sertaneja</h3><p>Opção leve com assinatura regional.</p></div><strong>31,90</strong></article>
         </div>
       </section>
 

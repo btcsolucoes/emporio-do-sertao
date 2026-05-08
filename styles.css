@@ -25,8 +25,8 @@ body {
   color: var(--texto);
   font-family: var(--text);
   background:
-    linear-gradient(rgba(234, 216, 177, .46), rgba(234, 216, 177, .46)),
-    url("assets/padrao-sertao.svg") center top / 360px 360px repeat,
+    linear-gradient(rgba(234, 216, 177, .36), rgba(234, 216, 177, .36)),
+    url("assets/padrao-sertao.svg") center top / 330px 330px repeat,
     radial-gradient(circle at 16% 6%, rgba(217, 154, 34, .34), transparent 28%),
     radial-gradient(circle at 86% 18%, rgba(6, 63, 43, .16), transparent 30%),
     linear-gradient(145deg, #f4e4bf, #d7bb7e 58%, #b98749);
@@ -54,8 +54,8 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    url("assets/padrao-sertao.svg") -90px 120px / 520px 520px repeat;
-  opacity: .24;
+    url("assets/padrao-sertao.svg") -90px 120px / 460px 460px repeat;
+  opacity: .34;
   mix-blend-mode: multiply;
 }
 
@@ -92,10 +92,10 @@ h1, h2, h3, p { margin: 0; }
   align-items: center;
   overflow: hidden;
   isolation: isolate;
-  padding: 48px max(20px, calc((100vw - 1080px) / 2 + 24px)) 28px;
+  padding: 34px max(20px, calc((100vw - 1080px) / 2 + 24px)) 32px;
   text-align: center;
   background:
-    linear-gradient(180deg, rgba(20, 13, 7, .08), rgba(28, 22, 11, .08) 38%, rgba(34, 18, 9, .58)),
+    linear-gradient(180deg, rgba(20, 13, 7, .04), rgba(28, 22, 11, .04) 42%, rgba(34, 18, 9, .46)),
     url("assets/hero-sertao-illustration.png") center / cover no-repeat;
 }
 
@@ -124,7 +124,7 @@ h1, h2, h3, p { margin: 0; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 980px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
@@ -154,17 +154,17 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .logo {
-  width: min(86vw, 760px);
-  max-height: 50svh;
+  width: min(96vw, 980px);
+  max-height: 72svh;
   height: auto;
-  margin: 16px auto 6px;
+  margin: 0 auto 6px;
   object-fit: contain;
   filter: drop-shadow(0 28px 32px rgba(15, 7, 3, .36));
 }
 
 .cover-brand p {
-  max-width: 650px;
-  margin-top: 12px;
+  max-width: 620px;
+  margin-top: 6px;
   color: rgba(255, 248, 226, .96);
   font-size: clamp(1rem, 2.3vw, 1.18rem);
   font-weight: 700;
@@ -236,7 +236,7 @@ h1, h2, h3, p { margin: 0; }
   top: 0;
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(10, minmax(116px, 1fr));
+  grid-template-columns: repeat(11, minmax(116px, 1fr));
   gap: 6px;
   width: 100vw;
   margin: 0 calc(50% - 50vw);
@@ -281,7 +281,7 @@ h1, h2, h3, p { margin: 0; }
 
 .menu-status {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
   padding: 14px 0 12px;
   color: var(--barro);
@@ -303,8 +303,8 @@ h1, h2, h3, p { margin: 0; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: url("assets/padrao-sertao.svg") 18px 20px / 300px 300px repeat;
-  opacity: .16;
+  background: url("assets/padrao-sertao.svg") 18px 20px / 260px 260px repeat;
+  opacity: .24;
   mix-blend-mode: multiply;
 }
 
@@ -327,7 +327,7 @@ h1, h2, h3, p { margin: 0; }
   color: var(--texto);
   background:
     linear-gradient(135deg, rgba(255, 248, 226, .88), rgba(239, 224, 191, .9)),
-    url("assets/padrao-sertao.svg") right -50px top -74px / 360px 360px repeat,
+    url("assets/padrao-sertao.svg") right -50px top -74px / 300px 300px repeat,
     var(--papel);
   border-bottom: 1px solid var(--linha);
 }
@@ -382,6 +382,60 @@ h1, h2, h3, p { margin: 0; }
   border: 4px solid rgba(255, 248, 226, .88);
   border-radius: 4px 46px 4px 46px;
   box-shadow: 0 14px 26px rgba(74, 42, 18, .18);
+}
+
+.buffet-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 63, 43, .96), rgba(142, 23, 15, .94)),
+    var(--verde);
+  border-bottom: 1px solid rgba(255, 248, 226, .22);
+}
+
+.buffet-tab {
+  min-height: 56px;
+  border: 0;
+  border-right: 1px solid rgba(255, 248, 226, .18);
+  color: rgba(255, 248, 226, .9);
+  background: transparent;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.buffet-tab.is-active {
+  color: var(--verde);
+  background: var(--papel-claro);
+}
+
+.buffet-panel article {
+  min-height: 280px;
+  padding: 26px 24px;
+  background:
+    linear-gradient(rgba(255, 248, 226, .86), rgba(255, 248, 226, .86)),
+    url("assets/padrao-sertao.svg") center / 320px 320px repeat,
+    var(--papel-claro);
+}
+
+.buffet-panel span {
+  display: block;
+  color: var(--vermelho-2);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.buffet-panel p {
+  padding: 13px 0;
+  border-bottom: 1px dashed rgba(129, 80, 50, .28);
+  color: var(--verde);
+  font-size: 1.02rem;
+  font-weight: 800;
 }
 
 .menu-list {
@@ -546,8 +600,8 @@ h1, h2, h3, p { margin: 0; }
   }
 
   .logo {
-    width: min(90vw, 620px);
-    max-height: 48svh;
+    width: min(94vw, 780px);
+    max-height: 66svh;
   }
 
   .cover-balloons,
@@ -559,7 +613,7 @@ h1, h2, h3, p { margin: 0; }
   }
 
   .tab-dock {
-    grid-template-columns: repeat(10, minmax(104px, 1fr));
+    grid-template-columns: repeat(11, minmax(104px, 1fr));
     padding-inline: 12px;
   }
 
@@ -577,7 +631,7 @@ h1, h2, h3, p { margin: 0; }
 
   .cover {
     min-height: 100svh;
-    padding: 44px 16px 18px;
+    padding: 34px 16px 18px;
   }
 
   .cover::before {
@@ -594,12 +648,12 @@ h1, h2, h3, p { margin: 0; }
   }
 
   .logo {
-    width: min(74vw, 360px);
-    max-height: 40svh;
+    width: min(96vw, 430px);
+    max-height: 58svh;
   }
 
   .cover-brand p {
-    max-width: 340px;
+    max-width: 350px;
     font-size: .98rem;
     line-height: 1.34;
   }
@@ -652,6 +706,26 @@ h1, h2, h3, p { margin: 0; }
     gap: 5px;
     padding: 8px 10px;
     scroll-snap-type: x proximity;
+  }
+
+  .buffet-tabs {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(118px, 1fr);
+    grid-template-columns: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .buffet-tabs::-webkit-scrollbar { display: none; }
+
+  .buffet-tab {
+    min-height: 50px;
+    font-size: .68rem;
+  }
+
+  .buffet-panel article {
+    min-height: 0;
+    padding: 20px 14px;
   }
 
   .tab {

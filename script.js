@@ -1,5 +1,7 @@
-const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+const tabs = Array.from(document.querySelectorAll('.tab-dock [role="tab"]'));
+const panels = Array.from(document.querySelectorAll('.tab-panels > [role="tabpanel"]'));
+const buffetTabs = Array.from(document.querySelectorAll('.buffet-tab'));
+const buffetPanels = Array.from(document.querySelectorAll('.buffet-panel'));
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.querySelectorAll('.menu-item img, .section-hero img').forEach((img) => {
@@ -29,4 +31,22 @@ function activateTab(tab) {
 
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => activateTab(tab));
+});
+
+function activateBuffetTab(tab) {
+  const target = tab.dataset.buffetTarget;
+
+  buffetTabs.forEach((item) => {
+    item.classList.toggle('is-active', item === tab);
+  });
+
+  buffetPanels.forEach((panel) => {
+    const isTarget = panel.id === target;
+    panel.classList.toggle('is-active', isTarget);
+    panel.hidden = !isTarget;
+  });
+}
+
+buffetTabs.forEach((tab) => {
+  tab.addEventListener('click', () => activateBuffetTab(tab));
 });
