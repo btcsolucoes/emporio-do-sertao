@@ -272,7 +272,7 @@ h1, h2, h3, p { margin: 0; }
   overflow: hidden;
   isolation: isolate;
   min-height: 60px;
-  padding: 8px 10px;
+  padding: 8px 44px 8px 10px;
   border: 1px solid rgba(255, 248, 226, .18);
   border-radius: 0;
   color: rgba(255, 248, 226, .9);
@@ -285,13 +285,15 @@ h1, h2, h3, p { margin: 0; }
 .tab::after {
   content: "";
   position: absolute;
-  right: 6px;
-  bottom: 4px;
+  top: 50%;
+  right: 8px;
+  bottom: auto;
   z-index: 0;
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
   background: center / contain no-repeat;
   opacity: 1;
+  transform: translateY(-50%);
 }
 
 .tab:nth-child(5n+1)::after { background-image: url("assets/xilo-cacto.png"); }
@@ -449,6 +451,7 @@ h1, h2, h3, p { margin: 0; }
   overflow: hidden;
   isolation: isolate;
   min-height: 56px;
+  padding: 0 46px 0 12px;
   border: 0;
   border-right: 1px solid rgba(255, 248, 226, .18);
   color: rgba(255, 248, 226, .9);
@@ -457,17 +460,23 @@ h1, h2, h3, p { margin: 0; }
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
+  text-align: left;
   cursor: pointer;
 }
 
 .buffet-tab::before {
   content: "";
   position: absolute;
-  inset: 8px auto 8px 10px;
+  top: 50%;
+  right: 10px;
+  bottom: auto;
+  left: auto;
   z-index: 0;
-  width: 38px;
+  width: 28px;
+  height: 28px;
   background: center / contain no-repeat;
   opacity: 1;
+  transform: translateY(-50%);
 }
 
 .buffet-tab:nth-child(1)::before { background-image: url("assets/xilo-cacto.png"); }
@@ -790,7 +799,14 @@ h1, h2, h3, p { margin: 0; }
 
   .buffet-tab {
     min-height: 50px;
+    padding: 0 38px 0 10px;
     font-size: .68rem;
+  }
+
+  .buffet-tab::before {
+    right: 8px;
+    width: 22px;
+    height: 22px;
   }
 
   .buffet-panel article {
@@ -800,9 +816,15 @@ h1, h2, h3, p { margin: 0; }
 
   .tab {
     min-height: 50px;
-    padding: 7px 8px;
+    padding: 7px 32px 7px 8px;
     font-size: .7rem;
     scroll-snap-align: start;
+  }
+
+  .tab::after {
+    right: 6px;
+    width: 20px;
+    height: 20px;
   }
 
   .tab span {
