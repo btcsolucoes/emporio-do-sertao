@@ -758,8 +758,9 @@ h1, h2, h3, p { margin: 0; }
   .menu-shell { padding-inline: 10px; }
 
   .cover {
-    min-height: 100svh;
-    padding: 34px 16px 18px;
+    height: 100svh;
+    min-height: 100dvh;
+    padding: max(28px, env(safe-area-inset-top)) 16px max(18px, env(safe-area-inset-bottom));
   }
 
   .cover::before {
@@ -776,8 +777,8 @@ h1, h2, h3, p { margin: 0; }
   }
 
   .logo {
-    width: min(96vw, 430px);
-    max-height: 58svh;
+    width: min(96vw, 460px);
+    max-height: 64dvh;
   }
 
   .cover-brand p {
@@ -923,16 +924,14 @@ h1, h2, h3, p { margin: 0; }
   }
 
   .menu-item.with-photo {
-    grid-template-columns: 82px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      "photo content"
-      "price price";
+      "content"
+      "price";
   }
 
   .menu-item.with-photo img {
-    grid-area: photo;
-    width: 82px;
-    height: 102px;
+    display: none;
   }
 
   .menu-item.with-photo div {
@@ -981,7 +980,8 @@ h1, h2, h3, p { margin: 0; }
 
 @media (max-width: 380px) {
   .logo {
-    width: 72vw;
+    width: min(92vw, 360px);
+    max-height: 60dvh;
   }
 
   .tab-dock {
@@ -990,14 +990,6 @@ h1, h2, h3, p { margin: 0; }
 
   .tab {
     font-size: .65rem;
-  }
-
-  .menu-item.with-photo {
-    grid-template-columns: 74px minmax(0, 1fr);
-  }
-
-  .menu-item.with-photo img {
-    width: 74px;
   }
 
   .menu-item strong,
