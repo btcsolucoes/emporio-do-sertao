@@ -57,29 +57,29 @@ body::before {
     url("assets/xilo-cacto-mulher.png"),
     url("assets/xilo-passaro.png");
   -webkit-mask-position:
-    left 3vw top 160px,
-    right 8vw top 100px,
-    left 9vw top 450px,
-    right 4vw top 410px,
-    right 14vw bottom 45px;
+    left 24px top 170px,
+    right 38px top 170px,
+    left 42px bottom 150px,
+    right 30px bottom 245px,
+    left 50vw bottom 50px;
   mask-position:
-    left 3vw top 160px,
-    right 8vw top 100px,
-    left 9vw top 450px,
-    right 4vw top 410px,
-    right 14vw bottom 45px;
+    left 24px top 170px,
+    right 38px top 170px,
+    left 42px bottom 150px,
+    right 30px bottom 245px,
+    left 50vw bottom 50px;
   -webkit-mask-size:
-    120px auto,
-    130px auto,
-    105px auto,
-    140px auto,
-    105px auto;
+    112px auto,
+    122px auto,
+    96px auto,
+    126px auto,
+    92px auto;
   mask-size:
-    120px auto,
-    130px auto,
-    105px auto,
-    140px auto,
-    105px auto;
+    112px auto,
+    122px auto,
+    96px auto,
+    126px auto,
+    92px auto;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
@@ -371,49 +371,7 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .tab-panels::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-color: rgba(133, 65, 46, .15);
-  -webkit-mask-image:
-    url("assets/xilo-cacto.png"),
-    url("assets/xilo-chapeu.png"),
-    url("assets/xilo-sol.png"),
-    url("assets/xilo-passaro.png"),
-    url("assets/xilo-cacto-mulher.png");
-  mask-image:
-    url("assets/xilo-cacto.png"),
-    url("assets/xilo-chapeu.png"),
-    url("assets/xilo-sol.png"),
-    url("assets/xilo-passaro.png"),
-    url("assets/xilo-cacto-mulher.png");
-  -webkit-mask-position:
-    left 34px top 124px,
-    right 44px top 28px,
-    center top 238px,
-    right 118px bottom 54px,
-    left 120px bottom 34px;
-  mask-position:
-    left 34px top 124px,
-    right 44px top 28px,
-    center top 238px,
-    right 118px bottom 54px,
-    left 120px bottom 34px;
-  -webkit-mask-size:
-    92px auto,
-    112px auto,
-    96px auto,
-    96px auto,
-    108px auto;
-  mask-size:
-    92px auto,
-    112px auto,
-    96px auto,
-    96px auto,
-    108px auto;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  content: none;
 }
 
 .tab-panels::after {
