@@ -269,6 +269,9 @@ h1, h2, h3, p { margin: 0; }
 .tab-dock::-webkit-scrollbar { display: none; }
 
 .tab {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   min-height: 60px;
   padding: 8px 10px;
   border: 1px solid rgba(255, 248, 226, .18);
@@ -279,6 +282,26 @@ h1, h2, h3, p { margin: 0; }
   font-weight: 800;
   cursor: pointer;
 }
+
+.tab::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+  z-index: 0;
+  width: 42px;
+  height: 42px;
+  background: center / contain no-repeat;
+  opacity: .20;
+  mix-blend-mode: multiply;
+}
+
+.tab:nth-child(5n+1)::after { background-image: url("assets/xilo-cacto.png"); }
+.tab:nth-child(5n+2)::after { background-image: url("assets/xilo-sol.png"); }
+.tab:nth-child(5n+3)::after { background-image: url("assets/xilo-chapeu.png"); }
+.tab:nth-child(5n+4)::after { background-image: url("assets/xilo-passaro.png"); }
+.tab:nth-child(5n+5)::after { background-image: url("assets/xilo-cacto-mulher.png"); }
+.tab.is-active::after { opacity: .32; }
 
 .tab span {
   display: block;
@@ -417,6 +440,9 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .buffet-tab {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   min-height: 56px;
   border: 0;
   border-right: 1px solid rgba(255, 248, 226, .18);
@@ -428,6 +454,24 @@ h1, h2, h3, p { margin: 0; }
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.buffet-tab::before {
+  content: "";
+  position: absolute;
+  inset: 8px auto 8px 10px;
+  z-index: 0;
+  width: 46px;
+  background: center / contain no-repeat;
+  opacity: .18;
+  mix-blend-mode: multiply;
+}
+
+.buffet-tab:nth-child(1)::before { background-image: url("assets/xilo-cacto.png"); }
+.buffet-tab:nth-child(2)::before { background-image: url("assets/xilo-sol.png"); }
+.buffet-tab:nth-child(3)::before { background-image: url("assets/xilo-chapeu.png"); }
+.buffet-tab:nth-child(4)::before { background-image: url("assets/xilo-passaro.png"); }
+.buffet-tab:nth-child(5)::before { background-image: url("assets/xilo-cacto-mulher.png"); }
+.buffet-tab.is-active::before { opacity: .30; }
 
 .buffet-tab.is-active {
   color: var(--verde);
