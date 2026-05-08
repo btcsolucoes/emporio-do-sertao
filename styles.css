@@ -269,10 +269,12 @@ h1, h2, h3, p { margin: 0; }
 
 .tab {
   position: relative;
+  display: grid;
+  align-content: center;
   overflow: hidden;
   isolation: isolate;
   min-height: 60px;
-  padding: 8px 44px 8px 10px;
+  padding: 8px 38px 8px 10px;
   border: 1px solid rgba(255, 248, 226, .18);
   border-radius: 0;
   color: rgba(255, 248, 226, .9);
@@ -289,8 +291,8 @@ h1, h2, h3, p { margin: 0; }
   right: 8px;
   bottom: auto;
   z-index: 0;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   background: center / contain no-repeat;
   opacity: 1;
   transform: translateY(-50%);
@@ -303,7 +305,9 @@ h1, h2, h3, p { margin: 0; }
 .tab:nth-child(5n+5)::after { background-image: url("assets/xilo-cacto-mulher.png"); }
 .tab.is-active::after { opacity: 1; }
 
-.tab span {
+.tab-number {
+  position: relative;
+  z-index: 1;
   display: block;
   margin-bottom: 5px;
   color: rgba(255, 207, 88, .75);
@@ -312,13 +316,22 @@ h1, h2, h3, p { margin: 0; }
   line-height: .85;
 }
 
+.tab-label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 100%;
+  line-height: 1.14;
+  overflow-wrap: anywhere;
+}
+
 .tab.is-active {
   color: var(--verde);
   background: var(--papel-claro);
   border-color: var(--papel-claro);
 }
 
-.tab.is-active span { color: var(--vermelho); }
+.tab.is-active .tab-number { color: var(--vermelho); }
 
 .menu-status {
   display: flex;
@@ -360,9 +373,66 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .panel {
+  z-index: 1;
   position: relative;
   min-height: 460px;
   animation: reveal .18s ease-out;
+}
+
+#panel-info {
+  overflow: hidden;
+}
+
+#panel-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: rgba(133, 65, 46, .20);
+  -webkit-mask-image:
+    url("assets/xilo-sol.png"),
+    url("assets/xilo-cacto.png"),
+    url("assets/xilo-chapeu.png"),
+    url("assets/xilo-passaro.png"),
+    url("assets/xilo-cacto-mulher.png");
+  mask-image:
+    url("assets/xilo-sol.png"),
+    url("assets/xilo-cacto.png"),
+    url("assets/xilo-chapeu.png"),
+    url("assets/xilo-passaro.png"),
+    url("assets/xilo-cacto-mulher.png");
+  -webkit-mask-position:
+    right 18px top 20px,
+    left 34px top 74px,
+    center top 66px,
+    right 36px bottom 18px,
+    left 46px bottom 28px;
+  mask-position:
+    right 18px top 20px,
+    left 34px top 74px,
+    center top 66px,
+    right 36px bottom 18px,
+    left 46px bottom 28px;
+  -webkit-mask-size:
+    160px auto,
+    118px auto,
+    150px auto,
+    130px auto,
+    150px auto;
+  mask-size:
+    160px auto,
+    118px auto,
+    150px auto,
+    130px auto,
+    150px auto;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+#panel-info > * {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes reveal {
@@ -447,11 +517,13 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .buffet-tab {
+  display: flex;
+  align-items: center;
   position: relative;
   overflow: hidden;
   isolation: isolate;
   min-height: 56px;
-  padding: 0 46px 0 12px;
+  padding: 0 42px 0 12px;
   border: 0;
   border-right: 1px solid rgba(255, 248, 226, .18);
   color: rgba(255, 248, 226, .9);
@@ -472,8 +544,8 @@ h1, h2, h3, p { margin: 0; }
   bottom: auto;
   left: auto;
   z-index: 0;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background: center / contain no-repeat;
   opacity: 1;
   transform: translateY(-50%);
@@ -485,6 +557,15 @@ h1, h2, h3, p { margin: 0; }
 .buffet-tab:nth-child(4)::before { background-image: url("assets/xilo-passaro.png"); }
 .buffet-tab:nth-child(5)::before { background-image: url("assets/xilo-cacto-mulher.png"); }
 .buffet-tab.is-active::before { opacity: 1; }
+
+.buffet-tab span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 100%;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
 
 .buffet-tab.is-active {
   color: var(--verde);
@@ -780,7 +861,7 @@ h1, h2, h3, p { margin: 0; }
 
   .tab-dock {
     grid-auto-flow: column;
-    grid-auto-columns: minmax(88px, 98px);
+    grid-auto-columns: minmax(112px, 126px);
     grid-template-columns: none;
     gap: 5px;
     padding: 8px 10px;
@@ -827,7 +908,7 @@ h1, h2, h3, p { margin: 0; }
     height: 20px;
   }
 
-  .tab span {
+  .tab-number {
     font-size: 1rem;
   }
 
@@ -934,7 +1015,7 @@ h1, h2, h3, p { margin: 0; }
   }
 
   .tab-dock {
-    grid-auto-columns: minmax(82px, 90px);
+    grid-auto-columns: minmax(104px, 116px);
   }
 
   .tab {
