@@ -1,16 +1,16 @@
 :root {
-  --verde: #1f4d2e;
-  --verde-2: #356b3c;
-  --terracota: #a94624;
-  --vermelho: #b53d22;
-  --vermelho-2: #722717;
-  --ouro: #d18a2f;
-  --taipa: #c48a50;
-  --areia: #d0a56c;
-  --papel: #e4bd7c;
-  --papel-claro: #f3d59c;
-  --barro: #65351f;
-  --argila: #8f4326;
+  --verde: #486b3c;
+  --verde-2: #6f8b55;
+  --terracota: #bd7351;
+  --vermelho: #b86245;
+  --vermelho-2: #85412e;
+  --ouro: #d9a15d;
+  --taipa: #d1a06b;
+  --areia: #dfbb83;
+  --papel: #e8c891;
+  --papel-claro: #f6dfb0;
+  --barro: #744229;
+  --argila: #a96343;
   --texto: #261407;
   --muted: #684026;
   --linha: rgba(88, 43, 22, .28);
@@ -28,11 +28,11 @@ body {
   color: var(--texto);
   font-family: var(--text);
   background:
-    linear-gradient(rgba(164, 79, 37, .2), rgba(101, 53, 31, .16)),
-    url("assets/padrao-sertao.svg") center top / 380px 380px repeat,
-    radial-gradient(circle at 15% 8%, rgba(209, 138, 47, .44), transparent 30%),
-    radial-gradient(circle at 84% 18%, rgba(31, 77, 46, .34), transparent 32%),
-    linear-gradient(145deg, #d19a59, #b35f34 56%, #6f351f);
+    linear-gradient(rgba(210, 150, 92, .22), rgba(132, 78, 45, .12)),
+    url("assets/padrao-sertao.svg") center top / 420px 420px repeat,
+    radial-gradient(circle at 15% 8%, rgba(217, 161, 93, .38), transparent 30%),
+    radial-gradient(circle at 84% 18%, rgba(72, 107, 60, .24), transparent 32%),
+    linear-gradient(145deg, #e5bd82, #c9855d 56%, #98613d);
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -68,6 +68,34 @@ h1, h2, h3, p { margin: 0; }
   width: min(1060px, 100%);
   margin: 0 auto;
   padding: 0 16px 44px;
+}
+
+.menu-shell::before,
+.menu-shell::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: .16;
+  mix-blend-mode: multiply;
+}
+
+.menu-shell::before {
+  width: min(40vw, 360px);
+  aspect-ratio: 1;
+  left: -120px;
+  top: 220px;
+  background-image: url("assets/xilo-cacto-mulher.png");
+}
+
+.menu-shell::after {
+  width: min(34vw, 310px);
+  aspect-ratio: 1;
+  right: -95px;
+  top: 780px;
+  background-image: url("assets/xilo-passaro.png");
 }
 
 .cover {
@@ -233,7 +261,7 @@ h1, h2, h3, p { margin: 0; }
   padding: 11px 16px;
   overflow-x: auto;
   background:
-    linear-gradient(90deg, rgba(114, 39, 23, .98), rgba(181, 61, 34, .98) 50%, rgba(31, 77, 46, .98));
+    linear-gradient(90deg, rgba(133, 65, 46, .98), rgba(184, 98, 69, .98) 50%, rgba(72, 107, 60, .98));
   box-shadow: 0 12px 22px rgba(54, 27, 9, .34);
   scrollbar-width: none;
 }
@@ -293,7 +321,10 @@ h1, h2, h3, p { margin: 0; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: url("assets/padrao-sertao.svg") 18px 20px / 260px 260px repeat;
+  background:
+    url("assets/xilo-sol.png") right 22px top 24px / 170px auto no-repeat,
+    url("assets/xilo-cacto.png") left 24px bottom 42px / 96px auto no-repeat,
+    url("assets/padrao-sertao.svg") 18px 20px / 300px 300px repeat;
   opacity: .18;
   mix-blend-mode: multiply;
 }
@@ -316,7 +347,8 @@ h1, h2, h3, p { margin: 0; }
   padding: 26px 22px 22px;
   color: var(--texto);
   background:
-    linear-gradient(135deg, rgba(243, 213, 156, .9), rgba(212, 154, 88, .86)),
+    url("assets/xilo-chapeu.png") right 28px center / 138px auto no-repeat,
+    linear-gradient(135deg, rgba(246, 223, 176, .92), rgba(223, 187, 131, .86)),
     url("assets/padrao-sertao.svg") right -60px top -84px / 310px 310px repeat,
     var(--papel);
   border-bottom: 1px solid var(--linha);
@@ -379,7 +411,7 @@ h1, h2, h3, p { margin: 0; }
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
   background:
-    linear-gradient(90deg, rgba(31, 77, 46, .98), rgba(114, 39, 23, .96)),
+    linear-gradient(90deg, rgba(72, 107, 60, .98), rgba(133, 65, 46, .96)),
     var(--verde);
   border-bottom: 1px solid rgba(255, 248, 226, .22);
 }
@@ -446,7 +478,7 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .menu-item:nth-child(even) {
-  background: rgba(224, 180, 111, .82);
+  background: rgba(232, 200, 145, .76);
 }
 
 .menu-item.with-photo {
@@ -531,7 +563,7 @@ h1, h2, h3, p { margin: 0; }
 
 .price-grid article:nth-child(even),
 .info-cards article:nth-child(even) {
-  background: rgba(224, 180, 111, .82);
+  background: rgba(232, 200, 145, .76);
 }
 
 .price-grid h3,
