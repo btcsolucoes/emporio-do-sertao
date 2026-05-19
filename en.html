@@ -3,57 +3,199 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Menu unavailable</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #f5f0e6;
-      --ink: #23170f;
-      --muted: #6b5848;
-      --line: rgba(35, 23, 15, .18);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      color: var(--ink);
-      background: var(--bg);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      text-align: center;
-    }
-
-    main {
-      width: min(460px, 100%);
-      padding: 28px 24px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(1.6rem, 5vw, 2.2rem);
-      line-height: 1.1;
-    }
-
-    p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-  </style>
+  <title>Empório do Sertão — Digital Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <h1>Menu unavailable</h1>
-    <p>This digital menu is no longer active.</p>
+  <div class="ambient-marks" aria-hidden="true">
+    <img src="assets/illustracao-prato.png" class="ambient-mark mark-1" alt="">
+    <img src="assets/illustracao-suco.png" class="ambient-mark mark-2" alt="">
+    <img src="assets/illustracao-sobremesa.png" class="ambient-mark mark-3" alt="">
+    <img src="assets/illustracao-buffet.png" class="ambient-mark mark-4" alt="">
+  </div>
+
+  <main class="menu-shell">
+    <div class="language-switch" aria-label="Language">
+      <a class="language-pill" href="index.html" aria-label="Português"><span class="flag flag-br" aria-hidden="true"></span><span>PT</span></a>
+      <a class="language-pill is-active" href="en.html" aria-label="English"><span class="flag flag-us" aria-hidden="true"></span><span>EN</span></a>
+    </div>
+
+    <header class="cover">
+      <div class="cover-brand">
+        <span class="menu-word">M E N U</span>
+        <span class="kicker">Digital Menu</span>
+        <img src="assets/logo-emporio-clean-4k.png" alt="Empório do Sertão" class="logo" width="3840" height="2262" fetchpriority="high">
+        <h1 class="sr-only">Empório do Sertão</h1>
+        <p>Regional self-service with market flavors, homestyle cooking and Northeastern tradition.</p>
+        <div class="sertanejo-tags" aria-label="House flavors">
+          <span>Sun-dried beef</span>
+          <span>Baião de dois</span>
+          <span>Coalho cheese</span>
+          <span>Rapadura</span>
+        </div>
+        <a class="cover-cta" href="#cardapio">View menu</a>
+      </div>
+
+      <div class="cover-balloons" aria-label="Hours">
+        <div class="balloon clay"><span>Lunch</span><strong>Mon-Fri 11:30am-3:30pm</strong><strong>Sat, Sun and holidays 11:30am-4pm</strong></div>
+        <div class="balloon leaf"><span>Flour house</span><strong>Buffet by weight and all-you-can-eat</strong><strong>Cassava, cuscus, green beans and coalho cheese</strong></div>
+      </div>
+    </header>
+
+    <nav class="tab-dock" id="cardapio" role="tablist" aria-label="Menu categories">
+      <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-self" id="tab-self"><span>01</span>Self-service</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-degustacao" id="tab-degustacao"><span>02</span>Specials</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-entradas" id="tab-entradas"><span>03</span>Starters</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-saladas" id="tab-saladas"><span>04</span>Salads & Kids</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-pratos" id="tab-pratos"><span>05</span>Mains</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sobremesas" id="tab-sobremesas"><span>06</span>Desserts</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-bebidas" id="tab-bebidas"><span>07</span>Drinks</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-drinks" id="tab-drinks"><span>08</span>Juices</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-alcoolicas" id="tab-alcoolicas"><span>09</span>Alcoholic</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-vinhos" id="tab-vinhos"><span>10</span>Combos</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-info" id="tab-info"><span>11</span>Info</button>
+    </nav>
+
+    <section class="menu-status"><span>Cordel, mandacaru and market cooking</span><span>Prices in R$</span></section>
+
+    <section class="theme-strip" aria-label="Regional references">
+      <span>Mandacaru</span>
+      <span>Cordel</span>
+      <span>Flour house</span>
+      <span>Northeastern market</span>
+      <span>Forró pé de serra</span>
+    </section>
+
+    <div class="tab-panels">
+      <section class="panel is-active" id="panel-self" role="tabpanel" aria-labelledby="tab-self">
+        <div class="section-hero self-hero"><div><span>House lunch</span><h2>Self-service</h2><p>A warm and varied buffet organized by stations, with regional recipes and daily homestyle sides.</p></div><img src="assets/illustracao-buffet.png" alt="Delicate representation of Empório do Sertão regional buffet"></div>
+        <div class="buffet-board">
+          <article><span>Meats</span><p>Sun-dried beef with onions</p><p>Free-range chicken stew</p><p>Pork ribs with rapadura glaze</p><p>Goat stew with herbs</p><p>Artisanal sausage on the griddle</p></article>
+          <article><span>Rice</span><p>White rice</p><p>Creamy baião de dois</p><p>Milk rice with coalho cheese</p><p>Rice with pequi and cilantro</p><p>Brown rice with vegetables</p></article>
+          <article><span>Sides</span><p>Cassava with bottled butter</p><p>Cuscus farofa with bacon</p><p>Coalho cheese pirão</p><p>Seasoned green beans</p><p>Pumpkin puree</p></article>
+          <article><span>Salads</span><p>Sertão vinaigrette</p><p>Leaf mix with mango</p><p>Tomato, red onion and cilantro</p><p>Cashew and lime dressing</p><p>House pickles</p></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-degustacao" role="tabpanel" aria-labelledby="tab-degustacao" hidden>
+        <div class="section-head"><span>House picks</span><h2>Regional Specials</h2></div>
+        <div class="menu-list">
+          <article class="menu-item large"><div><span>Experience</span><h3>Sertão Route</h3><p>Tapioca bites, mini sun-dried beef escondidinho, creamy baião, grilled coalho cheese and rapadura dulce de leche.</p></div><strong>89,90</strong></article>
+          <article class="menu-item"><div><span>Daily dish</span><h3>Monday Baião</h3><p>Baião de dois, sun-dried beef in cream, golden cassava and crunchy farofa.</p></div><strong>46,90</strong></article>
+          <article class="menu-item"><div><span>Daily dish</span><h3>Free-range Chicken Wednesday</h3><p>Free-range chicken, broth pirão, white rice, green beans and vinaigrette.</p></div><strong>44,90</strong></article>
+          <article class="menu-item"><div><span>Weekend</span><h3>Sertão Panelada</h3><p>Seasoned panelada with rice, butter farofa, lime and house pepper.</p></div><strong>49,90</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-entradas" role="tabpanel" aria-labelledby="tab-entradas" hidden>
+        <div class="section-head"><span>To start</span><h2>Starters</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/illustracao-prato.png" alt="Regional dish representation"><div><span>Starter</span><h3>Mini sun-dried beef escondidinho</h3><p>Creamy cassava, shredded sun-dried beef and gratinated coalho cheese.</p></div><strong>28</strong></article>
+          <article class="menu-item"><div><span>Starter</span><h3>Tapioca bites with rapadura syrup</h3><p>Crispy outside, soft inside, served with a sweet and savory syrup.</p></div><strong>24</strong></article>
+          <article class="menu-item"><div><span>Starter</span><h3>Grilled coalho cheese</h3><p>Toasted coalho cheese, fresh oregano, sugarcane honey and mild pepper.</p></div><strong>26</strong></article>
+          <article class="menu-item"><div><span>Starter</span><h3>Goat stew pastries</h3><p>Light pastry, regional seasoned filling and cilantro vinaigrette.</p></div><strong>32</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-saladas" role="tabpanel" aria-labelledby="tab-saladas" hidden>
+        <div class="section-head"><span>Fresh & family</span><h2>Salads & Kids</h2></div>
+        <div class="menu-list">
+          <article class="menu-item"><div><span>Salad</span><h3>Mandacaru Salad</h3><p>Leaves, mango, cherry tomato, cashew nuts and citrus dressing.</p></div><strong>29</strong></article>
+          <article class="menu-item"><div><span>Salad</span><h3>Cold green bean salad</h3><p>Green beans, red onion, bell pepper, cilantro and lime olive oil.</p></div><strong>24</strong></article>
+          <article class="menu-item"><div><span>Salad</span><h3>Maxixe vinaigrette</h3><p>Crisp maxixe, tomato, onion and fresh herbs.</p></div><strong>18</strong></article>
+          <article class="menu-item large"><div><span>Kids</span><h3>Sertão kids plate</h3><p>Grilled chicken or shredded sun-dried beef with rice, beans, cassava or fries.</p></div><strong>32</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-pratos" role="tabpanel" aria-labelledby="tab-pratos" hidden>
+        <div class="section-head"><span>Individual plates</span><h2>Mains</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/illustracao-prato.png" alt="Sun-dried beef representation"><div><span>Beef</span><h3>Empório sun-dried beef</h3><p>Sun-dried beef in bottled butter, baião de dois, cassava and vinaigrette.</p></div><strong>58</strong></article>
+          <article class="menu-item with-photo"><img src="assets/illustracao-buffet.png" alt="Creamy baião de dois representation"><div><span>Regional</span><h3>Creamy baião de dois</h3><p>Green beans, rice, coalho cheese, cream, shredded sun-dried beef and cilantro.</p></div><strong>48</strong></article>
+          <article class="menu-item"><div><span>Homestyle</span><h3>Free-range chicken with pirão</h3><p>Slow-cooked chicken, white rice, broth pirão and butter farofa.</p></div><strong>52</strong></article>
+          <article class="menu-item"><div><span>Goat</span><h3>Sertão goat stew</h3><p>Tender goat in spiced sauce, green beans, cassava and rice.</p></div><strong>62</strong></article>
+          <article class="menu-item"><div><span>Fish</span><h3>Tilapia with coconut sauce</h3><p>Grilled tilapia, coconut sauce, cilantro rice and sauteed vegetables.</p></div><strong>54</strong></article>
+          <article class="menu-item"><div><span>Vegetarian</span><h3>Stuffed pumpkin</h3><p>Roasted pumpkin with coalho cheese, vegetables, cashews and herb sauce.</p></div><strong>42</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-sobremesas" role="tabpanel" aria-labelledby="tab-sobremesas" hidden>
+        <div class="section-head"><span>Sweet finish</span><h2>Desserts</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/illustracao-sobremesa.png" alt="Regional dessert representation"><div><span>Dessert</span><h3>Sertão cartola</h3><p>Golden banana, coalho cheese, sugar, cinnamon and sugarcane honey.</p></div><strong>24</strong></article>
+          <article class="menu-item"><div><span>Dessert</span><h3>Rapadura pudding</h3><p>Creamy pudding with rapadura syrup and a touch of orange.</p></div><strong>22</strong></article>
+          <article class="menu-item"><div><span>Dessert</span><h3>Dulce de leche with coalho cheese</h3><p>House dulce de leche, grilled cheese and cashew crumble.</p></div><strong>23</strong></article>
+          <article class="menu-item"><div><span>Dessert</span><h3>Rocambole cake with ice cream</h3><p>Slice of rolled guava cake, tapioca ice cream and warm sauce.</p></div><strong>26</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-bebidas" role="tabpanel" aria-labelledby="tab-bebidas" hidden>
+        <div class="section-head"><span>Non-alcoholic</span><h2>Drinks</h2></div>
+        <div class="price-grid">
+          <article><h3>Still / sparkling water</h3><strong>6</strong><span>300 ml</span></article>
+          <article><h3>Coconut water</h3><strong>12 / 22</strong><span>Glass / pitcher</span></article>
+          <article><h3>Coca-Cola</h3><strong>9</strong><span>Regular / zero</span></article>
+          <article><h3>Guaraná</h3><strong>9</strong><span>Regular / zero</span></article>
+          <article><h3>H2O lemon</h3><strong>10</strong><span>500 ml</span></article>
+          <article><h3>Filtered coffee</h3><strong>5</strong><span>Cup</span></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-drinks" role="tabpanel" aria-labelledby="tab-drinks" hidden>
+        <div class="section-head"><span>Regional fruits</span><h2>Juices</h2></div>
+        <div class="menu-list photo-list">
+          <article class="menu-item with-photo"><img src="assets/illustracao-suco.png" alt="Cashew refreshment representation"><div><span>Juice</span><h3>Cashew with lime</h3><p>Cashew pulp, fresh lime and ice.</p></div><strong>12</strong></article>
+          <article class="menu-item"><div><span>Juice</span><h3>Umbu cajá</h3><p>Regional fruit blended with water or milk.</p></div><strong>13</strong></article>
+          <article class="menu-item"><div><span>Juice</span><h3>Soursop</h3><p>Creamy soursop juice served very cold.</p></div><strong>14</strong></article>
+          <article class="menu-item"><div><span>Refreshment</span><h3>Mate with rapadura and lime</h3><p>Iced mate tea, lime and grated rapadura.</p></div><strong>11</strong></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-alcoolicas" role="tabpanel" aria-labelledby="tab-alcoolicas" hidden>
+        <div class="section-head"><span>Bar</span><h2>Alcoholic Drinks</h2></div>
+        <div class="price-grid dense">
+          <article><h3>Long neck beer</h3><strong>12</strong><span>Ask for labels</span></article>
+          <article><h3>Pilsen draft beer</h3><strong>11</strong><span>300 ml</span></article>
+          <article><h3>Lime caipirinha</h3><strong>21</strong><span>Cachaça</span></article>
+          <article><h3>Cajá caipiroska</h3><strong>26</strong><span>Vodka</span></article>
+          <article><h3>Umburana cachaça</h3><strong>12</strong><span>Shot</span></article>
+          <article><h3>Silver cachaça</h3><strong>9</strong><span>Shot</span></article>
+          <article><h3>National whisky</h3><strong>18</strong><span>Shot</span></article>
+          <article><h3>Gin tonic</h3><strong>28</strong><span>Glass</span></article>
+          <article><h3>Jenipapo liqueur</h3><strong>14</strong><span>Shot</span></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-vinhos" role="tabpanel" aria-labelledby="tab-vinhos" hidden>
+        <div class="section-head"><span>To share</span><h2>Combos</h2></div>
+        <div class="wine-stack">
+          <article><h3>Sertão Combo for 2</h3><p>Sun-dried beef, creamy baião, cassava, coalho cheese, farofa and vinaigrette. R$ 118</p></article>
+          <article><h3>Market Combo</h3><p>Tapioca bites, goat pastries, coalho cheese and cashew sauce. R$ 76</p></article>
+          <article><h3>Family Combo</h3><p>Free-range chicken, rice, pirão, green beans, cassava and salad. R$ 146</p></article>
+          <article><h3>House Sweets Combo</h3><p>Cartola, rapadura pudding and rolled cake with ice cream. R$ 58</p></article>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-info" role="tabpanel" aria-labelledby="tab-info" hidden>
+        <div class="section-head"><span>Restaurant</span><h2>Information</h2></div>
+        <div class="info-cards">
+          <article><span>Address</span><p>Empório do Sertão · Northeastern regional cuisine</p></article>
+          <article><span>Phone</span><p>Service, reservations and orders by WhatsApp.</p></article>
+          <article><span>Social</span><p>@emporiodosertao · Instagram, Google and delivery.</p></article>
+          <article><span>Payment</span><p>Cash, Pix, credit cards, debit cards and meal benefits.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <footer class="menu-footer">
+      <img src="assets/logo-emporio-clean-4k.png" alt="Empório do Sertão">
+      <span>Empório do Sertão · Regional cuisine</span>
+    </footer>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
